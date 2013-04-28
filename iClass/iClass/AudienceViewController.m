@@ -60,7 +60,8 @@
 
 - (void)insertNewObject:(id)sender
 {
-    NSLog(@"Not available now");
+    //NSLog(@"Not available now");
+    [self performSegueWithIdentifier:@"JoinSession" sender:sender];
 }
 
 #pragma mark - Table view data source

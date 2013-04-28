@@ -30,6 +30,9 @@
 		4A449DFC172CF37300BB116C /* AudienceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449DFA172CF36F00BB116C /* AudienceViewController.m */; };
 		4A449DFD172CF37300BB116C /* AudienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A449DFB172CF37100BB116C /* AudienceViewController.xib */; };
 		4A449E00172CF65D00BB116C /* AudienceSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449DFF172CF65D00BB116C /* AudienceSessionModel.m */; };
+		4A449E04172D000600BB116C /* AudienceJoinSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449E02172D000600BB116C /* AudienceJoinSessionViewController.m */; };
+		4A449E05172D000600BB116C /* AudienceJoinSessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A449E03172D000600BB116C /* AudienceJoinSessionViewController.xib */; };
+		4A449E08172D03A400BB116C /* AudienceJoinSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449E07172D03A400BB116C /* AudienceJoinSessionModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,11 @@
 		4A449DFB172CF37100BB116C /* AudienceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudienceViewController.xib; sourceTree = "<group>"; };
 		4A449DFE172CF65D00BB116C /* AudienceSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudienceSessionModel.h; sourceTree = "<group>"; };
 		4A449DFF172CF65D00BB116C /* AudienceSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudienceSessionModel.m; sourceTree = "<group>"; };
+		4A449E01172D000600BB116C /* AudienceJoinSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudienceJoinSessionViewController.h; sourceTree = "<group>"; };
+		4A449E02172D000600BB116C /* AudienceJoinSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudienceJoinSessionViewController.m; sourceTree = "<group>"; };
+		4A449E03172D000600BB116C /* AudienceJoinSessionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudienceJoinSessionViewController.xib; sourceTree = "<group>"; };
+		4A449E06172D03A300BB116C /* AudienceJoinSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudienceJoinSessionModel.h; sourceTree = "<group>"; };
+		4A449E07172D03A400BB116C /* AudienceJoinSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudienceJoinSessionModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +171,8 @@
 				4A449DEE172CDFFB00BB116C /* LoginModel.m */,
 				4A449DFE172CF65D00BB116C /* AudienceSessionModel.h */,
 				4A449DFF172CF65D00BB116C /* AudienceSessionModel.m */,
+				4A449E06172D03A300BB116C /* AudienceJoinSessionModel.h */,
+				4A449E07172D03A400BB116C /* AudienceJoinSessionModel.m */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -172,6 +182,7 @@
 			children = (
 				4A449DFB172CF37100BB116C /* AudienceViewController.xib */,
 				4A449DEA172CDCBE00BB116C /* LoginViewController.xib */,
+				4A449E03172D000600BB116C /* AudienceJoinSessionViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -179,6 +190,8 @@
 		4A449DE6172CD32700BB116C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4A449E01172D000600BB116C /* AudienceJoinSessionViewController.h */,
+				4A449E02172D000600BB116C /* AudienceJoinSessionViewController.m */,
 				4A449DE8172CDCBE00BB116C /* LoginViewController.h */,
 				4A449DE9172CDCBE00BB116C /* LoginViewController.m */,
 				4A449DCC172CCFB600BB116C /* FirstViewController.h */,
@@ -273,6 +286,7 @@
 				4A449DD9172CCFB700BB116C /* second@2x.png in Resources */,
 				4A449DEC172CDCBE00BB116C /* LoginViewController.xib in Resources */,
 				4A449DFD172CF37300BB116C /* AudienceViewController.xib in Resources */,
+				4A449E05172D000600BB116C /* AudienceJoinSessionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +306,8 @@
 				4A449DF3172CE86800BB116C /* PopupMessageCreator.m in Sources */,
 				4A449DFC172CF37300BB116C /* AudienceViewController.m in Sources */,
 				4A449E00172CF65D00BB116C /* AudienceSessionModel.m in Sources */,
+				4A449E04172D000600BB116C /* AudienceJoinSessionViewController.m in Sources */,
+				4A449E08172D03A400BB116C /* AudienceJoinSessionModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
