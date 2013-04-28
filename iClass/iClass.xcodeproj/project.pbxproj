@@ -23,6 +23,10 @@
 		4A449DD5172CCFB600BB116C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449DD4172CCFB600BB116C /* SecondViewController.m */; };
 		4A449DD7172CCFB600BB116C /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A449DD6172CCFB600BB116C /* second.png */; };
 		4A449DD9172CCFB700BB116C /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A449DD8172CCFB700BB116C /* second@2x.png */; };
+		4A449DEB172CDCBE00BB116C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449DE9172CDCBE00BB116C /* LoginViewController.m */; };
+		4A449DEC172CDCBE00BB116C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A449DEA172CDCBE00BB116C /* LoginViewController.xib */; };
+		4A449DEF172CDFFB00BB116C /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449DEE172CDFFB00BB116C /* LoginModel.m */; };
+		4A449DF3172CE86800BB116C /* PopupMessageCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449DF2172CE86800BB116C /* PopupMessageCreator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,13 @@
 		4A449DD4172CCFB600BB116C /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		4A449DD6172CCFB600BB116C /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		4A449DD8172CCFB700BB116C /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		4A449DE8172CDCBE00BB116C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		4A449DE9172CDCBE00BB116C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		4A449DEA172CDCBE00BB116C /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		4A449DED172CDFFB00BB116C /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		4A449DEE172CDFFB00BB116C /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		4A449DF1172CE86800BB116C /* PopupMessageCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupMessageCreator.h; sourceTree = "<group>"; };
+		4A449DF2172CE86800BB116C /* PopupMessageCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupMessageCreator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +105,7 @@
 		4A449DB7172CCFB600BB116C /* iClass */ = {
 			isa = PBXGroup;
 			children = (
+				4A449DF0172CE78E00BB116C /* Utility */,
 				4A449DE7172CD34C00BB116C /* Resources */,
 				4A449DE3172CD2F000BB116C /* MVC */,
 				4A449DE0172CD28300BB116C /* main */,
@@ -139,6 +151,8 @@
 		4A449DE4172CD30700BB116C /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				4A449DED172CDFFB00BB116C /* LoginModel.h */,
+				4A449DEE172CDFFB00BB116C /* LoginModel.m */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -146,6 +160,7 @@
 		4A449DE5172CD31F00BB116C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4A449DEA172CDCBE00BB116C /* LoginViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -153,6 +168,8 @@
 		4A449DE6172CD32700BB116C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4A449DE8172CDCBE00BB116C /* LoginViewController.h */,
+				4A449DE9172CDCBE00BB116C /* LoginViewController.m */,
 				4A449DCC172CCFB600BB116C /* FirstViewController.h */,
 				4A449DCD172CCFB600BB116C /* FirstViewController.m */,
 				4A449DD3172CCFB600BB116C /* SecondViewController.h */,
@@ -170,6 +187,15 @@
 				4A449DD8172CCFB700BB116C /* second@2x.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		4A449DF0172CE78E00BB116C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				4A449DF1172CE86800BB116C /* PopupMessageCreator.h */,
+				4A449DF2172CE86800BB116C /* PopupMessageCreator.m */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +258,7 @@
 				4A449DD2172CCFB600BB116C /* first@2x.png in Resources */,
 				4A449DD7172CCFB600BB116C /* second.png in Resources */,
 				4A449DD9172CCFB700BB116C /* second@2x.png in Resources */,
+				4A449DEC172CDCBE00BB116C /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +273,9 @@
 				4A449DC2172CCFB600BB116C /* AppDelegate.m in Sources */,
 				4A449DCE172CCFB600BB116C /* FirstViewController.m in Sources */,
 				4A449DD5172CCFB600BB116C /* SecondViewController.m in Sources */,
+				4A449DEB172CDCBE00BB116C /* LoginViewController.m in Sources */,
+				4A449DEF172CDFFB00BB116C /* LoginModel.m in Sources */,
+				4A449DF3172CE86800BB116C /* PopupMessageCreator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
