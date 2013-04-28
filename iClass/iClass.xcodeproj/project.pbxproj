@@ -94,17 +94,9 @@
 		4A449DB7172CCFB600BB116C /* iClass */ = {
 			isa = PBXGroup;
 			children = (
-				4A449DC0172CCFB600BB116C /* AppDelegate.h */,
-				4A449DC1172CCFB600BB116C /* AppDelegate.m */,
-				4A449DC9172CCFB600BB116C /* MainStoryboard.storyboard */,
-				4A449DCC172CCFB600BB116C /* FirstViewController.h */,
-				4A449DCD172CCFB600BB116C /* FirstViewController.m */,
-				4A449DCF172CCFB600BB116C /* first.png */,
-				4A449DD1172CCFB600BB116C /* first@2x.png */,
-				4A449DD3172CCFB600BB116C /* SecondViewController.h */,
-				4A449DD4172CCFB600BB116C /* SecondViewController.m */,
-				4A449DD6172CCFB600BB116C /* second.png */,
-				4A449DD8172CCFB700BB116C /* second@2x.png */,
+				4A449DE7172CD34C00BB116C /* Resources */,
+				4A449DE3172CD2F000BB116C /* MVC */,
+				4A449DE0172CD28300BB116C /* main */,
 				4A449DB8172CCFB600BB116C /* Supporting Files */,
 			);
 			path = iClass;
@@ -122,6 +114,62 @@
 				4A449DC7172CCFB600BB116C /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4A449DE0172CD28300BB116C /* main */ = {
+			isa = PBXGroup;
+			children = (
+				4A449DC0172CCFB600BB116C /* AppDelegate.h */,
+				4A449DC1172CCFB600BB116C /* AppDelegate.m */,
+				4A449DC9172CCFB600BB116C /* MainStoryboard.storyboard */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
+		4A449DE3172CD2F000BB116C /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				4A449DE6172CD32700BB116C /* Controller */,
+				4A449DE5172CD31F00BB116C /* View */,
+				4A449DE4172CD30700BB116C /* Modal */,
+			);
+			name = MVC;
+			sourceTree = "<group>";
+		};
+		4A449DE4172CD30700BB116C /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
+		4A449DE5172CD31F00BB116C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4A449DE6172CD32700BB116C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4A449DCC172CCFB600BB116C /* FirstViewController.h */,
+				4A449DCD172CCFB600BB116C /* FirstViewController.m */,
+				4A449DD3172CCFB600BB116C /* SecondViewController.h */,
+				4A449DD4172CCFB600BB116C /* SecondViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4A449DE7172CD34C00BB116C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4A449DCF172CCFB600BB116C /* first.png */,
+				4A449DD1172CCFB600BB116C /* first@2x.png */,
+				4A449DD6172CCFB600BB116C /* second.png */,
+				4A449DD8172CCFB700BB116C /* second@2x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +368,7 @@
 				4A449DDE172CCFB700BB116C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
