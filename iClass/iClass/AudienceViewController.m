@@ -8,6 +8,7 @@
 
 #import "AudienceViewController.h"
 #import "AudienceSessionModel.h"
+#import "AudienceJoinSessionViewController.h"
 @interface AudienceViewController () {
     NSMutableArray *_objects;
 }
@@ -61,7 +62,12 @@
 - (void)insertNewObject:(id)sender
 {
     //NSLog(@"Not available now");
-    [self performSegueWithIdentifier:@"JoinSession" sender:sender];
+    
+    if (!self.joinSessionViewController) {
+        self.joinSessionViewController = [[AudienceJoinSessionViewController alloc] initWithNibName:@"AudienceJoinSessionViewController" bundle:nil];
+    }
+    [self.navigationController pushViewController:self.joinSessionViewController animated:YES];
+    
 }
 
 #pragma mark - Table view data source

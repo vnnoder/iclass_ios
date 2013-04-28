@@ -48,7 +48,7 @@
     if (!result) {
         [PopupMessageCreator popupAlertMessageBox:@"Session is wrong"];
     } else {
-        [self performSegueWithIdentifier:@"JoinSessionReturn" sender:tmpSessionID];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 @end

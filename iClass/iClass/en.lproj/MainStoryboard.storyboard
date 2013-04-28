@@ -92,24 +92,12 @@
             </objects>
             <point key="canvasLocation" x="561" y="-418"/>
         </scene>
-        <!--Audience Join Session View Controller-->
-        <scene sceneID="aU4-Zr-OmO">
-            <objects>
-                <viewController id="G4R-x5-Yxf" customClass="AudienceJoinSessionViewController" sceneMemberID="viewController">
-                    <connections>
-                        <segue destination="wD2-tm-0or" kind="modal" identifier="JoinSessionReturn" id="EK4-wn-BeA"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h7Q-CV-VnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1999" y="-222"/>
-        </scene>
         <!--Audience View Controller-->
         <scene sceneID="A8t-xf-qDh">
             <objects>
                 <tableViewController id="wD2-tm-0or" customClass="AudienceViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="IaF-MK-S4q">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -129,9 +117,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="EHD-Tt-CW3"/>
-                    <connections>
-                        <segue destination="G4R-x5-Yxf" kind="modal" identifier="JoinSession" id="0St-5K-GXu"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7UX-Nh-HNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,7 +132,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="EK4-wn-BeA"/>
-    </inferredMetricsTieBreakers>
 </document>
