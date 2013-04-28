@@ -27,6 +27,9 @@
 		4A449DEC172CDCBE00BB116C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A449DEA172CDCBE00BB116C /* LoginViewController.xib */; };
 		4A449DEF172CDFFB00BB116C /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449DEE172CDFFB00BB116C /* LoginModel.m */; };
 		4A449DF3172CE86800BB116C /* PopupMessageCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449DF2172CE86800BB116C /* PopupMessageCreator.m */; };
+		4A449DFC172CF37300BB116C /* AudienceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449DFA172CF36F00BB116C /* AudienceViewController.m */; };
+		4A449DFD172CF37300BB116C /* AudienceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A449DFB172CF37100BB116C /* AudienceViewController.xib */; };
+		4A449E00172CF65D00BB116C /* AudienceSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449DFF172CF65D00BB116C /* AudienceSessionModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,11 @@
 		4A449DEE172CDFFB00BB116C /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		4A449DF1172CE86800BB116C /* PopupMessageCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupMessageCreator.h; sourceTree = "<group>"; };
 		4A449DF2172CE86800BB116C /* PopupMessageCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupMessageCreator.m; sourceTree = "<group>"; };
+		4A449DF9172CF36D00BB116C /* AudienceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudienceViewController.h; sourceTree = "<group>"; };
+		4A449DFA172CF36F00BB116C /* AudienceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudienceViewController.m; sourceTree = "<group>"; };
+		4A449DFB172CF37100BB116C /* AudienceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudienceViewController.xib; sourceTree = "<group>"; };
+		4A449DFE172CF65D00BB116C /* AudienceSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudienceSessionModel.h; sourceTree = "<group>"; };
+		4A449DFF172CF65D00BB116C /* AudienceSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudienceSessionModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +161,8 @@
 			children = (
 				4A449DED172CDFFB00BB116C /* LoginModel.h */,
 				4A449DEE172CDFFB00BB116C /* LoginModel.m */,
+				4A449DFE172CF65D00BB116C /* AudienceSessionModel.h */,
+				4A449DFF172CF65D00BB116C /* AudienceSessionModel.m */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -160,6 +170,7 @@
 		4A449DE5172CD31F00BB116C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4A449DFB172CF37100BB116C /* AudienceViewController.xib */,
 				4A449DEA172CDCBE00BB116C /* LoginViewController.xib */,
 			);
 			name = View;
@@ -174,6 +185,8 @@
 				4A449DCD172CCFB600BB116C /* FirstViewController.m */,
 				4A449DD3172CCFB600BB116C /* SecondViewController.h */,
 				4A449DD4172CCFB600BB116C /* SecondViewController.m */,
+				4A449DF9172CF36D00BB116C /* AudienceViewController.h */,
+				4A449DFA172CF36F00BB116C /* AudienceViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -259,6 +272,7 @@
 				4A449DD7172CCFB600BB116C /* second.png in Resources */,
 				4A449DD9172CCFB700BB116C /* second@2x.png in Resources */,
 				4A449DEC172CDCBE00BB116C /* LoginViewController.xib in Resources */,
+				4A449DFD172CF37300BB116C /* AudienceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +290,8 @@
 				4A449DEB172CDCBE00BB116C /* LoginViewController.m in Sources */,
 				4A449DEF172CDFFB00BB116C /* LoginModel.m in Sources */,
 				4A449DF3172CE86800BB116C /* PopupMessageCreator.m in Sources */,
+				4A449DFC172CF37300BB116C /* AudienceViewController.m in Sources */,
+				4A449E00172CF65D00BB116C /* AudienceSessionModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -48,6 +48,7 @@
     if (!result) {
         [PopupMessageCreator popupAlertMessageBox:@"Incorrect userId or password"];
     } else {
+        [self performSegueWithIdentifier:@"Login" sender:sender];
         NSLog(@"Log in successfully");
     }
 }
