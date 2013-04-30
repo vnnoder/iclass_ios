@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 @class AudienceSessionModel;
 @class AudienceJoinSessionViewController;
+@class AudienceSessionDetailViewController;
 @interface AudienceViewController : UITableViewController
 
 @property (strong, nonatomic) AudienceJoinSessionViewController *joinSessionViewController;
+@property (strong, nonatomic) AudienceSessionDetailViewController *sessionDetailViewController;
 @property AudienceSessionModel *audienceSessionModel;
 @end

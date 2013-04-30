@@ -33,6 +33,8 @@
 		4A449E04172D000600BB116C /* AudienceJoinSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449E02172D000600BB116C /* AudienceJoinSessionViewController.m */; };
 		4A449E05172D000600BB116C /* AudienceJoinSessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A449E03172D000600BB116C /* AudienceJoinSessionViewController.xib */; };
 		4A449E08172D03A400BB116C /* AudienceJoinSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449E07172D03A400BB116C /* AudienceJoinSessionModel.m */; };
+		4A449E0C172D174B00BB116C /* AudienceSessionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A449E0A172D174900BB116C /* AudienceSessionDetailViewController.m */; };
+		4A449E0D172D174B00BB116C /* AudienceSessionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A449E0B172D174A00BB116C /* AudienceSessionDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,9 @@
 		4A449E03172D000600BB116C /* AudienceJoinSessionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudienceJoinSessionViewController.xib; sourceTree = "<group>"; };
 		4A449E06172D03A300BB116C /* AudienceJoinSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudienceJoinSessionModel.h; sourceTree = "<group>"; };
 		4A449E07172D03A400BB116C /* AudienceJoinSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudienceJoinSessionModel.m; sourceTree = "<group>"; };
+		4A449E09172D174900BB116C /* AudienceSessionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudienceSessionDetailViewController.h; sourceTree = "<group>"; };
+		4A449E0A172D174900BB116C /* AudienceSessionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudienceSessionDetailViewController.m; sourceTree = "<group>"; };
+		4A449E0B172D174A00BB116C /* AudienceSessionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudienceSessionDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +188,7 @@
 				4A449DFB172CF37100BB116C /* AudienceViewController.xib */,
 				4A449DEA172CDCBE00BB116C /* LoginViewController.xib */,
 				4A449E03172D000600BB116C /* AudienceJoinSessionViewController.xib */,
+				4A449E0B172D174A00BB116C /* AudienceSessionDetailViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -190,6 +196,8 @@
 		4A449DE6172CD32700BB116C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4A449E09172D174900BB116C /* AudienceSessionDetailViewController.h */,
+				4A449E0A172D174900BB116C /* AudienceSessionDetailViewController.m */,
 				4A449E01172D000600BB116C /* AudienceJoinSessionViewController.h */,
 				4A449E02172D000600BB116C /* AudienceJoinSessionViewController.m */,
 				4A449DE8172CDCBE00BB116C /* LoginViewController.h */,
@@ -287,6 +295,7 @@
 				4A449DEC172CDCBE00BB116C /* LoginViewController.xib in Resources */,
 				4A449DFD172CF37300BB116C /* AudienceViewController.xib in Resources */,
 				4A449E05172D000600BB116C /* AudienceJoinSessionViewController.xib in Resources */,
+				4A449E0D172D174B00BB116C /* AudienceSessionDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +317,7 @@
 				4A449E00172CF65D00BB116C /* AudienceSessionModel.m in Sources */,
 				4A449E04172D000600BB116C /* AudienceJoinSessionViewController.m in Sources */,
 				4A449E08172D03A400BB116C /* AudienceJoinSessionModel.m in Sources */,
+				4A449E0C172D174B00BB116C /* AudienceSessionDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

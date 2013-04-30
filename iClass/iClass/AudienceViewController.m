@@ -9,6 +9,7 @@
 #import "AudienceViewController.h"
 #import "AudienceSessionModel.h"
 #import "AudienceJoinSessionViewController.h"
+#import "AudienceSessionDetailViewController.h"
 @interface AudienceViewController () {
     NSMutableArray *_objects;
 }
@@ -144,12 +145,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    
+     if (!self.sessionDetailViewController) {
+     self.sessionDetailViewController = [[AudienceSessionDetailViewController alloc] initWithNibName:@"AudienceSessionDetailViewController" bundle:nil];
+     }
+     NSDate *object = _objects[indexPath.row];
+     self.sessionDetailViewController.detailItem = object;
+     [self.navigationController pushViewController:self.sessionDetailViewController animated:YES];
 }
 
 @end
