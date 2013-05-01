@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AudienceViewController : UIViewController
+@interface AudienceViewController : UITableViewController
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *AudienceNavBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *AddBtn;

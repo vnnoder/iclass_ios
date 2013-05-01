@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SpeakerViewController : UIViewController
+@interface SpeakerViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UINavigationBar *SpeakerNavigationBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *AddBtn;
 
