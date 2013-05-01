@@ -28,6 +28,10 @@
 		03C5DFDE173013DF00B39AFF /* CreateClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFDD173013DF00B39AFF /* CreateClassViewController.m */; };
 		03C5DFE1173015E700B39AFF /* ClassDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFE0173015E600B39AFF /* ClassDetailsViewController.m */; };
 		03C5DFE71730180100B39AFF /* QuestionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFE61730180000B39AFF /* QuestionListViewController.m */; };
+		CEFB7B531730B40C0045364D /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFB7B521730B40C0045364D /* LoginModel.m */; };
+		CEFB7B561730B4D40045364D /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFB7B551730B4D40045364D /* Session.m */; };
+		CEFB7B591730B66D0045364D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFB7B581730B66D0045364D /* User.m */; };
+		CEFB7B5C1730B7A70045364D /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFB7B5B1730B7A70045364D /* Question.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +66,14 @@
 		03C5DFE0173015E600B39AFF /* ClassDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassDetailsViewController.m; sourceTree = "<group>"; };
 		03C5DFE51730180000B39AFF /* QuestionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListViewController.h; sourceTree = "<group>"; };
 		03C5DFE61730180000B39AFF /* QuestionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListViewController.m; sourceTree = "<group>"; };
+		CEFB7B511730B40C0045364D /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		CEFB7B521730B40C0045364D /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		CEFB7B541730B4D40045364D /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		CEFB7B551730B4D40045364D /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		CEFB7B571730B66D0045364D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		CEFB7B581730B66D0045364D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		CEFB7B5A1730B7A70045364D /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Question.h; path = ../Question.h; sourceTree = "<group>"; };
+		CEFB7B5B1730B7A70045364D /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Question.m; path = ../Question.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +131,17 @@
 		03C5DF1A172D5E1D00B39AFF /* iclass */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+=======
+				CEFB7B5A1730B7A70045364D /* Question.h */,
+				CEFB7B5B1730B7A70045364D /* Question.m */,
+				03C5DF23172D5E1D00B39AFF /* AppDelegate.h */,
+				03C5DF24172D5E1D00B39AFF /* AppDelegate.m */,
+				03C5DF2C172D5E1D00B39AFF /* MainStoryboard_iPhone.storyboard */,
+				03C5DF32172D5E1D00B39AFF /* ViewController.h */,
+				03C5DF33172D5E1D00B39AFF /* ViewController.m */,
+				03C5DF1B172D5E1D00B39AFF /* Supporting Files */,
+>>>>>>> aba12c08158e83985439ade384a928f7d171c9ba
 				03C5DF3D172D70C600B39AFF /* LogonViewController.h */,
 				03C5DFE51730180000B39AFF /* QuestionListViewController.h */,
 				03C5DFE61730180000B39AFF /* QuestionListViewController.m */,
@@ -133,12 +156,21 @@
 				03C5DFA2172FFCCC00B39AFF /* SpeakerViewController.m */,
 				03C5DFDF173015E600B39AFF /* ClassDetailsViewController.h */,
 				03C5DFE0173015E600B39AFF /* ClassDetailsViewController.m */,
+<<<<<<< HEAD
 				03C5DF23172D5E1D00B39AFF /* AppDelegate.h */,
 				03C5DF24172D5E1D00B39AFF /* AppDelegate.m */,
 				03C5DF2C172D5E1D00B39AFF /* MainStoryboard_iPhone.storyboard */,
 				03C5DF32172D5E1D00B39AFF /* ViewController.h */,
 				03C5DF33172D5E1D00B39AFF /* ViewController.m */,
 				03C5DF1B172D5E1D00B39AFF /* Supporting Files */,
+=======
+				CEFB7B511730B40C0045364D /* LoginModel.h */,
+				CEFB7B521730B40C0045364D /* LoginModel.m */,
+				CEFB7B541730B4D40045364D /* Session.h */,
+				CEFB7B551730B4D40045364D /* Session.m */,
+				CEFB7B571730B66D0045364D /* User.h */,
+				CEFB7B581730B66D0045364D /* User.m */,
+>>>>>>> aba12c08158e83985439ade384a928f7d171c9ba
 			);
 			path = iclass;
 			sourceTree = "<group>";
@@ -258,6 +290,10 @@
 				03C5DFDE173013DF00B39AFF /* CreateClassViewController.m in Sources */,
 				03C5DFE1173015E700B39AFF /* ClassDetailsViewController.m in Sources */,
 				03C5DFE71730180100B39AFF /* QuestionListViewController.m in Sources */,
+				CEFB7B531730B40C0045364D /* LoginModel.m in Sources */,
+				CEFB7B561730B4D40045364D /* Session.m in Sources */,
+				CEFB7B591730B66D0045364D /* User.m in Sources */,
+				CEFB7B5C1730B7A70045364D /* Question.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
