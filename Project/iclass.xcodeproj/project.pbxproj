@@ -29,6 +29,7 @@
 		03C5DFE1173015E700B39AFF /* ClassDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFE0173015E600B39AFF /* ClassDetailsViewController.m */; };
 		03C5DFE71730180100B39AFF /* QuestionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFE61730180000B39AFF /* QuestionListViewController.m */; };
 		03C5DFEA1730E57F00B39AFF /* QuestionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFE91730E57F00B39AFF /* QuestionDetailsViewController.m */; };
+		03C5DFF01730F5CB00B39AFF /* sessionListSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFEF1730F5CA00B39AFF /* sessionListSample.m */; };
 		CE31B97D1730CB4E00FDD98B /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B9761730CB4E00FDD98B /* LoginModel.m */; };
 		CE31B97E1730CB4E00FDD98B /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B9781730CB4E00FDD98B /* Question.m */; };
 		CE31B97F1730CB4E00FDD98B /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B97A1730CB4E00FDD98B /* Session.m */; };
@@ -69,6 +70,8 @@
 		03C5DFE61730180000B39AFF /* QuestionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListViewController.m; sourceTree = "<group>"; };
 		03C5DFE81730E57F00B39AFF /* QuestionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionDetailsViewController.h; sourceTree = "<group>"; };
 		03C5DFE91730E57F00B39AFF /* QuestionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailsViewController.m; sourceTree = "<group>"; };
+		03C5DFEE1730F5CA00B39AFF /* sessionListSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sessionListSample.h; sourceTree = "<group>"; };
+		03C5DFEF1730F5CA00B39AFF /* sessionListSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sessionListSample.m; sourceTree = "<group>"; };
 		CE31B9751730CB4E00FDD98B /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
 		CE31B9761730CB4E00FDD98B /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		CE31B9771730CB4E00FDD98B /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				03C5DFE0173015E600B39AFF /* ClassDetailsViewController.m */,
 				03C5DFE81730E57F00B39AFF /* QuestionDetailsViewController.h */,
 				03C5DFE91730E57F00B39AFF /* QuestionDetailsViewController.m */,
+				03C5DFEE1730F5CA00B39AFF /* sessionListSample.h */,
+				03C5DFEF1730F5CA00B39AFF /* sessionListSample.m */,
 			);
 			path = iclass;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				CE31B97F1730CB4E00FDD98B /* Session.m in Sources */,
 				CE31B9801730CB4E00FDD98B /* User.m in Sources */,
 				03C5DFEA1730E57F00B39AFF /* QuestionDetailsViewController.m in Sources */,
+				03C5DFF01730F5CB00B39AFF /* sessionListSample.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

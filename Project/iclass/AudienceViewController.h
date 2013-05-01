@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AudienceViewController : UITableViewController
+@class ClassDetailsViewController;
+@class sessionListSample;
+
+@interface AudienceViewController : UITableViewController{
+    NSString *classID;
+    ClassDetailsViewController *classDetails;
+    sessionListSample *sessionList;
+}
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *AudienceNavBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *AddBtn;
+
+@property (nonatomic, strong) NSString *classID;
+@property (nonatomic, strong) ClassDetailsViewController *classDetails;
+@property (nonatomic, strong) sessionListSample *sessionList;
+
 @end
