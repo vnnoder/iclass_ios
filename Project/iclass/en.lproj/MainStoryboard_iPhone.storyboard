@@ -250,16 +250,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mIw-mN-b9T">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="8dY-Ln-iVp" style="IBUITableViewCellStyleDefault" id="mIw-mN-b9T" userLabel="Table View Cell - Cell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dY-Ln-iVp">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="JIJ-cE-GhG" kind="push" id="2aq-KC-rKm"/>
+                                    <segue destination="JIJ-cE-GhG" kind="push" identifier="showClassDetail" id="FN7-mK-NSX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -416,6 +423,8 @@
                     <connections>
                         <outlet property="ClassDescription" destination="R8y-XQ-rO5" id="cvK-Sl-dnp"/>
                         <outlet property="ClassID" destination="XBs-pI-TgM" id="v2V-wo-bEm"/>
+                        <outlet property="QuestionsBtn" destination="qil-TZ-Kwr" id="0Mv-So-D6q"/>
+                        <outlet property="SurveryBtn" destination="cyo-86-Rkn" id="BEQ-wF-gcx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ml-ey-y91" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -464,9 +473,6 @@
                                     <constraint firstItem="SxV-Rr-FrQ" firstAttribute="leading" secondItem="Ta3-uP-H0Z" secondAttribute="leading" type="default" id="QIU-Xh-tDq"/>
                                     <constraint firstItem="SxV-Rr-FrQ" firstAttribute="top" secondItem="Ta3-uP-H0Z" secondAttribute="top" constant="66" id="qOv-ac-DU6"/>
                                 </constraints>
-                                <connections>
-                                    <segue destination="5fx-et-fOB" kind="push" id="oWg-gH-Toz"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -475,6 +481,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Ld1-nS-FHE"/>
+                    <connections>
+                        <segue destination="5fx-et-fOB" kind="push" identifier="showQuestionDetails" id="Xdl-M3-uof"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EcF-QI-zvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -559,8 +568,8 @@
             <relationships>
                 <relationship kind="outlet" name="ClassDescription" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="ClassID" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="QuestionsLbl" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="SurveyLbl" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="QuestionsBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="SurveryBtn" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="CreateClassViewController" superclassName="UIViewController">

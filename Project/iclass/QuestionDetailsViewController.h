@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionDetailsViewController : UIViewController
+@interface QuestionDetailsViewController : UIViewController <UISearchDisplayDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *VoteBtn;
+
+
 
 @end

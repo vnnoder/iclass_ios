@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ClassDetailsViewController : UIViewController
+@interface ClassDetailsViewController : UIViewController <UISearchDisplayDelegate>
+
+@property (strong, nonatomic) id classDetailItem;
+
 @property (weak, nonatomic) IBOutlet UITextField *ClassID;
 @property (weak, nonatomic) IBOutlet UITextView *ClassDescription;
-@property (weak, nonatomic) IBOutlet UILabel *QuestionsLbl;
-@property (weak, nonatomic) IBOutlet UILabel *SurveyLbl;
+@property (weak, nonatomic) IBOutlet UIButton *SurveryBtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *QuestionsBtn;
 @end

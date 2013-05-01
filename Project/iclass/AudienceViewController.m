@@ -19,8 +19,10 @@
 @synthesize classDetails,classID,sessionList;
 
 
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
+    NSLog(@"initWithStyle");
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
@@ -30,6 +32,7 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"viewDidLoad");
     [super viewDidLoad];
     
     self.title = @"Audience Class";
@@ -43,7 +46,9 @@
     classID = @"TEST DATA";
     sessionList = [[sessionListSample alloc] init];
     
-    self.classDetails = (ClassDetailsViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];    
+    self.classDetails = (ClassDetailsViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+
+    NSLog(@"viewDidLoad ~ End");
 }
 
 
@@ -72,16 +77,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier ];
-                                                                          
-                                                                          //] forIndexPath:indexPath];
+    NSLog(@"tableView cellForRowAtIndexPath");
+//    static NSString *CellIdentifier = @"Cell";
+//   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier ];
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];// forIndexPath:indexPath];
+
     if (cell == nil)
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-                             
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+/*
     // Configure the cell...
     NSUInteger row = indexPath.row;
-    cell.textLabel.text = [sessionList.arrayData objectAtIndex:row];
+*/
+    NSLog(@"tableView cell.text %@ ", [sessionList.arrayData objectAtIndex:indexPath.row]);
+
+    
+    cell.textLabel.text = [sessionList.arrayData objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -136,7 +147,7 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-    
+/*
     if (self.classDetails == nil){
        // self.classDetails = [[ClassDetailsViewController alloc] init];  //
         self.classDetails = [[ClassDetailsViewController alloc] initWithNibName:nil bundle:nil];
@@ -146,10 +157,25 @@
     }
     
     [self.navigationController pushViewController:self.classDetails animated:YES];
+*/
+    NSLog(@"tableView didSelectRowAtIndexPath text = %@ ", [sessionList.arrayData objectAtIndex:indexPath.row]);
 
-    
-    
+    self.classDetails.classDetailItem = [sessionList.arrayData objectAtIndex:indexPath.row];
     
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"prepareForSegue ");
+    
+    if ([[segue identifier] isEqualToString:@"showClassDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        NSDate *object = _objects[indexPath.row];
+        [[segue destinationViewController] setClassDetailItem:[sessionList.arrayData objectAtIndex:indexPath.row]];
+    }
+}
+
+
 
 @end
