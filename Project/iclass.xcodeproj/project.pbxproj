@@ -28,6 +28,10 @@
 		03C5DFDE173013DF00B39AFF /* CreateClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFDD173013DF00B39AFF /* CreateClassViewController.m */; };
 		03C5DFE1173015E700B39AFF /* ClassDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFE0173015E600B39AFF /* ClassDetailsViewController.m */; };
 		03C5DFE71730180100B39AFF /* QuestionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFE61730180000B39AFF /* QuestionListViewController.m */; };
+		CE31B97D1730CB4E00FDD98B /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B9761730CB4E00FDD98B /* LoginModel.m */; };
+		CE31B97E1730CB4E00FDD98B /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B9781730CB4E00FDD98B /* Question.m */; };
+		CE31B97F1730CB4E00FDD98B /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B97A1730CB4E00FDD98B /* Session.m */; };
+		CE31B9801730CB4E00FDD98B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B97C1730CB4E00FDD98B /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +66,14 @@
 		03C5DFE0173015E600B39AFF /* ClassDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassDetailsViewController.m; sourceTree = "<group>"; };
 		03C5DFE51730180000B39AFF /* QuestionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListViewController.h; sourceTree = "<group>"; };
 		03C5DFE61730180000B39AFF /* QuestionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListViewController.m; sourceTree = "<group>"; };
+		CE31B9751730CB4E00FDD98B /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		CE31B9761730CB4E00FDD98B /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		CE31B9771730CB4E00FDD98B /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		CE31B9781730CB4E00FDD98B /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		CE31B9791730CB4E00FDD98B /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		CE31B97A1730CB4E00FDD98B /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		CE31B97B1730CB4E00FDD98B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		CE31B97C1730CB4E00FDD98B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +131,14 @@
 		03C5DF1A172D5E1D00B39AFF /* iclass */ = {
 			isa = PBXGroup;
 			children = (
+				CE31B9751730CB4E00FDD98B /* LoginModel.h */,
+				CE31B9761730CB4E00FDD98B /* LoginModel.m */,
+				CE31B9771730CB4E00FDD98B /* Question.h */,
+				CE31B9781730CB4E00FDD98B /* Question.m */,
+				CE31B9791730CB4E00FDD98B /* Session.h */,
+				CE31B97A1730CB4E00FDD98B /* Session.m */,
+				CE31B97B1730CB4E00FDD98B /* User.h */,
+				CE31B97C1730CB4E00FDD98B /* User.m */,
 				03C5DF23172D5E1D00B39AFF /* AppDelegate.h */,
 				03C5DF24172D5E1D00B39AFF /* AppDelegate.m */,
 				03C5DF2C172D5E1D00B39AFF /* MainStoryboard_iPhone.storyboard */,
@@ -258,6 +278,10 @@
 				03C5DFDE173013DF00B39AFF /* CreateClassViewController.m in Sources */,
 				03C5DFE1173015E700B39AFF /* ClassDetailsViewController.m in Sources */,
 				03C5DFE71730180100B39AFF /* QuestionListViewController.m in Sources */,
+				CE31B97D1730CB4E00FDD98B /* LoginModel.m in Sources */,
+				CE31B97E1730CB4E00FDD98B /* Question.m in Sources */,
+				CE31B97F1730CB4E00FDD98B /* Session.m in Sources */,
+				CE31B9801730CB4E00FDD98B /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
