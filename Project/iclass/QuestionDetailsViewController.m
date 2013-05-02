@@ -13,6 +13,7 @@
 @end
 
 @implementation QuestionDetailsViewController
+@synthesize string, QuestionDescription;
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,13 +23,15 @@
     }
     return self;
 }
+ */
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    QuestionDescription.text = self.string;
 }
-*/
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
