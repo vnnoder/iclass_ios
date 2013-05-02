@@ -446,24 +446,8 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SxV-Rr-FrQ">
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="300" id="iE8-jG-Oeb"/>
-                                            </constraints>
-                                            <items>
-                                                <tabBarItem systemItem="favorites" id="Gcf-7g-V39"/>
-                                                <tabBarItem systemItem="more" id="uuG-ws-AkL"/>
-                                            </items>
-                                        </tabBar>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <constraints>
-                                    <constraint firstItem="SxV-Rr-FrQ" firstAttribute="leading" secondItem="Ta3-uP-H0Z" secondAttribute="leading" type="default" id="QIU-Xh-tDq"/>
-                                    <constraint firstItem="SxV-Rr-FrQ" firstAttribute="top" secondItem="Ta3-uP-H0Z" secondAttribute="top" constant="66" id="qOv-ac-DU6"/>
-                                </constraints>
                                 <connections>
                                     <segue destination="5fx-et-fOB" kind="push" id="JaX-vc-xkM"/>
                                 </connections>
