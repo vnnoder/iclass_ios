@@ -35,14 +35,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)ConfirmNewClass:(id)sender {
-    NSLog(@"ConfirmNewClassAction");
-
-    
-    if ((_ClassID.text.length > 0 ) && (_ClassDesc.text.length > 0))
-        [self performSegueWithIdentifier:@"CreateNewClassSegue" sender:self];
-
-    
-}
 
 @end
