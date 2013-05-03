@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class sessionListSample;
 @interface SpeakerViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UINavigationBar *SpeakerNavigationBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *AddBtn;
-
+@property (nonatomic, strong) sessionListSample *sessionList;
 @end

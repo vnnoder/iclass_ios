@@ -127,7 +127,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5d-Kx-6hq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="523" y="533"/>
+            <point key="canvasLocation" x="523" y="913"/>
         </scene>
         <!--Speaker View Controller-->
         <scene sceneID="mrt-mo-vmr">
@@ -138,14 +138,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SpeakerClassCell" id="hOs-ha-adT">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SpeakerClassCell" id="hOs-ha-adT">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="JIJ-cE-GhG" kind="push" id="RBT-zC-7Xe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -163,7 +166,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Sq-gG-Lk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="979" y="533"/>
+            <point key="canvasLocation" x="1061" y="1259"/>
         </scene>
         <!--Create Class View Controller-->
         <scene sceneID="Whh-DK-wBg">
@@ -223,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwP-gK-d1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1543" y="930"/>
+            <point key="canvasLocation" x="1699" y="1374"/>
         </scene>
         <!--Navigation Controller - Audience-->
         <scene sceneID="ZbW-HF-t6L">
@@ -429,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ml-ey-y91" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1529" y="43"/>
+            <point key="canvasLocation" x="1573" y="279"/>
         </scene>
         <!--Question List View Controller-->
         <scene sceneID="hUW-MU-bbA">
@@ -468,7 +471,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EcF-QI-zvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1978" y="43"/>
+            <point key="canvasLocation" x="2070" y="79"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="KYC-lT-Dyj">
@@ -595,8 +598,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3CS-ZZ-fqb"/>
-        <segue reference="cyj-AT-YCq"/>
+        <segue reference="XkC-4r-mwk"/>
+        <segue reference="RBT-zC-7Xe"/>
         <segue reference="1uX-uK-eJN"/>
+        <segue reference="cyj-AT-YCq"/>
     </inferredMetricsTieBreakers>
 </document>

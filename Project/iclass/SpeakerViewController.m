@@ -7,13 +7,14 @@
 //
 
 #import "SpeakerViewController.h"
-
+#import "ClassDetailsViewController.h"
+#import "sessionListSample.h"
 @interface SpeakerViewController ()
 
 @end
 
 @implementation SpeakerViewController
-
+@synthesize sessionList;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,6 +34,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    sessionList = [[sessionListSample alloc] init];
 }
 
 
@@ -57,30 +59,37 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 20;
+    return sessionList.arrayData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"SpeakerClassCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    NSLog(@"tableView cellForRowAtIndexPath");
     
-    // Configure the cell...
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"Class %d",indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpeakerClassCell"];// forIndexPath:indexPath];
+    
+    if (cell == nil)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SpeakerClassCell"];
+    /*
+     // Configure the cell...
+     NSUInteger row = indexPath.row;
+     */
+    NSLog(@"tableView cell.text %@ ", [sessionList.arrayData objectAtIndex:indexPath.row]);
+    
+    
+    cell.textLabel.text = [sessionList.arrayData objectAtIndex:indexPath.row];
+    
     return cell;
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([sender isKindOfClass:[UITableViewCell class]]) {
         if ([segue
-             .destinationViewController isKindOfClass:[QuestionDetailsViewController class]]) {
+             .destinationViewController isKindOfClass:[ClassDetailsViewController class]]) {
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-            QuestionDetailsViewController *detailController = segue.destinationViewController;
-            detailController.string = [NSString stringWithFormat:
-                                       @"%d", indexPath.row];
+            ClassDetailsViewController *detailController = segue.destinationViewController;
+            [detailController setClassDetailItem:[sessionList.arrayData objectAtIndex:indexPath.row]];
+    
         }
     }
 }
