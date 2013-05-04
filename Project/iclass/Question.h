@@ -12,11 +12,15 @@
 
 @interface Question : NSObject
 
+@property (strong) NSString *key;
 @property (strong) NSString *title;
 @property (strong) NSString *detail;
-@property (strong) User *owner;
-@property (strong) Session *session;
+@property (copy, nonatomic) User *owner;
+@property (copy, nonatomic) Session *session;
 @property (strong) NSDate *createdAt;
 @property (strong) NSDate *updatedAt;
+@property NSInteger vote;
 
+-(NSComparisonResult) compareUpdateDate:(Question *) question;
+-(NSComparisonResult) compareVote:(Question *) question;
 @end
