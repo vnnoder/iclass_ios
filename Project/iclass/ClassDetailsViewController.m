@@ -40,12 +40,13 @@
     }
     
     //if (OperationBtn) {
-    
         if (GUserGole == AUDIENCE) {
-            OperationBtn.titleLabel.text = @"Leave";
+            [OperationBtn setTitle:@"Leave" forState:UIControlStateNormal];
+
         } else {
             // TODO change button title according to class's status
-            OperationBtn.titleLabel.text = @"Start";
+            [OperationBtn setTitle:@"Start" forState:UIControlStateNormal];
+
         }
     //}
 
