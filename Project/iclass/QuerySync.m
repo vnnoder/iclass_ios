@@ -19,7 +19,7 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url];
     [request setHTTPMethod:@"GET"];
     
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+//    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
 }
 
