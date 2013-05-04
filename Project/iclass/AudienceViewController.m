@@ -9,7 +9,7 @@
 #import "AudienceViewController.h"
 #import "ClassDetailsViewController.h"
 #import "sessionListSample.h"
-
+#import "GlobalState.h"
 @interface AudienceViewController ()
 
 @end
@@ -48,6 +48,7 @@
     
     self.classDetails = (ClassDetailsViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 
+    GUserGole = AUDIENCE;
     NSLog(@"viewDidLoad ~ End");
 }
 

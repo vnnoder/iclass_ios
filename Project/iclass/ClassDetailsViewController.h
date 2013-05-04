@@ -17,4 +17,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *SurveryBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *QuestionsBtn;
+@property (weak, nonatomic) IBOutlet UIButton *OperationBtn;
 @end

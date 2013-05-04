@@ -7,9 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "GlobalState.h"
 @implementation AppDelegate
-
+NSUserRole GUserGole = AUDIENCE;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.

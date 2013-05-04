@@ -7,6 +7,7 @@
 //
 
 #import "ClassDetailsViewController.h"
+#import "GlobalState.h"
 
 @interface ClassDetailsViewController ()
 @property (strong,nonatomic) UIPopoverController *parentPopoverController;
@@ -14,6 +15,7 @@
 @end
 
 @implementation ClassDetailsViewController
+@synthesize OperationBtn;
 
 - (void) setClassDetailItem:(id)newClassDetailItem
 {
@@ -36,6 +38,17 @@
     if (self.classDetailItem){
         self.ClassID.text = [self.classDetailItem description];
     }
+    
+    //if (OperationBtn) {
+    
+        if (GUserGole == AUDIENCE) {
+            OperationBtn.titleLabel.text = @"Leave";
+        } else {
+            // TODO change button title according to class's status
+            OperationBtn.titleLabel.text = @"Start";
+        }
+    //}
+
 }
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

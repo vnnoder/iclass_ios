@@ -72,6 +72,7 @@
 		03C5DFE91730E57F00B39AFF /* QuestionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailsViewController.m; sourceTree = "<group>"; };
 		03C5DFEE1730F5CA00B39AFF /* sessionListSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sessionListSample.h; sourceTree = "<group>"; };
 		03C5DFEF1730F5CA00B39AFF /* sessionListSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sessionListSample.m; sourceTree = "<group>"; };
+		4A4A68CF173400ED002C9BBC /* GlobalState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalState.h; sourceTree = "<group>"; };
 		CE31B9751730CB4E00FDD98B /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
 		CE31B9761730CB4E00FDD98B /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		CE31B9771730CB4E00FDD98B /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
@@ -168,6 +169,7 @@
 				03C5DF2C172D5E1D00B39AFF /* MainStoryboard_iPhone.storyboard */,
 				03C5DF32172D5E1D00B39AFF /* ViewController.h */,
 				03C5DF33172D5E1D00B39AFF /* ViewController.m */,
+				4A4A68CF173400ED002C9BBC /* GlobalState.h */,
 				03C5DF1B172D5E1D00B39AFF /* Supporting Files */,
 			);
 			path = iclass;

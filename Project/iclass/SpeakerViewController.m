@@ -9,6 +9,7 @@
 #import "SpeakerViewController.h"
 #import "ClassDetailsViewController.h"
 #import "sessionListSample.h"
+#import "GlobalState.h"
 @interface SpeakerViewController ()
 
 @end
@@ -28,7 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    GUserGole = SPEAKER;
+    self.title = @"Speaker Classes";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
