@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface Entity : NSObject
-    @property int key;
+    @property NSInteger key;
 @end

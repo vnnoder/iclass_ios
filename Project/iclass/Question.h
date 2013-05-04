@@ -13,15 +13,15 @@
 
 @interface Question : Entity
 
-@property (strong) NSString *key;
 @property (strong) NSString *title;
 @property (strong) NSString *detail;
 @property (copy, nonatomic) User *owner;
 @property (copy, nonatomic) Session *session;
 @property (strong) NSDate *createdAt;
 @property (strong) NSDate *updatedAt;
-@property NSInteger vote;
+@property NSInteger voteCount;
+@property BOOL voted;
 
 -(NSComparisonResult) compareUpdateDate:(Question *) question;
--(NSComparisonResult) compareVote:(Question *) question;
+-(NSComparisonResult) compareVoteCount:(Question *) question;
 @end

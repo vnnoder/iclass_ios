@@ -18,7 +18,7 @@
     NSString* password = [map objectForKey:@"password"];
     NSString* name = [map objectForKey:@"name"];
     int key = [[map objectForKey:@"key"] intValue];
-    user.username = username;
+    user.loginId = username;
     user.password = password;
     user.name = name;
     user.key = key;

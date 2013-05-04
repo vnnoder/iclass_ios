@@ -18,9 +18,14 @@
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url];
     [request setHTTPMethod:@"GET"];
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
-//    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSString *string = [NSString stringWithUTF8String:[data bytes]];
     
+//    NSMutableString *jsonString = [[NSMutableString alloc] initWithBytes:[data bytes] length:[data length] encoding:NSUTF8StringEncoding];
+//    [jsonString JSONValue];
 }
 
 @end

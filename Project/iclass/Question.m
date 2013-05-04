@@ -10,23 +10,24 @@
 
 @implementation Question
 
-@synthesize key;
 @synthesize title;
 @synthesize detail;
 @synthesize owner;
 @synthesize session;
 @synthesize createdAt;
 @synthesize updatedAt;
-@synthesize vote;
+@synthesize voteCount;
+@synthesize voted;
 
 -(NSComparisonResult) compareUpdateDate:(Question *) question
 {
     return [updatedAt compare:[question updatedAt]];
 }
 
--(NSComparisonResult) compareVote:(Question *) question
+-(NSComparisonResult) compareVoteCount:(Question *) question
 {
-    return vote < [question vote];
+    
+    return voteCount < [question voteCount];
 }
 
 @end

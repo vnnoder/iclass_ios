@@ -11,10 +11,11 @@
 
 @interface User : Entity
 
-@property (strong) NSString *username;
+@property (strong) NSString *loginId;
 @property (strong) NSString *password;
 @property (strong) NSDate *createdAt;
 @property (strong) NSDate *updatedAt;
 @property (strong) NSString *name;
+@property (strong) NSString *email;
 
 @end

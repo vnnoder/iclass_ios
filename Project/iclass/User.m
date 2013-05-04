@@ -10,10 +10,7 @@
 
 @implementation User
 
-@synthesize username;
-@synthesize password;
-@synthesize createdAt;
-@synthesize updatedAt;
-@synthesize name;
+@synthesize loginId, password, createdAt, updatedAt, name,email;
+
 
 @end

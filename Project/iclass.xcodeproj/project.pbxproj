@@ -30,7 +30,6 @@
 		03C5DFE71730180100B39AFF /* QuestionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFE61730180000B39AFF /* QuestionListViewController.m */; };
 		03C5DFEA1730E57F00B39AFF /* QuestionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFE91730E57F00B39AFF /* QuestionDetailsViewController.m */; };
 		03C5DFF01730F5CB00B39AFF /* sessionListSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFEF1730F5CA00B39AFF /* sessionListSample.m */; };
-		4A4A68D41734BA2D002C9BBC /* QuestionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A68D31734BA2C002C9BBC /* QuestionList.m */; };
 		41C534B01734B29200493111 /* ServiceAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C534AF1734B29200493111 /* ServiceAPI.m */; };
 		41C534B41734B35C00493111 /* QueryAsync.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C534B31734B35C00493111 /* QueryAsync.m */; };
 		41C534B81734D6A700493111 /* SessionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C534B71734D6A700493111 /* SessionService.m */; };
@@ -45,6 +44,7 @@
 		41C8DDE31734F28F0075DD92 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDDA1734F28F0075DD92 /* SBJsonParser.m */; };
 		41C8DDE41734F28F0075DD92 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDDC1734F28F0075DD92 /* SBJsonWriter.m */; };
 		41C8DDE51734F28F0075DD92 /* SearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDDE1734F28F0075DD92 /* SearchResults.m */; };
+		4A4A68D41734BA2D002C9BBC /* QuestionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A68D31734BA2C002C9BBC /* QuestionList.m */; };
 		CE31B97D1730CB4E00FDD98B /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B9761730CB4E00FDD98B /* LoginModel.m */; };
 		CE31B97E1730CB4E00FDD98B /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B9781730CB4E00FDD98B /* Question.m */; };
 		CE31B97F1730CB4E00FDD98B /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B97A1730CB4E00FDD98B /* Session.m */; };
@@ -187,7 +187,7 @@
 			children = (
 				41C8DDCF1734F28F0075DD92 /* JSON */,
 				41C8DDA91734E1630075DD92 /* domain */,
-				41C534B11734B29900493111 /* API */,
+				41C534B11734B29900493111 /* service */,
 				03C5DF3D172D70C600B39AFF /* LogonViewController.h */,
 				03C5DFE51730180000B39AFF /* QuestionListViewController.h */,
 				03C5DFE61730180000B39AFF /* QuestionListViewController.m */,
@@ -241,7 +241,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		41C534B11734B29900493111 /* API */ = {
+		41C534B11734B29900493111 /* service */ = {
 			isa = PBXGroup;
 			children = (
 				41C534AE1734B29200493111 /* ServiceAPI.h */,
@@ -258,7 +258,7 @@
 				41C8DDB31734EF0B0075DD92 /* QuerySync.h */,
 				41C8DDB41734EF0B0075DD92 /* QuerySync.m */,
 			);
-			name = API;
+			name = service;
 			sourceTree = "<group>";
 		};
 		41C8DDA91734E1630075DD92 /* domain */ = {
