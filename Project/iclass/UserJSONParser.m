@@ -17,10 +17,13 @@
     NSString* username = [map objectForKey:@"username"];
     NSString* password = [map objectForKey:@"password"];
     NSString* name = [map objectForKey:@"name"];
-    NSString* key = [map objectForKey:@"key"];
+    int key = [[map objectForKey:@"key"] intValue];
     user.username = username;
     user.password = password;
     user.name = name;
+    user.key = key;
+    
+    return user;
 }
 
 @end

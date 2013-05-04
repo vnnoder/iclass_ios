@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Query.h"
+#import "QueryAsync.h"
 @interface ServiceAPI : NSObject
 
  @property(strong, nonatomic) NSString *path;

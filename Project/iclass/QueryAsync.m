@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Wiely Rabin. All rights reserved.
 //
 
-#import "Query.h"
+#import "QueryAsync.h"
 
-@implementation Query
+@implementation QueryAsync
 
 @synthesize buffer, conn, processor;
 NSMutableData *a;

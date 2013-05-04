@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ResponseProcessor.h"
 
-@interface Query : NSObject
+@interface QueryAsync : NSObject
     @property(strong, nonatomic) NSMutableData *buffer;
     @property(strong, nonatomic) NSURLConnection *conn;
     @property(weak) id <ResponseProcessor> processor;
