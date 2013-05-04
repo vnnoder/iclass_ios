@@ -9,5 +9,5 @@
 #import "Entity.h"
 
 @implementation Entity
-
+    @synthesize key;
 @end

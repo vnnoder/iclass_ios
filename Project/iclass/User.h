@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Entity.h"
 
-@interface User : NSObject
+@interface User : Entity
 
 @property (strong) NSString *username;
 @property (strong) NSString *password;

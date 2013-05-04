@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 #import "Session.h"
+#import "Entity.h"
 
-@interface Question : NSObject
+@interface Question : Entity
 
 @property (strong) NSString *title;
 @property (strong) NSString *detail;

@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
-@interface Session : NSObject
+#import "Entity.h"
+@interface Session : Entity
 
 @property (strong) NSString *name;
 @property (strong) NSString *description;
