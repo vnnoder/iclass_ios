@@ -38,4 +38,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)VoteAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES]; 
+}
+
 @end
