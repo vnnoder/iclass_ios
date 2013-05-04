@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Query.h"
+
 
 @interface SessionService : NSObject
-    @property(strong, nonatomic) Query *query;
+
 @end
