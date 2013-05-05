@@ -39,7 +39,6 @@
 		41C8DDE31734F28F0075DD92 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDDA1734F28F0075DD92 /* SBJsonParser.m */; };
 		41C8DDE41734F28F0075DD92 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDDC1734F28F0075DD92 /* SBJsonWriter.m */; };
 		41C8DDE51734F28F0075DD92 /* SearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDDE1734F28F0075DD92 /* SearchResults.m */; };
-		41C8DDE8173566120075DD92 /* QueryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDE7173566120075DD92 /* QueryUtil.m */; };
 		41C8DDEC17369A7F0075DD92 /* SessionSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDEB17369A7F0075DD92 /* SessionSerializer.m */; };
 		41C8DDEF17369AEC0075DD92 /* Serializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDEE17369AEB0075DD92 /* Serializer.m */; };
 		4A4A68D41734BA2D002C9BBC /* QuestionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A68D31734BA2C002C9BBC /* QuestionList.m */; };
@@ -110,8 +109,6 @@
 		41C8DDDC1734F28F0075DD92 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		41C8DDDD1734F28F0075DD92 /* SearchResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResults.h; sourceTree = "<group>"; };
 		41C8DDDE1734F28F0075DD92 /* SearchResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResults.m; sourceTree = "<group>"; };
-		41C8DDE6173566120075DD92 /* QueryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryUtil.h; sourceTree = "<group>"; };
-		41C8DDE7173566120075DD92 /* QueryUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryUtil.m; sourceTree = "<group>"; };
 		41C8DDEA17369A7F0075DD92 /* SessionSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionSerializer.h; sourceTree = "<group>"; };
 		41C8DDEB17369A7F0075DD92 /* SessionSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionSerializer.m; sourceTree = "<group>"; };
 		41C8DDED17369AEB0075DD92 /* Serializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serializer.h; sourceTree = "<group>"; };
@@ -224,8 +221,6 @@
 				03C5DF1C172D5E1D00B39AFF /* iclass-Info.plist */,
 				03C5DF1D172D5E1D00B39AFF /* InfoPlist.strings */,
 				03C5DF20172D5E1D00B39AFF /* main.m */,
-				41C8DDE6173566120075DD92 /* QueryUtil.h */,
-				41C8DDE7173566120075DD92 /* QueryUtil.m */,
 				03C5DF22172D5E1D00B39AFF /* iclass-Prefix.pch */,
 				03C5DF26172D5E1D00B39AFF /* Default.png */,
 				03C5DF28172D5E1D00B39AFF /* Default@2x.png */,
@@ -395,7 +390,6 @@
 				41C8DDE31734F28F0075DD92 /* SBJsonParser.m in Sources */,
 				41C8DDE41734F28F0075DD92 /* SBJsonWriter.m in Sources */,
 				41C8DDE51734F28F0075DD92 /* SearchResults.m in Sources */,
-				41C8DDE8173566120075DD92 /* QueryUtil.m in Sources */,
 				41C8DDEC17369A7F0075DD92 /* SessionSerializer.m in Sources */,
 				41C8DDEF17369AEC0075DD92 /* Serializer.m in Sources */,
 			);
