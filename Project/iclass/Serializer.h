@@ -9,16 +9,19 @@
 #import <Foundation/Foundation.h>
 
 @interface Serializer : NSObject
-// serializ the object to json data
-+ (NSData*) serialize: (id)entity;
 
 // construct the object from json data
-+ (id) deserialize: (NSData*)jsonData;
+// used to parse result from HTTP request
+- (id) deserialize: (NSData*)jsonData;
 
-// subclass need to implement the methodåÅ
-+ (NSDictionary *) toNSDictionary:(id)entity;
+// construct array of object from json data
+- (NSArray*) deserializeArray: (NSData*)jsonData;
 
-// subclass need to implement the methodåÅ
-+ (id) fromNSDictionary:(NSDictionary*) dict;
+// subclass need to implement the method for the specific entity
+// use to send HTTP request
+- (NSDictionary *) toNSDictionary:(id)entity;
+
+// subclass need to implement the method for the specific entity
+- (id) fromNSDictionary:(NSDictionary*) dict;
 
 @end

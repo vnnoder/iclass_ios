@@ -7,12 +7,13 @@
 //
 
 #import "HttpQuery.h"
+#import "Util.h"
 
 @implementation HttpQuery
 
 + (NSData*) querySyncWithPath: (NSString *)path
                      withMethod:(NSString *)method
-                     withParams: (NSMutableDictionary *)paramMap{
+                     withParams: (NSDictionary *)paramMap{
         
     NSString *base = @"http://ec2-122-248-192-192.ap-southeast-1.compute.amazonaws.com";
     NSString *urlString = [base stringByAppendingString:path];
@@ -25,12 +26,9 @@
             paramString = [paramString stringByAppendingFormat:@"%@=%@&", [self encodeURIComponent:name], [self encodeURIComponent:value]];
         }
     }
-    NSLog(@"Params: %@", paramString);
-
+   
     BOOL isGETmethod = [@"GET"isEqualToString: method];
-    
-    
-    if(isGETmethod){
+       if(isGETmethod){
         urlString = [urlString stringByAppendingString:@"?"];
         urlString = [urlString stringByAppendingString:paramString];
     }
@@ -53,6 +51,7 @@
     NSURLResponse * response = nil;
     NSError * error = nil;
     NSLog(@"Synchronous request start. URL = %@, Method= %@", urlString, method);
+    NSLog(@"Params: %@", paramString);
     
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
@@ -63,6 +62,7 @@
     }
     
 //    NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"Synchronous request end.");
     return data;
 
 }
@@ -74,9 +74,7 @@
     
     NSString *base = @"http://ec2-122-248-192-192.ap-southeast-1.compute.amazonaws.com";
     NSString *urlString = [base stringByAppendingString:path];
-    
-    NSLog(@"Cotent body: %@", [NSString stringWithUTF8String:[postBody bytes]]);
-    
+
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url];
     [request setTimeoutInterval:30.0f];
@@ -88,12 +86,13 @@
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
 
+    NSLog(@"Synchronous request start. URL = %@, Method= %@", urlString, method);
+    NSLog(@"Cotent body: %@", [[NSString alloc] initWithData:postBody encoding:NSUTF8StringEncoding]);
     
     
     NSURLResponse * response = nil;
     NSError * error = nil;
-    NSLog(@"Synchronous request start. URL = %@, Method= %@", urlString, method);
-    
+  
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
     if ([data length] == 0 && error == nil){
@@ -103,6 +102,8 @@
     }
     
 //    NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"Synchronous request end.");
+
     return data;
     
 }
@@ -162,6 +163,11 @@
 
 + (NSString *)encodeURIComponent:(NSString *)string
 {
+    NSLog(@"%@", string);
+    if ([Util isNull:string]) {
+        return @"";
+    }
+    
     NSString *s = [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     return s;
 }

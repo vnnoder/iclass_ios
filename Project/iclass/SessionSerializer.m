@@ -27,13 +27,13 @@
  talk[end_date(3i)]:5
  
  */
-+ (NSDictionary *) toNSDictionary:(id)entity{
+- (NSDictionary *) toNSDictionary:(id)entity{
     Session *session = (Session*) entity;
     NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
-    [dict setValue:[NSNumber numberWithInteger:[session key]] forKey:@"talk[id]"];
+    [dict setValue:[NSString stringWithFormat:@"%d",[session key]] forKey:@"talk[id]"];
     [dict setValue:[session title ] forKey:@"talk[title]"];
     [dict setValue:[session description ] forKey:@"talk[description]"];
-    [dict setValue:[NSNumber numberWithInteger:[session ownerId]] forKey:@"talk[user_id]"];
+    [dict setValue:[NSString stringWithFormat:@"%d",[session ownerId]]  forKey:@"talk[user_id]"];
     [dict setValue:[session status] forKey:@"talk[status]"];
 
     //TODO
@@ -43,12 +43,12 @@
     return dict;
 }
 
-+ (id) fromNSDictionary:(NSDictionary *) dict{
+- (id) fromNSDictionary:(NSDictionary *) dict{
     Session *entity = [[Session alloc]init];
-    entity.key = [[dict objectForKey: @"id"]integerValue];
-    entity.title = [dict objectForKey:@"username"];
-    entity.description = [dict objectForKey:@"name"];
-    entity.ownerId = [[dict objectForKey: @"user_id"]integerValue];
+    entity.key = [[dict objectForKey: @"id"]intValue];
+    entity.title = [dict objectForKey:@"title"];
+    entity.description = [dict objectForKey:@"description"];
+    entity.ownerId = [[dict objectForKey: @"user_id"]intValue];
     entity.status = [dict objectForKey:@"status"];
     return entity;
 }

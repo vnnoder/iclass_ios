@@ -41,6 +41,7 @@
 		41C8DDE51734F28F0075DD92 /* SearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDDE1734F28F0075DD92 /* SearchResults.m */; };
 		41C8DDEC17369A7F0075DD92 /* SessionSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDEB17369A7F0075DD92 /* SessionSerializer.m */; };
 		41C8DDEF17369AEC0075DD92 /* Serializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDEE17369AEB0075DD92 /* Serializer.m */; };
+		41C8DDF91736C2700075DD92 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDF81736C26F0075DD92 /* Util.m */; };
 		4A4A68D41734BA2D002C9BBC /* QuestionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A68D31734BA2C002C9BBC /* QuestionList.m */; };
 		CE31B97D1730CB4E00FDD98B /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B9761730CB4E00FDD98B /* LoginModel.m */; };
 		CE31B97E1730CB4E00FDD98B /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B9781730CB4E00FDD98B /* Question.m */; };
@@ -85,7 +86,6 @@
 		03C5DFEF1730F5CA00B39AFF /* sessionListSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sessionListSample.m; sourceTree = "<group>"; };
 		41C534AE1734B29200493111 /* ServiceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAPI.h; sourceTree = "<group>"; };
 		41C534AF1734B29200493111 /* ServiceAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAPI.m; sourceTree = "<group>"; };
-		41C534B51734CE9A00493111 /* ResponseProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseProcessor.h; sourceTree = "<group>"; };
 		41C534B61734D6A700493111 /* SessionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionService.h; sourceTree = "<group>"; };
 		41C534B71734D6A700493111 /* SessionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionService.m; sourceTree = "<group>"; };
 		41C8DDAD1734E6050075DD92 /* UserSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSerializer.h; sourceTree = "<group>"; };
@@ -114,6 +114,8 @@
 		41C8DDED17369AEB0075DD92 /* Serializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serializer.h; sourceTree = "<group>"; };
 		41C8DDEE17369AEB0075DD92 /* Serializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Serializer.m; sourceTree = "<group>"; };
 		41C8DDF217369D4B0075DD92 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		41C8DDF71736C26F0075DD92 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		41C8DDF81736C26F0075DD92 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		4A4A68CF173400ED002C9BBC /* GlobalState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalState.h; sourceTree = "<group>"; };
 		4A4A68D21734BA2C002C9BBC /* QuestionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionList.h; sourceTree = "<group>"; };
 		4A4A68D31734BA2C002C9BBC /* QuestionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionList.m; sourceTree = "<group>"; };
@@ -234,11 +236,12 @@
 			children = (
 				41C534AE1734B29200493111 /* ServiceAPI.h */,
 				41C534AF1734B29200493111 /* ServiceAPI.m */,
-				41C534B51734CE9A00493111 /* ResponseProcessor.h */,
 				41C534B61734D6A700493111 /* SessionService.h */,
 				41C534B71734D6A700493111 /* SessionService.m */,
 				41C8DDB31734EF0B0075DD92 /* HttpQuery.h */,
 				41C8DDB41734EF0B0075DD92 /* HttpQuery.m */,
+				41C8DDF71736C26F0075DD92 /* Util.h */,
+				41C8DDF81736C26F0075DD92 /* Util.m */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				41C8DDE51734F28F0075DD92 /* SearchResults.m in Sources */,
 				41C8DDEC17369A7F0075DD92 /* SessionSerializer.m in Sources */,
 				41C8DDEF17369AEC0075DD92 /* Serializer.m in Sources */,
+				41C8DDF91736C2700075DD92 /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

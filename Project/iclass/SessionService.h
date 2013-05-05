@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ServiceAPI.h"
 
-
-@interface SessionService : NSObject
+@interface SessionService : ServiceAPI
 
 @end

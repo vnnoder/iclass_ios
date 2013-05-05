@@ -7,14 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HttpQuery.h"
+#import "Serializer.h"
+
+// provid basic CRUD method
 @interface ServiceAPI : NSObject
 
  @property(strong, nonatomic) NSString *path;
+ @property(strong, nonatomic) Serializer *serializer;
 
-- (id) create:(id)entity WithCallbackBlock:(void (^)(id))callbackBlock;
-- (void) remove:(int)key WithCallbackBlock:(void (^)(id))callbackBlock;
-- (void) update:(id)entity WithCallbackBlock:(void (^)(id))callbackBlock;
-- (void) get:(int)key WithCallbackBlock:(void (^)(id))callbackBlock;
+- (id) create:(id)entity;
+- (void) remove:(int)key;
+- (void) update:(id)entity;
+- (id) get:(int)key;
+- (NSArray*) list;
 
+/**
+ sub class must provide its own path and serializer
+ */
+- (id) initWithPath: (NSString *) aPath
+     withSerializer: (Serializer *)aSerializer;
+
++ (NSString *) pathPostfix;
 @end

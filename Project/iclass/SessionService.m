@@ -7,7 +7,11 @@
 //
 
 #import "SessionService.h"
-
+#import "SessionSerializer.h"
 @implementation SessionService
+
+- (id) init{
+    return [super initWithPath:@"/talks" withSerializer:[[SessionSerializer alloc]init]];
+}
 
 @end

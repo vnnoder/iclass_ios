@@ -10,7 +10,7 @@
 #import "JSON.h"
 
 @implementation Serializer
-+ (NSData*) serialize: (id)user{
+- (NSData*) serialize: (id)user{
     NSDictionary *dict = [self toNSDictionary:user];
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
@@ -24,13 +24,13 @@
     
 }
 
-+ (id) deserialize: (NSData*)jsonData{
+- (id) deserialize: (NSData*)jsonData{
     NSDictionary *map = [self parseJSONData:jsonData];
     return [self fromNSDictionary:map];
 }
 
 
-+ (NSArray*) deserializeArray: (NSData*)jsonData{
+- (NSArray*) deserializeArray: (NSData*)jsonData{
     NSMutableArray *result = [[NSMutableArray alloc] init];
     NSArray *map = [self parseJSONData:jsonData];
     
@@ -41,16 +41,21 @@
     return result;
 }
 
-+ (NSDictionary *) toNSDictionary:(id)entity{
+- (NSDictionary *) toNSDictionary:(id)entity{
     return nil;
 }
 
-+ (id) fromNSDictionary:(NSDictionary *) dict{
+- (id) fromNSDictionary:(NSDictionary *) dict{
     return nil;
 }
 
 
-+ (id) parseJSONData: (NSData*) data{
+- (id) parseJSONData: (NSData*) data{
+    if (data.length == 0) {
+        
+        return nil;
+    }
+
     NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     return [json JSONValue];
 }
