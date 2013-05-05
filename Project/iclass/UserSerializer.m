@@ -18,20 +18,20 @@
  user[username]:Lewis
  user[password]:pass123
 */
-+ (NSDictionary *) toNSDictionary:(id)entity{
++ (NSDictionary *) toNSDictionary:(id)user{
     NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
     [dict setValue:[user fullName] forKey:@"user[name]"];
     [dict setValue:[user loginId] forKey:@"user[username]"];
     [dict setValue:[user email] forKey:@"user[email]"];
     [dict setValue:[user password] forKey:@"user[password]"];
-    retrn dict;
+    return dict;
 }
 
-+ (id) fromNSDictionary:(NSDictionary * dict)entity{
++ (id) fromNSDictionary:(NSDictionary *) map{
     User *entity = [[User alloc]init];
     entity.loginId = [map objectForKey:@"username"];
     entity.fullName = [map objectForKey:@"name"];
-    enitty.key = [map objectForKey: @"id"];
+    entity.key = [[map objectForKey: @"id"]integerValue];
     return entity;
 }
 

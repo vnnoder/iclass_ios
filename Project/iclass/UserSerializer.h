@@ -8,6 +8,5 @@
 
 #import <Foundation/Foundation.h>
 #import "Serializer.h"
-#import "User.h"
 @interface UserSerializer : Serializer
 @end

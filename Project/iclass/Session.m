@@ -10,13 +10,11 @@
 
 @implementation Session
 
-@synthesize name;
+@synthesize title;
 @synthesize description;
 @synthesize startDate;
 @synthesize endDate;
 @synthesize status;
-@synthesize createdAt;
-@synthesize updatedAt;
-@synthesize owner;
+@synthesize ownerId;
 
 @end

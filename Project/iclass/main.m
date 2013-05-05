@@ -10,7 +10,8 @@
 
 #import "AppDelegate.h"
 #import "HttpQuery.h"
-
+#import "SessionSerializer.h"
+#import "Session.h"
 
 int main(int argc, char *argv[])
 {
@@ -33,6 +34,9 @@ int main(int argc, char *argv[])
         NSString *json = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
 
         NSLog(@"=====> %@", json);
+       Session* sess =  [SessionSerializer deserialize:response];
+        NSLog(@"id = %d", [sess key]);
+        
 //        NSError *error = [[NSError alloc]init];
         
 //        [QueryUtil request:@"/talks.json" method:@"POST" params:params host:@"host" withError:error];

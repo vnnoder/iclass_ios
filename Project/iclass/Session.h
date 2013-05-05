@@ -11,13 +11,11 @@
 #import "Entity.h"
 @interface Session : Entity
 
-@property (strong) NSString *name;
+@property (strong) NSString *title;
 @property (strong) NSString *description;
 @property (strong) NSDate *startDate;
 @property (strong) NSDate *endDate;
 @property (strong) NSString *status;
-@property (strong) NSString *createdAt;
-@property (strong) NSString *updatedAt;
-@property (strong) User *owner;
+@property NSInteger ownerId;
 
 @end

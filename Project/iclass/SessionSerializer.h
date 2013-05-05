@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Serializer.h"
-#import "Session.h"
-@interface SessionSerializer : NSObject <Serializer>
-+ (NSData*) serialize: (Session*)user;
-+ (Session*) deserialize: (NSData*)json;
+@interface SessionSerializer : Serializer
 
 @end

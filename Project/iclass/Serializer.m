@@ -7,6 +7,7 @@
 //
 
 #import "Serializer.h"
+#import "JSON.h"
 
 @implementation Serializer
 + (NSData*) serialize: (id)user{
@@ -14,7 +15,7 @@
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
     if ([jsonData length] > 0 && error == nil){
-        NSLog(@"Successfully serialized the User with key %d", [user key]);
+        NSLog(@"Successfully serialized the User with key %@", [user key]);
     }else{
         NSLog(@"Error happens: %@", error);
     }
@@ -23,7 +24,7 @@
     
 }
 
-+ (User*) deserialize: (NSData*)jsonData{
++ (id) deserialize: (NSData*)jsonData{
     NSDictionary *map = [self parseJSONData:jsonData];
     return [self fromNSDictionary:map];
 }
@@ -34,27 +35,18 @@
     NSArray *map = [self parseJSONData:jsonData];
     
     for (NSDictionary *item in map) {
-        [result addObject:[self fromNSDictionary:item];
+        [result addObject:[self fromNSDictionary:item]];
     }
     
     return result;
 }
 
 + (NSDictionary *) toNSDictionary:(id)entity{
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
-    [dict setValue:[user fullName] forKey:@"user[name]"];
-    [dict setValue:[user loginId] forKey:@"user[username]"];
-    [dict setValue:[user email] forKey:@"user[email]"];
-    [dict setValue:[user password] forKey:@"user[password]"];
-    retrn dict;
+    return nil;
 }
 
-+ (id) fromNSDictionary:(NSDictionary * dict){
-    User *entity = [[User alloc]init];
-    entity.loginId = [map objectForKey:@"username"];
-    entity.fullName = [map objectForKey:@"name"];
-    enitty.key = [map objectForKey: @"id"];
-    return entity;
++ (id) fromNSDictionary:(NSDictionary *) dict{
+    return nil;
 }
 
 
