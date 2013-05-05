@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONParser.h"
-@interface UserJSONParser : JSONParser
-
+#import "Serializer.h"
+#import "User.h"
+@interface UserSerializer : Serializer
 @end
