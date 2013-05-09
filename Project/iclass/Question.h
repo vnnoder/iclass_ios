@@ -22,6 +22,8 @@
 @property NSInteger voteCount;
 @property BOOL voted;
 
+-(id) initWithTitle:(NSString *)paratitle andDetail:(NSString*)paradetail andOwener:(User*)paraowner andSession:(Session*)parasession andCreateData:(NSDate*)paracreateDate andUpdateDate:(NSDate*)paraupdateDate andVoteCount:(NSInteger)paravoteCount andIsVoted:(BOOL)paravoted;
+
 -(NSComparisonResult) compareUpdateDate:(Question *) question;
 -(NSComparisonResult) compareVoteCount:(Question *) question;
 @end

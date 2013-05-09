@@ -15,4 +15,5 @@
 -(void)deleteQuestion:(Question *) question;
 -(void)sortByUpdateTime;
 -(void)sortByVote;
++(QuestionList *) getExistingQuestions;
 @end

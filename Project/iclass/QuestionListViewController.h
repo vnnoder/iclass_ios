@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class Session;
 @interface QuestionListViewController : UITableViewController
-
+{
+    Session *currentSesseion;
+}
+@property (strong, nonatomic) Session *currentSesseion;
 @end

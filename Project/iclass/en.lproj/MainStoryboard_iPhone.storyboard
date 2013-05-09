@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -455,7 +455,7 @@
             <objects>
                 <tableViewController id="3cm-W4-GXP" customClass="QuestionListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eD8-cV-3hD">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -494,7 +494,7 @@
             <objects>
                 <viewController id="96q-t4-Wen" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sOE-FW-Ax4">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dt6-AJ-Fpe">
@@ -543,7 +543,7 @@
             <objects>
                 <viewController id="5fx-et-fOB" customClass="QuestionDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="suf-Ka-oGU">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Question detials" translatesAutoresizingMaskIntoConstraints="NO" id="Kkj-SO-fTY">
@@ -637,7 +637,6 @@
         <class className="JoinClassViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JoinClassViewController.h"/>
             <relationships>
-                <relationship kind="action" name="JoinInAction:"/>
                 <relationship kind="outlet" name="ClassID" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="JoinBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="ScanBtn" candidateClass="UIButton"/>
@@ -646,11 +645,7 @@
         <class className="LogonViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LogonViewController.h"/>
             <relationships>
-                <relationship kind="action" name="GuestAction:"/>
                 <relationship kind="action" name="Logon"/>
-                <relationship kind="action" name="SignInAction:"/>
-                <relationship kind="action" name="SignInWithFacebookAction:"/>
-                <relationship kind="action" name="SignUpAction:"/>
                 <relationship kind="outlet" name="GuestButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="SignInButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="SignInWithFacebookButton" candidateClass="UIButton"/>
@@ -665,7 +660,6 @@
         <class className="QuestionDetailsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionDetailsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="VoteAction:"/>
                 <relationship kind="outlet" name="QuestionDescription" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="VoteBtn" candidateClass="UIButton"/>
             </relationships>
@@ -687,9 +681,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xbv-zg-ULW"/>
-        <segue reference="cyj-AT-YCq"/>
+        <segue reference="XkC-4r-mwk"/>
         <segue reference="FN7-mK-NSX"/>
-        <segue reference="vRw-lY-nrV"/>
+        <segue reference="cyj-AT-YCq"/>
+        <segue reference="xbv-zg-ULW"/>
     </inferredMetricsTieBreakers>
 </document>

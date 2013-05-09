@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 Wiely Rabin. All rights reserved.
 //
 
+#import "Session.h"
 #import "ClassDetailsViewController.h"
+#import "QuestionListViewController.h"
 #import "GlobalState.h"
 
 @interface ClassDetailsViewController ()
@@ -77,6 +79,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        if ([segue
+             .destinationViewController isKindOfClass:[QuestionListViewController class]]) {
+            QuestionListViewController *detailController = segue.destinationViewController;
+            
+            // TODO should pass current session to question list view
+            detailController.currentSesseion = [[Session alloc] init];
+        }
+    }
+}
 
 #pragma mark - Split view
 

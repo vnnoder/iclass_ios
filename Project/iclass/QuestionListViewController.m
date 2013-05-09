@@ -8,12 +8,13 @@
 
 #import "QuestionListViewController.h"
 #import "QuestionDetailsViewController.h"
+#import "Session.h"
 @interface QuestionListViewController ()
 
 @end
 
 @implementation QuestionListViewController
-
+@synthesize currentSesseion;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

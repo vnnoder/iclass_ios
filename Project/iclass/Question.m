@@ -19,6 +19,23 @@
 @synthesize voteCount;
 @synthesize voted;
 
+-(id) initWithTitle:(NSString *)paratitle andDetail:(NSString*)paradetail andOwener:(User*)paraowner andSession:(Session*)parasession andCreateData:(NSDate*)paracreateDate andUpdateDate:(NSDate*)paraupdateDate andVoteCount:(NSInteger)paravoteCount andIsVoted:(BOOL)paravoted
+{
+    self = [super init];
+    if (self) {
+        self.title = paratitle;
+        self.detail =paradetail;
+        self.owner = paraowner;
+        self.session = parasession;
+        self.createdAt = paracreateDate;
+        self.updatedAt = paraupdateDate;
+        self.voteCount = paravoteCount;
+        self.voted = paravoted;
+        return self;
+    }
+    return self;
+}
+
 -(NSComparisonResult) compareUpdateDate:(Question *) question
 {
     return [updatedAt compare:[question updatedAt]];
