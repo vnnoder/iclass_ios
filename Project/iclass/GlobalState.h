@@ -15,3 +15,6 @@ typedef enum
 
 extern NSUserRole GUserGole;
 
+#define AUDIENCEROLE 0
+#define SPEAKERROLE 1 
+

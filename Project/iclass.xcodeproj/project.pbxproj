@@ -27,6 +27,8 @@
 		03C5DFE71730180100B39AFF /* QuestionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFE61730180000B39AFF /* QuestionListViewController.m */; };
 		03C5DFEA1730E57F00B39AFF /* QuestionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFE91730E57F00B39AFF /* QuestionDetailsViewController.m */; };
 		03C5DFF01730F5CB00B39AFF /* sessionListSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFEF1730F5CA00B39AFF /* sessionListSample.m */; };
+		03C5DFFF173BE3D000B39AFF /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFFE173BE3D000B39AFF /* SignUpViewController.m */; };
+		03C5E002173BE5D400B39AFF /* SessionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5E001173BE5D300B39AFF /* SessionList.m */; };
 		41C534B01734B29200493111 /* ServiceAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C534AF1734B29200493111 /* ServiceAPI.m */; };
 		41C534B81734D6A700493111 /* SessionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C534B71734D6A700493111 /* SessionService.m */; };
 		41C8DDAF1734E6050075DD92 /* UserSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDAE1734E6050075DD92 /* UserSerializer.m */; };
@@ -84,6 +86,10 @@
 		03C5DFE91730E57F00B39AFF /* QuestionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailsViewController.m; sourceTree = "<group>"; };
 		03C5DFEE1730F5CA00B39AFF /* sessionListSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sessionListSample.h; sourceTree = "<group>"; };
 		03C5DFEF1730F5CA00B39AFF /* sessionListSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sessionListSample.m; sourceTree = "<group>"; };
+		03C5DFFD173BE3D000B39AFF /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		03C5DFFE173BE3D000B39AFF /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		03C5E000173BE5D100B39AFF /* SessionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionList.h; sourceTree = "<group>"; };
+		03C5E001173BE5D300B39AFF /* SessionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionList.m; sourceTree = "<group>"; };
 		41C534AE1734B29200493111 /* ServiceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAPI.h; sourceTree = "<group>"; };
 		41C534AF1734B29200493111 /* ServiceAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAPI.m; sourceTree = "<group>"; };
 		41C534B61734D6A700493111 /* SessionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionService.h; sourceTree = "<group>"; };
@@ -213,6 +219,10 @@
 				03C5DF33172D5E1D00B39AFF /* ViewController.m */,
 				4A4A68CF173400ED002C9BBC /* GlobalState.h */,
 				03C5DF1B172D5E1D00B39AFF /* Supporting Files */,
+				03C5DFFD173BE3D000B39AFF /* SignUpViewController.h */,
+				03C5DFFE173BE3D000B39AFF /* SignUpViewController.m */,
+				03C5E000173BE5D100B39AFF /* SessionList.h */,
+				03C5E001173BE5D300B39AFF /* SessionList.m */,
 			);
 			path = iclass;
 			sourceTree = "<group>";
@@ -396,6 +406,8 @@
 				41C8DDEC17369A7F0075DD92 /* SessionSerializer.m in Sources */,
 				41C8DDEF17369AEC0075DD92 /* Serializer.m in Sources */,
 				41C8DDF91736C2700075DD92 /* Util.m in Sources */,
+				03C5DFFF173BE3D000B39AFF /* SignUpViewController.m in Sources */,
+				03C5E002173BE5D400B39AFF /* SessionList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

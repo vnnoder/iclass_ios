@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ClassDetailsViewController : UIViewController <UISearchDisplayDelegate>
+@interface ClassDetailsViewController : UIViewController 
 
+@property (nonatomic) NSInteger sessionDetailType;
 @property (strong, nonatomic) id classDetailItem;
+
 
 @property (weak, nonatomic) IBOutlet UITextField *ClassID;
 @property (weak, nonatomic) IBOutlet UITextView *ClassDescription;

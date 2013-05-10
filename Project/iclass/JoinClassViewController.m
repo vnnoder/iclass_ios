@@ -7,9 +7,10 @@
 //
 
 #import "JoinClassViewController.h"
+#import "SessionService.h"
 
 @interface JoinClassViewController ()
-
+@property (strong,nonatomic) UIPopoverController *parentPopoverController;
 @end
 
 @implementation JoinClassViewController
@@ -36,11 +37,35 @@
 }
 
 
+- (void) setSessionServiceAudience:(id)newSessionServiceAudience
+{
+    NSLog(@"setSessionServiceAudience ");
+
+    if ( _sessionServiceAudience != newSessionServiceAudience)
+    {
+        _sessionServiceAudience = newSessionServiceAudience;
+    }
+
+    if(self.parentPopoverController != nil){
+        [self.parentPopoverController dismissPopoverAnimated:YES];
+    }
+    
+}
+
+- (void) joinSession
+{
+    [self.sessionServiceAudience join:_ClassID.text];
+}
+
 - (IBAction)JoinInAction:(id)sender {
     NSLog(@"JoinInAction %@", _ClassID.text);
     
     if (_ClassID.text.length > 0 )
-        [self performSegueWithIdentifier:@"JoinClassSegue" sender:self];
+    {
+        [self joinSession];
+        [self.navigationController popViewControllerAnimated:YES];
+    
+    }
         
 }
 

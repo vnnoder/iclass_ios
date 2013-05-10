@@ -8,14 +8,20 @@
 
 #import "SpeakerViewController.h"
 #import "ClassDetailsViewController.h"
-#import "sessionListSample.h"
+#import "CreateClassViewController.h"
+
 #import "GlobalState.h"
+
+#import "SessionList.h"
+#import "SessionService.h"
+
 @interface SpeakerViewController ()
 
 @end
 
 @implementation SpeakerViewController
-@synthesize sessionList;
+
+@synthesize classDetails,createClass,ssSpeaker;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,14 +35,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    GUserGole = SPEAKER;
+
+    
     self.title = @"Speaker Classes";
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    sessionList = [[sessionListSample alloc] init];
+
+    ssSpeaker = [[SessionService alloc] init];
+    
+    self.classDetails = (ClassDetailsViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    self.createClass = (CreateClassViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    GUserGole = SPEAKER;
 }
 
 
@@ -61,7 +76,7 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return sessionList.arrayData.count;
+    return ssSpeaker.ActiveSessions.DataList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,25 +91,11 @@
      // Configure the cell...
      NSUInteger row = indexPath.row;
      */
-    NSLog(@"tableView cell.text %@ ", [sessionList.arrayData objectAtIndex:indexPath.row]);
-    
-    
-    cell.textLabel.text = [sessionList.arrayData objectAtIndex:indexPath.row];
-    
+        
+    cell.textLabel.text = [[ssSpeaker.ActiveSessions.DataList objectAtIndex:indexPath.row] title];
     return cell;
 }
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([sender isKindOfClass:[UITableViewCell class]]) {
-        if ([segue
-             .destinationViewController isKindOfClass:[ClassDetailsViewController class]]) {
-            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-            ClassDetailsViewController *detailController = segue.destinationViewController;
-            [detailController setClassDetailItem:[sessionList.arrayData objectAtIndex:indexPath.row]];
-    
-        }
-    }
-}
+
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -145,6 +146,34 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+
+    self.classDetails.classDetailItem = [ssSpeaker.ActiveSessions.DataList objectAtIndex:indexPath.row];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self.tableView reloadData];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        if ([segue.destinationViewController isKindOfClass:[ClassDetailsViewController class]]) {
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+            ClassDetailsViewController *detailController = segue.destinationViewController;
+            [[segue destinationViewController] setSessionDetailType:1];
+            [detailController setClassDetailItem:[ssSpeaker.ActiveSessions.DataList objectAtIndex:indexPath.row]];
+        }
+    }
+    
+    
+    if ([[segue identifier] isEqualToString:@"createNewClass"]) {
+        //Session *aNewSession = [[Session alloc] init];
+        NSLog(@"prepareForSegue createNewClass");
+        [[segue destinationViewController] setSessionServiceSpeaker:(ssSpeaker)];
+    }
+    
 }
 
 

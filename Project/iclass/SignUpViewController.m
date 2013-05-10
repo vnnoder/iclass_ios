@@ -1,20 +1,19 @@
 //
-//  QuestionDetailsViewController.m
+//  SignUpViewController.m
 //  iclass
 //
-//  Created by Wiely Rabin on 1/5/13.
+//  Created by Wiely Rabin on 9/5/13.
 //  Copyright (c) 2013 Wiely Rabin. All rights reserved.
 //
 
-#import "QuestionDetailsViewController.h"
+#import "SignUpViewController.h"
 
-@interface QuestionDetailsViewController ()
+@interface SignUpViewController ()
 
 @end
 
-@implementation QuestionDetailsViewController
-@synthesize string, QuestionDescription;
-/*
+@implementation SignUpViewController
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -23,13 +22,11 @@
     }
     return self;
 }
- */
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    QuestionDescription.text = self.string;
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,9 +34,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)CancelAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 
-- (IBAction)VoteAction:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES]; 
+}
+- (IBAction)SignUpAction:(id)sender {
 }
 
 @end

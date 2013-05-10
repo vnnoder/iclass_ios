@@ -11,6 +11,7 @@
 #import "Entity.h"
 @interface Session : Entity
 
+@property NSInteger key;
 @property (strong) NSString *title;
 @property (strong) NSString *description;
 @property (strong) NSDate *startDate;

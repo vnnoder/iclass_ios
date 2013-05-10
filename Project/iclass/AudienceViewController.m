@@ -8,16 +8,20 @@
 
 #import "AudienceViewController.h"
 #import "ClassDetailsViewController.h"
-#import "sessionListSample.h"
+#import "JoinClassViewController.h"
+
 #import "GlobalState.h"
+
+#import "SessionList.h"
+#import "SessionService.h"
+
 @interface AudienceViewController ()
 
 @end
 
 @implementation AudienceViewController
 
-@synthesize classDetails,classID,sessionList;
-
+@synthesize classDetails,joinClass,ssAudience;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -32,24 +36,18 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"viewDidLoad");
+    NSLog(@"viewDidLoad audience");
     [super viewDidLoad];
     
     self.title = @"Audience Class";
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    classID = @"TEST DATA";
-    sessionList = [[sessionListSample alloc] init];
+    ssAudience = [[SessionService alloc] init];
     
     self.classDetails = (ClassDetailsViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    self.joinClass = (JoinClassViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 
     GUserGole = AUDIENCE;
-    NSLog(@"viewDidLoad ~ End");
 }
 
 
@@ -72,8 +70,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    //return 0;
-    return sessionList.arrayData.count;
+    return ssAudience.ActiveSessions.DataList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -90,11 +87,10 @@
     // Configure the cell...
     NSUInteger row = indexPath.row;
 */
-    NSLog(@"tableView cell.text %@ ", [sessionList.arrayData objectAtIndex:indexPath.row]);
 
+    NSLog(@"tableView cell audi %@ ", [[ssAudience.ActiveSessions.DataList objectAtIndex:indexPath.row] description]);
     
-    cell.textLabel.text = [sessionList.arrayData objectAtIndex:indexPath.row];
-    
+    cell.textLabel.text = [[ssAudience.ActiveSessions.DataList objectAtIndex:indexPath.row] title];
     return cell;
 }
 
@@ -148,33 +144,34 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-/*
-    if (self.classDetails == nil){
-       // self.classDetails = [[ClassDetailsViewController alloc] init];  //
-        self.classDetails = [[ClassDetailsViewController alloc] initWithNibName:nil bundle:nil];
         
-        
-//                             initWithNibName:@"Class Details" bundle:nil]; //[NSBundle mainBundle]];
+    self.classDetails.classDetailItem = [ssAudience.ActiveSessions.DataList objectAtIndex:indexPath.row];
     }
     
-    [self.navigationController pushViewController:self.classDetails animated:YES];
-*/
-    NSLog(@"tableView didSelectRowAtIndexPath text = %@ ", [sessionList.arrayData objectAtIndex:indexPath.row]);
-
-    self.classDetails.classDetailItem = [sessionList.arrayData objectAtIndex:indexPath.row];
+- (void)viewDidAppear:(BOOL)animated {
+    [self.tableView reloadData];
     
 }
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSLog(@"prepareForSegue ");
     
     if ([[segue identifier] isEqualToString:@"showClassDetail"]) {
+        NSLog(@"prepareForSegue showClassDetail");
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setClassDetailItem:[sessionList.arrayData objectAtIndex:indexPath.row]];
+        [[segue destinationViewController] setSessionDetailType:0];
+        [[segue destinationViewController] setClassDetailItem:[ssAudience.ActiveSessions.DataList objectAtIndex:indexPath.row]];
+
     }
+
+    
+    if ([[segue identifier] isEqualToString:@"joinNewClass"]) {
+        //Session *aNewSession = [[Session alloc] init];
+        NSLog(@"prepareForSegue joinNewClass");
+        [[segue destinationViewController] setSessionServiceAudience:(ssAudience)];
+    }
+
 }
 
 

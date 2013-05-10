@@ -9,19 +9,22 @@
 #import <UIKit/UIKit.h>
 
 @class ClassDetailsViewController;
-@class sessionListSample;
+@class JoinClassViewController;
+@class SessionService;
 
-@interface AudienceViewController : UITableViewController{
-    NSString *classID;
+@interface AudienceViewController : UITableViewController
+{
     ClassDetailsViewController *classDetails;
-    sessionListSample *sessionList;
+    JoinClassViewController *joinClass;
+    SessionService *ssAudience;
 }
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *AudienceNavBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *AddBtn;
 
-@property (nonatomic, strong) NSString *classID;
 @property (nonatomic, strong) ClassDetailsViewController *classDetails;
-@property (nonatomic, strong) sessionListSample *sessionList;
+@property (nonatomic, strong) JoinClassViewController *joinClass;
+
+@property (nonatomic, strong) SessionService *ssAudience;
 
 @end

@@ -17,7 +17,15 @@
 @end
 
 @implementation ClassDetailsViewController
+
 @synthesize OperationBtn;
+
+
+- (void) setSessionDetailType:(NSInteger)inSessionDetailType
+{
+    _sessionDetailType = inSessionDetailType;
+}
+
 
 - (void) setClassDetailItem:(id)newClassDetailItem
 {
@@ -38,11 +46,14 @@
     NSLog(@"ClassDetails configureView = %@ ", [self.classDetailItem description]);
 
     if (self.classDetailItem){
-        self.ClassID.text = [self.classDetailItem description];
+        self.ClassID.text = [self.classDetailItem title];
+        self.ClassDescription.text = [self.classDetailItem description];
     }
     
     //if (OperationBtn) {
-        if (GUserGole == AUDIENCE) {
+        //if (GUserGole == AUDIENCE) {
+        if ( _sessionDetailType == 0)
+        {
             [OperationBtn setTitle:@"Leave" forState:UIControlStateNormal];
 
         } else {
@@ -65,7 +76,7 @@
 */
 - (void)viewDidLoad
 {
-    NSLog(@"ClassDetails viewDidLoad = %@ ", [self.classDetailItem description]);
+    NSLog(@"ClassDetails viewDidLoad = %@ ", [self.classDetailItem title]);
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -96,7 +107,7 @@
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
-    NSLog(@"ClassDetails splitViewController 1 = %@ ", [self.classDetailItem description]);
+    NSLog(@"ClassDetails splitViewController 1 = %@ ", [self.classDetailItem title]);
  
 //    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
 //    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
@@ -105,7 +116,7 @@
 
 - (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
-    NSLog(@"ClassDetails splitViewController 2 = %@ ", [self.classDetailItem description]);
+    NSLog(@"ClassDetails splitViewController 2 = %@ ", [self.classDetailItem title]);
 
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
 //    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
