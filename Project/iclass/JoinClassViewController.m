@@ -45,8 +45,6 @@ Session *newAudiSession;
 
 - (void) setSessionRef:(Session *) newSession thecaller:(AudienceViewController*) theSender
 {
-    NSLog(@"Join Session");
-    
     if ( newAudiSession != newSession)
     {
         newAudiSession = newSession;
@@ -64,23 +62,39 @@ Session *newAudiSession;
 {
     NSLog(@"JoinInAction %@", self.ClassID.text);
     
-    newAudiSession.title = self.ClassID.text;
+    newAudiSession.passcode = self.ClassID.text;
 }
 
 - (Boolean) checkSession
 {
-    // call service to check the existence of the session
-    // call serive to join session
+    SessionService *ssAudi;
+    Session *newSession;
+    
+    ssAudi = [[SessionService alloc] init];
+    
+    newSession = [ssAudi findByPasscode:(newAudiSession.passcode)];
+    
+    
+    if ( newSession == nil)
+    {
+        return FALSE;
+    }
+    else
+    {
+        if ( [ssAudi joinSession:(newSession.key)] == nil)
+            return FALSE;
+    
+    }
     
     return TRUE;
 }
 
-- (IBAction)JoinInAction:(id)sender {
+- (IBAction)JoinInAction:(id)sender
+{
     
     if (self.ClassID.text.length > 0)
     {
         [self setSessionInfo];
-        
 
         if ( [self checkSession] == TRUE)
         {

@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Wiely Rabin. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
 
 #import "AppDelegate.h"
@@ -22,12 +23,13 @@
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
+/*
         UserService *service = [[UserService alloc]init];
         LoginInfo *info = [service singInWithLoginId:@"michael" password:@"michael"];
         NSLog(@"%@", [[info user]fullName]);
+*/
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-        
-
-        
     }
 }
+
+
