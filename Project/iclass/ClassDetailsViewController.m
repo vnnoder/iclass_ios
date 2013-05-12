@@ -138,7 +138,7 @@ Session *currentSession;
     SessionService *ssCurr;
     
     ssCurr = [[SessionService alloc] init];
-    [ssCurr endSession:(currentSession.key)];
+    [ssCurr startSession:(currentSession.key)];
 
 }
 
