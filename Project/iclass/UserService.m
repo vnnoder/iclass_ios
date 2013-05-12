@@ -45,6 +45,8 @@
         // save to user defaults
         [[NSUserDefaults standardUserDefaults] setValue:loginId forKey:@"username"];
         [[NSUserDefaults standardUserDefaults] setValue:pwd forKey:@"password"];
+        [[NSUserDefaults standardUserDefaults] setValue:[info token] forKey:@"auth_token"];
+
         [[NSUserDefaults standardUserDefaults] synchronize];
         return info;
     }else{
@@ -63,6 +65,8 @@
     //clean user defaults
     [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"username"];
     [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"password"];
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"auth_token"];
+
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 @end

@@ -41,6 +41,14 @@
     return [self.serializer deserialize:jsonData];
 }
 
+- (id)leaveSession: (int) sessionId{
+    NSData* jsonData = [HttpQuery querySyncWithPath:[NSString stringWithFormat:@"/api/talks/%i/leave", sessionId]
+                                         withMethod:@"POST"
+                                         withParams:nil];
+    
+    return [self.serializer deserialize:jsonData];
+}
+
 -(id)findByPasscode: (NSString *)passcode{
     NSData* jsonData = [HttpQuery querySyncWithPath:[NSString stringWithFormat:@"/api/talks/passcode/%@", passcode]
                                          withMethod:@"GET"
