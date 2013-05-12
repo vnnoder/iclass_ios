@@ -11,7 +11,7 @@
 #import "JoinClassViewController.h"
 
 #import "GlobalState.h"
-
+#import "Session.h"
 #import "SessionList.h"
 #import "SessionService.h"
 
@@ -21,7 +21,7 @@
 
 @implementation AudienceViewController
 
-@synthesize classDetails,joinClass,ssAudience;
+@synthesize classDetails,joinClass,ssAudience,activeSessions;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -36,18 +36,20 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"viewDidLoad audience");
     [super viewDidLoad];
     
-    self.title = @"Audience Class";
+    self.title = @"Audience";
     
     ssAudience = [[SessionService alloc] init];
+    activeSessions = [[SessionList alloc] init];
     
     self.classDetails = (ClassDetailsViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     self.joinClass = (JoinClassViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 
     GUserGole = AUDIENCE;
+    
+    [self retriveActiveSessions];
 }
 
 
@@ -70,27 +72,20 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return ssAudience.ActiveSessions.DataList.count;
+    //return ssAudience.ActiveSessions.DataList.count;
+    
+    return activeSessions.DataList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"tableView cellForRowAtIndexPath");
-//    static NSString *CellIdentifier = @"Cell";
-//   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier ];
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];// forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
     if (cell == nil)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-/*
-    // Configure the cell...
-    NSUInteger row = indexPath.row;
-*/
-
-    NSLog(@"tableView cell audi %@ ", [[ssAudience.ActiveSessions.DataList objectAtIndex:indexPath.row] description]);
     
-    cell.textLabel.text = [[ssAudience.ActiveSessions.DataList objectAtIndex:indexPath.row] title];
+    //NSLog(@"Audi ~ load Title: %@ ", [[activeSessions.DataList objectAtIndex:indexPath.row] title]);
+    cell.textLabel.text = [[activeSessions.DataList objectAtIndex:indexPath.row] title];
     return cell;
 }
 
@@ -145,13 +140,24 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
         
-    self.classDetails.classDetailItem = [ssAudience.ActiveSessions.DataList objectAtIndex:indexPath.row];
-    }
-    
-- (void)viewDidAppear:(BOOL)animated {
-    [self.tableView reloadData];
-    
+    self.classDetails.classDetailItem = [activeSessions.DataList objectAtIndex:indexPath.row];
+
 }
+    
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+}
+
+
+- (void) retriveActiveSessions
+{
+    NSLog(@"Audi Retrive");
+
+    activeSessions.DataList = (NSMutableArray *) [ssAudience list];
+}
+
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -161,19 +167,16 @@
         NSLog(@"prepareForSegue showClassDetail");
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         [[segue destinationViewController] setSessionDetailType:0];
-        [[segue destinationViewController] setClassDetailItem:[ssAudience.ActiveSessions.DataList objectAtIndex:indexPath.row]];
-
+        [[segue destinationViewController] setClassDetailItem:[activeSessions.DataList objectAtIndex:indexPath.row]];
     }
 
     
     if ([[segue identifier] isEqualToString:@"joinNewClass"]) {
-        //Session *aNewSession = [[Session alloc] init];
+        Session *aNewSession = [[Session alloc] init];
         NSLog(@"prepareForSegue joinNewClass");
-        [[segue destinationViewController] setSessionServiceAudience:(ssAudience)];
+        [[segue destinationViewController] setSessionRef:(aNewSession) thecaller:(self)];
     }
 
 }
-
-
 
 @end

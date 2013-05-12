@@ -12,6 +12,7 @@
 
 #import "GlobalState.h"
 
+#import "Session.h"
 #import "SessionList.h"
 #import "SessionService.h"
 
@@ -21,7 +22,7 @@
 
 @implementation SpeakerViewController
 
-@synthesize classDetails,createClass,ssSpeaker;
+@synthesize classDetails,createClass,ssSpeaker,activeSessions;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,8 +37,7 @@
 {
     [super viewDidLoad];
 
-    
-    self.title = @"Speaker Classes";
+    self.title = @"Speaker";
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -46,12 +46,15 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     ssSpeaker = [[SessionService alloc] init];
+    activeSessions = [[SessionList alloc] init];
     
     self.classDetails = (ClassDetailsViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     self.createClass = (CreateClassViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     GUserGole = SPEAKER;
+    
+    [self retriveActiveSessions];
 }
 
 
@@ -76,23 +79,22 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return ssSpeaker.ActiveSessions.DataList.count;
+//    return ssSpeaker.ActiveSessions.DataList.count;
+    return activeSessions.DataList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"tableView cellForRowAtIndexPath");
+{    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpeakerClassCell"];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpeakerClassCell"];// forIndexPath:indexPath];
+    NSLog(@"Speaker ~ load Title: ");
     
     if (cell == nil)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SpeakerClassCell"];
-    /*
-     // Configure the cell...
-     NSUInteger row = indexPath.row;
-     */
-        
-    cell.textLabel.text = [[ssSpeaker.ActiveSessions.DataList objectAtIndex:indexPath.row] title];
+
+    NSLog(@"Speaker ~ load Title: %@ ", [[activeSessions.DataList objectAtIndex:indexPath.row] title]);
+    cell.textLabel.text = [[activeSessions.DataList objectAtIndex:indexPath.row] title];
+    
     return cell;
 }
 
@@ -139,6 +141,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"Speaker load");
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -147,14 +150,24 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 
-    self.classDetails.classDetailItem = [ssSpeaker.ActiveSessions.DataList objectAtIndex:indexPath.row];
+    //self.classDetails.classDetailItem = [ssSpeaker.ActiveSessions.DataList objectAtIndex:indexPath.row];
+    self.classDetails.classDetailItem = [activeSessions.DataList objectAtIndex:indexPath.row];
     
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [self.tableView reloadData];
-    
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self retriveActiveSessions];
 }
+
+- (void) retriveActiveSessions
+{
+    NSLog(@"Speaker Retrive");
+    activeSessions.DataList = (NSMutableArray *) [ssSpeaker list];
+    
+    //clear and retrive the list from web
+}
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -163,15 +176,15 @@
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
             ClassDetailsViewController *detailController = segue.destinationViewController;
             [[segue destinationViewController] setSessionDetailType:1];
-            [detailController setClassDetailItem:[ssSpeaker.ActiveSessions.DataList objectAtIndex:indexPath.row]];
+            [detailController setClassDetailItem:[activeSessions.DataList objectAtIndex:indexPath.row]];
         }
     }
     
     
     if ([[segue identifier] isEqualToString:@"createNewClass"]) {
-        //Session *aNewSession = [[Session alloc] init];
+        Session *aNewSession = [[Session alloc] init];
         NSLog(@"prepareForSegue createNewClass");
-        [[segue destinationViewController] setSessionServiceSpeaker:(ssSpeaker)];
+        [[segue destinationViewController] setSessionRef:(aNewSession) thecaller:(self)];
     }
     
 }

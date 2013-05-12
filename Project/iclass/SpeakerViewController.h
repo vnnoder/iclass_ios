@@ -11,13 +11,15 @@
 @class ClassDetailsViewController;
 @class CreateClassViewController;
 @class SessionService;
+@class SessionList;
 
 
 @interface SpeakerViewController : UITableViewController
 {
     ClassDetailsViewController *classDetails;
     CreateClassViewController *createClass;
-    SessionService *ssSpeaker;    
+    SessionService *ssSpeaker;
+    SessionList *activeSessions;
 }
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *SpeakerNavigationBar;
@@ -27,7 +29,9 @@
 @property (nonatomic, strong) CreateClassViewController *createClass;
 
 @property (nonatomic, strong) SessionService *ssSpeaker;
+@property (nonatomic, strong) SessionList *activeSessions;
 
+- (void) retriveActiveSessions;
 
 
 @end

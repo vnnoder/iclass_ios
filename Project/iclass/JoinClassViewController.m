@@ -7,13 +7,20 @@
 //
 
 #import "JoinClassViewController.h"
+#import "AudienceViewController.h"
 #import "SessionService.h"
+#import "session.h"
+
 
 @interface JoinClassViewController ()
 @property (strong,nonatomic) UIPopoverController *parentPopoverController;
 @end
 
+
 @implementation JoinClassViewController
+
+AudienceViewController *parent;
+Session *newAudiSession;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,35 +43,50 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-- (void) setSessionServiceAudience:(id)newSessionServiceAudience
+- (void) setSessionRef:(Session *) newSession thecaller:(AudienceViewController*) theSender
 {
-    NSLog(@"setSessionServiceAudience ");
-
-    if ( _sessionServiceAudience != newSessionServiceAudience)
+    NSLog(@"Join Session");
+    
+    if ( newAudiSession != newSession)
     {
-        _sessionServiceAudience = newSessionServiceAudience;
+        newAudiSession = newSession;
+        parent = theSender;
     }
 
-    if(self.parentPopoverController != nil){
+    if(self.parentPopoverController != nil)
+    {
         [self.parentPopoverController dismissPopoverAnimated:YES];
     }
-    
+
 }
 
-- (void) joinSession
+- (void) setSessionInfo
 {
-    [self.sessionServiceAudience join:_ClassID.text];
+    NSLog(@"JoinInAction %@", self.ClassID.text);
+    
+    newAudiSession.title = self.ClassID.text;
+}
+
+- (Boolean) checkSession
+{
+    // call service to check the existence of the session
+    // call serive to join session
+    
+    return TRUE;
 }
 
 - (IBAction)JoinInAction:(id)sender {
-    NSLog(@"JoinInAction %@", _ClassID.text);
     
-    if (_ClassID.text.length > 0 )
+    if (self.ClassID.text.length > 0)
     {
-        [self joinSession];
-        [self.navigationController popViewControllerAnimated:YES];
-    
+        [self setSessionInfo];
+        
+
+        if ( [self checkSession] == TRUE)
+        {
+            [parent retriveActiveSessions];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }
         
 }
