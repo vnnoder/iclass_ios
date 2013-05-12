@@ -11,5 +11,5 @@
 @interface Util : NSObject
 +(BOOL)isNull:(NSString*)string;
 +(NSDate*)parse:(NSString *)dataStr;
-+ (void)nofify:(NSString* )error;
++ (void)nofifyError:(NSString* )error;
 @end
