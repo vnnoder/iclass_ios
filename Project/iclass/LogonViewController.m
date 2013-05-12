@@ -7,7 +7,9 @@
 //
 
 #import "LogonViewController.h"
-#import "SpeakerViewController.h"
+#import "UserService.h"
+#import "LoginInfo.h"
+
 
 @interface LogonViewController ()
 
@@ -29,7 +31,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    //_usernameField.text = @"abc";
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,25 +39,53 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (Boolean) checkLogonInfo
+{
+    UserService *service = [[UserService alloc]init];
+    if ( (self.usernameField.text.length > 0) && (self.passwordField.text.length >0) )
+    {
+        LoginInfo *info = [service singInWithLoginId:self.usernameField.text password:self.passwordField.text];
+        
+        if ( [info user] == nil)
+            return false;
+        
+        NSLog(@"%@", [[info user]fullName]);        
+ 
+        return true;
+    }
+    
+    return false;
+}
 
-- (IBAction)Logon{
-//    int a;
+
+- (Boolean) guestLogon
+{
+    UserService *service = [[UserService alloc]init];
+    LoginInfo *info = [service singInWithLoginId:@"michael" password:@"michael"];
+        
+    if ( [info user] == nil)
+        return false;
+    
+    return true;
+}
+
+
+- (IBAction)Logon
+{
     NSLog(@"Logon IBAction");
-/*
-    a =2;
-    if (a==1)
-*/        [self performSegueWithIdentifier:@"LogonSegue" sender:self];
+    
+    if ( [self checkLogonInfo] )
+        [self performSegueWithIdentifier:@"LogonSegue" sender:self];
     
 }
 
 - (IBAction)SignUpAction:(id)sender {
     NSLog(@"SignUpAction");
-    
-
 }
 
 - (IBAction)GuestAction:(id)sender {
-    NSLog(@"GuestAction");
+    if ( [self guestLogon] == true)
+        [self performSegueWithIdentifier:@"LogonSegue" sender:self];
 }
 
 - (IBAction)SignInAction:(id)sender {

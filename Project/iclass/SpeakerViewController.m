@@ -171,7 +171,7 @@
 
 - (void) retriveActiveSessions
 {
-    activeSessions.DataList = (NSMutableArray *) [ssSpeaker list];
+    activeSessions.DataList = (NSMutableArray *) [ssSpeaker getOwnedSession];
 }
 
 -(void)refreshView:(UIRefreshControl *)refresh
