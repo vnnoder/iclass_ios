@@ -109,15 +109,16 @@ Session *currentSession;
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([sender isKindOfClass:[UITableViewCell class]]) {
+    //if ([sender isKindOfClass:[UITableViewCell class]]) {
         if ([segue
              .destinationViewController isKindOfClass:[QuestionListViewController class]]) {
             QuestionListViewController *detailController = segue.destinationViewController;
             
             // TODO should pass current session to question list view
+            NSLog(@"session id is  = %d", currentSession.key);
             detailController.currentSesseion = currentSession;
         }
-    }
+    //}
 }
 
 #pragma mark - Split view

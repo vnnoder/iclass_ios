@@ -16,7 +16,7 @@
 @end
 
 @implementation CreateQuestionViewController
-@synthesize questionTitle,qustionDetail, AskBtn,sessionId;
+@synthesize questionTitle,qustionDetail, AskBtn,currentSession;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -45,10 +45,12 @@
              .destinationViewController isKindOfClass:[QuestionListViewController class]]) {
             QuestionListViewController *questionListViewController = segue.destinationViewController;
             Question *newQustion = [[Question alloc]init];
-            newQustion.sessionId = sessionId;
+            NSLog(@"create question fo session id is  = %d", currentSession.key);
+            newQustion.sessionId = currentSession.key;
             newQustion.title = questionTitle.text;
             newQustion.detail = qustionDetail.text;
             [[[questionListViewController questionList]qsAudience] create:newQustion];
+            questionListViewController.currentSesseion = currentSession;
         }
 
 }
