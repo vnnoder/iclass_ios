@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 @class Session;
+@class QuestionList;
 @interface QuestionListViewController : UITableViewController
 {
     Session *currentSesseion;
+    QuestionList *questionList;
 }
 @property (strong, nonatomic) Session *currentSesseion;
+@property (nonatomic, strong) QuestionList *questionList;
 @end

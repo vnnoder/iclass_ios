@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -563,16 +563,28 @@
             <objects>
                 <tableViewController id="3cm-W4-GXP" customClass="QuestionListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eD8-cV-3hD">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionCell" id="Ta3-uP-H0Z">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionCell" textLabel="wy5-an-ChM" detailTextLabel="r6R-cb-BsT" style="IBUITableViewCellStyleSubtitle" id="Ta3-uP-H0Z">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy5-an-ChM">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6R-cb-BsT">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
@@ -602,15 +614,14 @@
             <objects>
                 <viewController id="96q-t4-Wen" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sOE-FW-Ax4">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dt6-AJ-Fpe">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please input the question detail..." translatesAutoresizingMaskIntoConstraints="NO" id="dt6-AJ-Fpe">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="113" id="aeW-5R-5tA"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -630,13 +641,22 @@
                                     <segue destination="3cm-W4-GXP" kind="push" id="vRw-lY-nrV"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Please input the title here..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEf-o5-eRP">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="Ffx-r1-0SC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="p4c-ed-E8I" secondAttribute="trailing" constant="8" id="Awx-UU-e4W"/>
+                            <constraint firstItem="p4c-ed-E8I" firstAttribute="top" secondItem="sOE-FW-Ax4" secondAttribute="top" constant="201" id="AYa-OH-SWe"/>
+                            <constraint firstItem="dt6-AJ-Fpe" firstAttribute="top" secondItem="sOE-FW-Ax4" secondAttribute="top" constant="72" id="BPx-mp-s0C"/>
                             <constraint firstItem="dt6-AJ-Fpe" firstAttribute="trailing" secondItem="sOE-FW-Ax4" secondAttribute="trailing" type="default" id="BnJ-Yr-5H4"/>
-                            <constraint firstItem="dt6-AJ-Fpe" firstAttribute="top" secondItem="sOE-FW-Ax4" secondAttribute="top" type="default" id="LCI-A3-rK2"/>
-                            <constraint firstItem="p4c-ed-E8I" firstAttribute="top" secondItem="dt6-AJ-Fpe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VDB-ce-w3q"/>
+                            <constraint firstAttribute="trailing" secondItem="dEf-o5-eRP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="CCh-L4-aaj"/>
+                            <constraint firstItem="dEf-o5-eRP" firstAttribute="top" secondItem="sOE-FW-Ax4" secondAttribute="top" constant="27" id="brY-Gj-kHf"/>
+                            <constraint firstItem="p4c-ed-E8I" firstAttribute="trailing" secondItem="sOE-FW-Ax4" secondAttribute="trailing" type="default" id="iGo-zk-Q7d"/>
                             <constraint firstItem="dt6-AJ-Fpe" firstAttribute="leading" secondItem="sOE-FW-Ax4" secondAttribute="leading" type="default" id="w5O-y3-whk"/>
                         </constraints>
                     </view>
@@ -651,7 +671,7 @@
             <objects>
                 <viewController id="5fx-et-fOB" customClass="QuestionDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="suf-Ka-oGU">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Question detials" translatesAutoresizingMaskIntoConstraints="NO" id="Kkj-SO-fTY">
@@ -716,73 +736,6 @@
             <point key="canvasLocation" x="-11" y="213"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AudienceViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AudienceViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="AddBtn" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="AudienceNavBar" candidateClass="UINavigationBar"/>
-            </relationships>
-        </class>
-        <class className="ClassDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClassDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="ClassDescription" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="ClassID" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="OperationBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="QuestionsBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="SurveryBtn" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="CreateClassViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateClassViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="ClassDesc" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="ClassID" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="ConfirmBtn" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="JoinClassViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JoinClassViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="ClassID" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="JoinBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="ScanBtn" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="LogonViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LogonViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Logon"/>
-                <relationship kind="outlet" name="GuestButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="SignInButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="SignInWithFacebookButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="SignUpButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="QuestionDetailsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="QuestionDescription" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="VoteBtn" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="QuestionListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionListViewController.h"/>
-        </class>
-        <class className="SpeakerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpeakerViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="AddBtn" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="SpeakerNavigationBar" candidateClass="UINavigationBar"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

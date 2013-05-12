@@ -5,7 +5,7 @@
 //  Created by Wiely Rabin on 30/4/13.
 //  Copyright (c) 2013 Wiely Rabin. All rights reserved.
 //
-
+#import "QuestionList.h"
 #import "QuestionListViewController.h"
 #import "QuestionDetailsViewController.h"
 #import "Session.h"
@@ -14,13 +14,14 @@
 @end
 
 @implementation QuestionListViewController
-@synthesize currentSesseion;
+@synthesize currentSesseion, questionList;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        questionList = [[QuestionList alloc] init];
     }
     return self;
 }
@@ -28,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [questionList getExistingQuestions:[currentSesseion key]];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -36,6 +37,12 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void) loadQuestionFromWebservice
+{
+    if (currentSesseion != nil) {
+        
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -58,7 +65,7 @@
 {
 
     // Return the number of rows in the section.
-    return 20;
+    return [[questionList QuestionListData]count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -70,7 +77,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%d",indexPath.row];
+    
+    cell.textLabel.text = [[questionList.QuestionListData objectAtIndex:indexPath.row]title] ;
     return cell;
 }
 
