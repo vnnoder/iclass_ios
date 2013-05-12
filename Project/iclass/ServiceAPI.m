@@ -9,13 +9,32 @@
 #import "ServiceAPI.h"
 #import "HttpQuery.h"
 #import "Entity.h"
+#import "User.h"
 
 @implementation ServiceAPI
 @synthesize path;
 
+static NSString* token;
+static User* currentUser;
+
 + (NSString *) pathPostfix{
     return @".json";
 }
+
++ (NSString*) authToken{
+    { @synchronized(self) { return token; } }
+}
++ (void) setAuthToken:(NSString*)val{
+    { @synchronized(self) { token = val; } }
+}
+
++ (User*) currentUser{
+    { @synchronized(self) { return currentUser; } }
+}
++ (void) setCurrentUser:(User *)val{
+    { @synchronized(self) { currentUser = val; } }
+}
+
 
 - (id) initWithPath: (NSString *) aPath
      withSerializer: (Serializer *)aSerializer{
@@ -38,7 +57,7 @@
 - (void) remove:(int)key{
    [HttpQuery querySyncWithPath:[self.path stringByAppendingFormat:@"/%d%@", key, [ServiceAPI pathPostfix]]
                      withMethod:@"DELETE"
-                       withBody:nil];
+                       withParams:nil];
    
 }
 - (void) update:(id)obj{
@@ -51,14 +70,14 @@
 - (id) get:(int)key{
     NSData* jsonData = [HttpQuery querySyncWithPath:[self.path stringByAppendingFormat:@"/%d%@", key, [ServiceAPI pathPostfix]]
                                          withMethod:@"GET"
-                                           withBody:nil];
+                                           withParams:nil];
     return [self.serializer deserialize:jsonData];
 }
 
 - (NSArray*) list{
     NSData* jsonData = [HttpQuery querySyncWithPath:[self.path stringByAppendingFormat:@"%@", [ServiceAPI pathPostfix]]
                                          withMethod:@"GET"
-                                           withBody:nil];
+                                           withParams:nil];
     return [self.serializer deserializeArray:jsonData];
 }
 

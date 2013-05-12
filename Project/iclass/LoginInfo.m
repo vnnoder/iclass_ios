@@ -10,6 +10,6 @@
 
 @implementation LoginInfo
 
-@synthesize fullName, token, error, success;
+@synthesize user, token, error, success;
 
 @end

@@ -28,8 +28,8 @@
 -(id)singInWithLoginId: (NSString *)loginId password: (NSString *)pwd{
     
     NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
-    [dict setValue:loginId forKey:@"userlogin[username]"];
-    [dict setValue:pwd forKey:@"userlogin[password]"];
+    [dict setValue:loginId forKey:@"user_login[username]"];
+    [dict setValue:pwd forKey:@"user_login[password]"];
     
     NSData* jsonData = [HttpQuery querySyncWithPath:@"/api/sign_in"
                                          withMethod:@"POST"
@@ -37,13 +37,19 @@
     NSLog(@"Response from login: %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
     LoginInfoSerializer *serializer =  [[LoginInfoSerializer alloc]init];
     LoginInfo *info = [serializer deserialize:jsonData];
-    return info;
+    if([info success]){
+        [UserService setAuthToken:[info token]];
+        [UserService setCurrentUser:[info user]];
+    }
+  //TODO handle login error;
+    return nil;
     
 }
 -(id)singInwithToken{
-    
+    return nil;
 }
 -(void)singOut{
-    
+    [UserService setAuthToken:nil];
+    [UserService setCurrentUser:nil];
 }
 @end

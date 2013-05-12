@@ -50,7 +50,6 @@
 		41DD7D0D173F3A3E00182868 /* LoginInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DD7D0C173F3A3E00182868 /* LoginInfo.m */; };
 		41DD7D10173F3AFF00182868 /* LoginInfoSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DD7D0F173F3AFF00182868 /* LoginInfoSerializer.m */; };
 		4A4A68D41734BA2D002C9BBC /* QuestionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A68D31734BA2C002C9BBC /* QuestionList.m */; };
-		CE31B97D1730CB4E00FDD98B /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B9761730CB4E00FDD98B /* LoginModel.m */; };
 		CE31B97E1730CB4E00FDD98B /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B9781730CB4E00FDD98B /* Question.m */; };
 		CE31B97F1730CB4E00FDD98B /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B97A1730CB4E00FDD98B /* Session.m */; };
 		CE31B9801730CB4E00FDD98B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B97C1730CB4E00FDD98B /* User.m */; };
@@ -140,8 +139,8 @@
 		4A4A68CF173400ED002C9BBC /* GlobalState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalState.h; sourceTree = "<group>"; };
 		4A4A68D21734BA2C002C9BBC /* QuestionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionList.h; sourceTree = "<group>"; };
 		4A4A68D31734BA2C002C9BBC /* QuestionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionList.m; sourceTree = "<group>"; };
-		CE31B9751730CB4E00FDD98B /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
-		CE31B9761730CB4E00FDD98B /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		CE31B9751730CB4E00FDD98B /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginModel.h; path = "/Users/Babie/Documents/HE Zhihua/ios/iclass_ios/Project/iclass/LoginModel.h"; sourceTree = "<absolute>"; };
+		CE31B9761730CB4E00FDD98B /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginModel.m; path = "/Users/Babie/Documents/HE Zhihua/ios/iclass_ios/Project/iclass/LoginModel.m"; sourceTree = "<absolute>"; };
 		CE31B9771730CB4E00FDD98B /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		CE31B9781730CB4E00FDD98B /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		CE31B9791730CB4E00FDD98B /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
@@ -217,8 +216,6 @@
 				03C5DFE91730E57F00B39AFF /* QuestionDetailsViewController.m */,
 				03C5DFEE1730F5CA00B39AFF /* sessionListSample.h */,
 				03C5DFEF1730F5CA00B39AFF /* sessionListSample.m */,
-				CE31B9751730CB4E00FDD98B /* LoginModel.h */,
-				CE31B9761730CB4E00FDD98B /* LoginModel.m */,
 				4A4A68D21734BA2C002C9BBC /* QuestionList.h */,
 				4A4A68D31734BA2C002C9BBC /* QuestionList.m */,
 				CE31B9771730CB4E00FDD98B /* Question.h */,
@@ -409,7 +406,6 @@
 				03C5DFDE173013DF00B39AFF /* CreateClassViewController.m in Sources */,
 				03C5DFE1173015E700B39AFF /* ClassDetailsViewController.m in Sources */,
 				03C5DFE71730180100B39AFF /* QuestionListViewController.m in Sources */,
-				CE31B97D1730CB4E00FDD98B /* LoginModel.m in Sources */,
 				CE31B97E1730CB4E00FDD98B /* Question.m in Sources */,
 				CE31B97F1730CB4E00FDD98B /* Session.m in Sources */,
 				CE31B9801730CB4E00FDD98B /* User.m in Sources */,

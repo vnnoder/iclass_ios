@@ -13,15 +13,25 @@
 #import "SessionSerializer.h"
 #import "Question.h"
 #import "QuestionService.h"
+#import "UserService.h"
+#import "LoginInfo.h"
+#import "SessionService.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
 //        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
         
-        QuestionService *service = [[QuestionService alloc]init];
-        NSArray *array = [service list];
-        NSString *title = [[array objectAtIndex:0] title];
-        NSLog(@"%@", title);
+        UserService *service = [[UserService alloc]init];
+        LoginInfo *info = [service singInWithLoginId:@"michael" password:@"michael"];
+        NSLog(@"%@", [[info user]fullName]);
+        
+        SessionService *sessionSer= [[SessionService alloc]init];
+        NSArray *list = [sessionSer list];
+//        NSLog(@"%@", [[info user]fullName]);
+        for (Session *item in list) {
+            NSLog(@"%@", item.title);
+        }
+       
     }
 }

@@ -8,6 +8,7 @@
 
 #import "HttpQuery.h"
 #import "Util.h"
+#import "ServiceAPI.h"
 
 @implementation HttpQuery
 
@@ -19,6 +20,10 @@
     NSString *urlString = [base stringByAppendingString:path];
     
     NSString *paramString = [[NSString alloc]init];
+    if ([ServiceAPI authToken]) {
+        paramString = [paramString stringByAppendingFormat:@"%@=%@&", @"authenticity_token", [ServiceAPI authToken]];
+    }
+    
     if(paramMap != nil){
         
         for (NSString * name in [paramMap allKeys]) {
