@@ -12,4 +12,5 @@
 -(id)singInWithLoginId: (NSString *)loginId password: (NSString *)pwd;
 -(id)singInwithToken;
 -(void)singOut;
+-(void)updateDeviceToken:(NSString*)token;
 @end

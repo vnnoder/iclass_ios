@@ -69,4 +69,19 @@
 
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
+
+-(void)updateDeviceToken:(NSString*)token{
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
+    [dict setValue:token forKey:@"device_token"];
+    NSData* jsonData = [HttpQuery querySyncWithPath:@"/api/update_device_token"
+                                         withMethod:@"POST"
+                                         withParams:dict];
+    
+    /**
+     response: 
+     {"success":"true","device_token":{"created_at":"2013-05-12T14:09:29Z","device_token":"790dfc8982e59f7936db182c2ccda5d3707d5034c7dac8e001bfae5bc73403fd","id":1,"updated_at":"2013-05-12T14:09:29Z","user_id":1}}
+     
+     */
+
+}
 @end
