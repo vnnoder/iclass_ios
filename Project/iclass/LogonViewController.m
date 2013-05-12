@@ -33,6 +33,18 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    NSString *username =  [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+    NSString *password =  [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    if(username && password){
+        self.usernameField.text = username;
+        self.passwordField.text = password;
+        
+        if ( [self checkLogonInfo] )
+            [self performSegueWithIdentifier:@"LogonSegue" sender:self];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
