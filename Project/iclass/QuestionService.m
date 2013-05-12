@@ -43,11 +43,11 @@
 
 ///api/talks/1/questions/5/vote
 - (id)updateVoteForQuestion:(int)questionId inSession: (int)sessionId{
-    NSData* jsonData = [HttpQuery querySyncWithPath:[NSString stringWithFormat:@"/api/talks/%i/questions/%i/vote", questionId, sessionId]
+    NSData* jsonData = [HttpQuery querySyncWithPath:[NSString stringWithFormat:@"/api/talks/%i/questions/%i/vote",  sessionId, questionId]
                                          withMethod:@"POST"
                                          withParams:nil];
     
-    return [self.serializer deserializeArray:jsonData];
+    return [self.serializer deserialize:jsonData];
 }
 
 @end

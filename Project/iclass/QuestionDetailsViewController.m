@@ -8,12 +8,13 @@
 
 #import "QuestionDetailsViewController.h"
 #import "Question.h"
+#import "QuestionService.h"
 @interface QuestionDetailsViewController ()
 
 @end
 
 @implementation QuestionDetailsViewController
-@synthesize string, QuestionDescription,currentSesseion,currentQuestion, VoteBtn;
+@synthesize string, QuestionDescription,currentSesseion,currentQuestion, VoteBtn, qsService;
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,12 +30,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    /*
     if (currentQuestion.voted) {
         VoteBtn.titleLabel.text = @"Unvote";
     }
     else{
         VoteBtn.titleLabel.text = @"Vote";
     }
+     */
     QuestionDescription.text = currentQuestion.title;
 }
 
@@ -45,8 +48,9 @@
 }
 
 - (IBAction)VoteAction:(id)sender {
+    NSLog(@"qk = %d, sessi=%d", [currentQuestion key], [currentSesseion key]);
+    [qsService updateVoteForQuestion:[currentQuestion key] inSession:[currentSesseion key]];
     [self.navigationController popViewControllerAnimated:YES];
-
 }
 
 @end

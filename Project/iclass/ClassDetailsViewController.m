@@ -67,9 +67,17 @@ Session *currentSession;
         }
         else
         {
+            if ( [currentSession.status isEqualToString:@"pending"] == true)
+            {
+                [OperationBtn setTitle:@"Start" forState:UIControlStateNormal];
+            }
+            else
+            {
+                [OperationBtn setTitle:@"End" forState:UIControlStateNormal];
+            }
             
             // TODO change button title according to class's status
-            [OperationBtn setTitle:@"Start" forState:UIControlStateNormal];
+
 
         }
     //}
@@ -87,7 +95,7 @@ Session *currentSession;
 */
 - (void)viewDidLoad
 {
-    NSLog(@"ClassDetails viewDidLoad = %@ ", [self.classDetailItem title]);
+    //NSLog(@"ClassDetails viewDidLoad = %@ ", [self.classDetailItem title]);
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -150,6 +158,21 @@ Session *currentSession;
         // no service to leave the session right now
         [self.navigationController popViewControllerAnimated:YES];
         
+    }
+    else
+    {
+        if ( [currentSession.status isEqualToString:@"pending"] == true)
+        {
+            [self startClass];
+            [OperationBtn setTitle:@"End" forState:UIControlStateNormal];
+        }
+        else
+        {
+            [self endClass];
+            //[OperationBtn setTitle:@"Start" forState:UIControlStateNormal];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+
     }
     
     
