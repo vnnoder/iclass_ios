@@ -86,8 +86,11 @@
 {
     NSLog(@"step A");
     if ([self createUser] == true)
+    {
+        //auto signin
         [self.navigationController popViewControllerAnimated:YES];
-        
+    }
+
 }
 
 @end

@@ -187,10 +187,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"prepareForSegue ");
-    
+    //NSLog(@"prepareForSegue ");
+    // learn 2 way to indetify segue 
     if ([[segue identifier] isEqualToString:@"showClassDetail"]) {
-        NSLog(@"prepareForSegue showClassDetail");
+        //NSLog(@"prepareForSegue showClassDetail");
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         [[segue destinationViewController] setSessionDetailType:0];
         //[[segue destinationViewController] setClassDetailItem:[activeSessions.DataList objectAtIndex:indexPath.row]];
@@ -200,7 +200,7 @@
     
     if ([[segue identifier] isEqualToString:@"joinNewClass"]) {
         Session *aNewSession = [[Session alloc] init];
-        NSLog(@"prepareForSegue joinNewClass");
+        //NSLog(@"prepareForSegue joinNewClass");
         [[segue destinationViewController] setSessionRef:(aNewSession) thecaller:(self)];
     }
 
