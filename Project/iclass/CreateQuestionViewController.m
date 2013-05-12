@@ -16,7 +16,7 @@
 @end
 
 @implementation CreateQuestionViewController
-@synthesize questionTitle,qustionDetail, AskBtn,currentSession;
+@synthesize questionTitle,qustionDetail, AskBtn,currentSession,qsService;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
