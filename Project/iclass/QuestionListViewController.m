@@ -108,7 +108,7 @@
             CreateQuestionViewController *createQuestionController = segue.destinationViewController;
             NSLog(@"session id in question list = %d", currentSesseion.key);
             createQuestionController.currentSession = currentSesseion;
-
+            createQuestionController.qsService = [questionList qsAudience];
         }
     //}
 }
