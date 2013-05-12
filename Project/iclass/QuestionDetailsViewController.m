@@ -7,13 +7,13 @@
 //
 
 #import "QuestionDetailsViewController.h"
-
+#import "Question.h"
 @interface QuestionDetailsViewController ()
 
 @end
 
 @implementation QuestionDetailsViewController
-@synthesize string, QuestionDescription;
+@synthesize string, QuestionDescription,currentSesseion,currentQuestion, VoteBtn;
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,7 +29,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    QuestionDescription.text = self.string;
+    if (currentQuestion.voted) {
+        VoteBtn.titleLabel.text = @"Unvote";
+    }
+    else{
+        VoteBtn.titleLabel.text = @"Vote";
+    }
+    QuestionDescription.text = currentQuestion.title;
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,7 +45,8 @@
 }
 
 - (IBAction)VoteAction:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES]; 
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 @end

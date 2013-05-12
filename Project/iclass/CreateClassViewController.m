@@ -58,17 +58,13 @@ Session *newSpeakerSession;
 }
 
 - (void) setSessionInfo
-{
-//    NSLog(@"setSessionInfo %@", self.ClassID.text);
-    
+{   
     newSpeakerSession.title = self.ClassID.text;
     newSpeakerSession.description = self.ClassDesc.text;
 }
 
 - (Boolean) checkSession
 {
-    // call service to check the existence of the session
-    // call serive to join session
     SessionService *ssSpeaker;
     
     ssSpeaker = [[SessionService alloc] init];

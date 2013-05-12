@@ -10,6 +10,9 @@
 #import "ClassDetailsViewController.h"
 #import "QuestionListViewController.h"
 #import "GlobalState.h"
+#import "SessionService.h"
+
+
 
 @interface ClassDetailsViewController ()
 @property (strong,nonatomic) UIPopoverController *parentPopoverController;
@@ -46,34 +49,25 @@ Session *currentSession;
     
 }
 
-- (void) setClassDetailItem:(id)newClassDetailItem 
-{
-    NSLog(@"ClassDetails setClassDetailItem = %@ ", [newClassDetailItem description]);
-
-    if(_classDetailItem != newClassDetailItem){
-        _classDetailItem = newClassDetailItem;
-        [self configureView];
-    }
-    
-    if(self.parentPopoverController != nil){
-        [self.parentPopoverController dismissPopoverAnimated:YES];
-    }
-}
 
 - (void) configureView
 {
     if (currentSession){
         self.ClassID.text = currentSession.title;
         self.ClassDescription.text = currentSession.description;
+        self.ClassPassCode.text = currentSession.passcode;
     }
     
     //if (OperationBtn) {
         //if (GUserGole == AUDIENCE) {
-        if ( _sessionDetailType == 0)
+        if ( _sessionDetailType == AUDIENCEROLE)
         {
             [OperationBtn setTitle:@"Leave" forState:UIControlStateNormal];
 
-        } else {
+        }
+        else
+        {
+            
             // TODO change button title according to class's status
             [OperationBtn setTitle:@"Start" forState:UIControlStateNormal];
 
@@ -119,6 +113,48 @@ Session *currentSession;
             detailController.currentSesseion = currentSession;
         }
     //}
+}
+
+
+- (void) leaveClass
+{
+    SessionService *ssCurr;
+    
+    ssCurr = [[SessionService alloc] init];
+    [ssCurr endSession:(currentSession.key)];
+}
+
+
+- (void) startClass
+{
+    SessionService *ssCurr;
+    
+    ssCurr = [[SessionService alloc] init];
+    [ssCurr endSession:(currentSession.key)];
+
+}
+
+- (void) endClass
+{
+    SessionService *ssCurr;
+    
+    ssCurr = [[SessionService alloc] init];
+    [ssCurr endSession:(currentSession.key)];
+}
+
+- (IBAction)ActionBtn:(id)sender
+{
+    NSLog(@"CS status %@",currentSession.status);
+    if ( _sessionDetailType == AUDIENCEROLE)
+    {
+        // no service to leave the session right now
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }
+    
+    
+    
+    
 }
 
 #pragma mark - Split view

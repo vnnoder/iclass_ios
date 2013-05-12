@@ -162,7 +162,7 @@
 
 - (void) retriveActiveSessions
 {
-    activeSessions.DataList = (NSMutableArray *) [ssAudience list];
+    activeSessions.DataList = (NSMutableArray *) [ssAudience getJoinedSession];
 }
 
 

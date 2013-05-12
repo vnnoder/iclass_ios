@@ -94,8 +94,9 @@
              .destinationViewController isKindOfClass:[QuestionDetailsViewController class]]) {
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
             QuestionDetailsViewController *detailController = segue.destinationViewController;
-            detailController.string = [NSString stringWithFormat:
-                                       @"%d", indexPath.row];
+            detailController.currentSesseion = currentSesseion;
+            detailController.currentQuestion = [questionList.QuestionListData objectAtIndex:indexPath.row];
+
         }
     }
     
