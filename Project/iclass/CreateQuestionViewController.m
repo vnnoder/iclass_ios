@@ -40,6 +40,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)AskAction:(id)sender {
+    Question *newQustion = [[Question alloc]init];
+    NSLog(@"create question fo session id is  = %d", currentSession.key);
+    newQustion.sessionId = currentSession.key;
+    newQustion.title = questionTitle.text;
+    newQustion.detail = qustionDetail.text;
+    [qsService create:newQustion];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+/*
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([sender isKindOfClass:[UIButton class]]) {
@@ -50,18 +60,13 @@
         if ([segue
              .destinationViewController isKindOfClass:[QuestionListViewController class]]) {
             QuestionListViewController *questionListViewController = segue.destinationViewController;
-            Question *newQustion = [[Question alloc]init];
-            NSLog(@"create question fo session id is  = %d", currentSession.key);
-            newQustion.sessionId = currentSession.key;
-            newQustion.title = questionTitle.text;
-            newQustion.detail = qustionDetail.text;
-            [qsService create:newQustion];
+
             questionListViewController.currentSesseion = currentSession;
         }
         }
     }
     //[self.navigationController popViewControllerAnimated:YES];
-}
+}*/
 
 - (void) textViewDidBeginEditing:(UITextView *)textView
 {
