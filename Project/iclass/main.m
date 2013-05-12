@@ -23,7 +23,7 @@
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-
+/*
         UserService *service = [[UserService alloc]init];
         LoginInfo *info = [service singInWithLoginId:@"michael" password:@"michael"];
         NSLog(@"%@", [[info user]fullName]);
@@ -45,9 +45,9 @@ int main(int argc, char *argv[])
         
 //        [qs listQuestionBySession:1];
         
-    
+  */  
 
-//        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+       return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
 
     }
 }

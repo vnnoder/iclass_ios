@@ -24,6 +24,7 @@
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *SpeakerNavigationBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *AddBtn;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *SignOut;
 
 @property (nonatomic, strong) ClassDetailsViewController *classDetails;
 @property (nonatomic, strong) CreateClassViewController *createClass;

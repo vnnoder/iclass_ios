@@ -14,6 +14,7 @@
 #import "Session.h"
 #import "SessionList.h"
 #import "SessionService.h"
+#import "UserService.h"
 
 @interface AudienceViewController ()
 
@@ -166,6 +167,13 @@
 }
 
 
+- (void) signOut
+{
+    UserService *us = [[UserService alloc] init];
+    [us singOut];
+}
+
+
 -(void)refreshView:(UIRefreshControl *)refresh
 {
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
@@ -203,6 +211,14 @@
         //NSLog(@"prepareForSegue joinNewClass");
         [[segue destinationViewController] setSessionRef:(aNewSession) thecaller:(self)];
     }
+    
+
+}
+
+- (IBAction)SignOutBtn:(id)sender {
+    UserService *us = [[UserService alloc] init];
+    [us singOut];
+    [self performSegueWithIdentifier:@"audienceSignOut" sender:self];
 
 }
 

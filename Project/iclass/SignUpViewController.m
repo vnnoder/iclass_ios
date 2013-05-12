@@ -31,6 +31,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.userRetypePasswordTextField.secureTextEntry = YES;
+    self.userPasswordTextField.secureTextEntry = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning

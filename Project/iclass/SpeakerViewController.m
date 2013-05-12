@@ -15,6 +15,7 @@
 #import "Session.h"
 #import "SessionList.h"
 #import "SessionService.h"
+#import "UserService.h"
 
 @interface SpeakerViewController ()
 
@@ -188,6 +189,14 @@
     [refresh endRefreshing];
 }
 
+
+- (void) signOut
+{
+    UserService *us = [[UserService alloc] init];
+    [us singOut];
+}
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
         // learn 2 way to indetify segue 
@@ -212,5 +221,11 @@
     
 }
 
+- (IBAction)signOutBtn:(id)sender {
+    UserService *us = [[UserService alloc] init];
+    [us singOut];
+    [self performSegueWithIdentifier:@"speakerSignOut" sender:self];
+
+}
 
 @end
