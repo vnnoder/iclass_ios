@@ -10,6 +10,7 @@
 #import "SessionSerializer.h"
 #import "SessionList.h"
 #import "Session.h"
+#import "HttpQuery.h"
 
 @implementation SessionService
 
@@ -65,7 +66,12 @@
 }
 
 
-
+- (NSArray*) getSessionByUserId: (int) userid{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:[NSString stringWithFormat:@"%d",userid] forKey:@"user_id"];
+    NSData *data = [HttpQuery querySyncWithPath:@"/talks/" withMethod:@"GET" withParams:dict];
+    return [self.serializer deserializeArray:data];
+}
 
 
 @end

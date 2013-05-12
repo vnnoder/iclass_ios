@@ -21,5 +21,6 @@
 - (void) create:(NSString *) sessionTitle description:(NSString *) sessionDesc owner:(NSInteger) sessionOwnerID;
 - (void) update:(NSString *) sessionKey sessionStatus:(NSInteger) sessionStatus;
 - (void) join:(NSString *) sessionTitle;
+- (NSArray*) getSessionByUserId: (int) useid;
 
 @end
