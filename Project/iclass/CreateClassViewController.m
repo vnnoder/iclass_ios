@@ -7,13 +7,18 @@
 //
 
 #import "CreateClassViewController.h"
+#import "SpeakerViewController.h"
 #import "SessionService.h"
+#import "Session.h"
 
 @interface CreateClassViewController ()
 @property (strong,nonatomic) UIPopoverController *parentPopoverController;
 @end
 
 @implementation CreateClassViewController
+
+SpeakerViewController *parent;
+Session *newSpeakerSession;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,34 +41,56 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) setSessionServiceSpeaker:(id)newSessionServiceSpeaker
+- (void) setSessionRef:(Session *) newSession thecaller:(SpeakerViewController*) theSender
 {
-    NSLog(@"setSessionServiceSpeaker ");
+    NSLog(@"Create Session");
     
-    if ( _sessionServiceSpeaker != newSessionServiceSpeaker)
+    if ( newSpeakerSession != newSession)
     {
-        _sessionServiceSpeaker = newSessionServiceSpeaker;
+        newSpeakerSession = newSession;
+        parent = theSender;
     }
     
-    if(self.parentPopoverController != nil){
+    if(self.parentPopoverController != nil)
+    {
         [self.parentPopoverController dismissPopoverAnimated:YES];
     }
-    
 }
 
-- (void) createSession
+- (void) setSessionInfo
 {
-    [self.sessionServiceSpeaker join:_ClassID.text];
+    NSLog(@"setSessionInfo %@", self.ClassID.text);
+    
+    newSpeakerSession.title = self.ClassID.text;
+    newSpeakerSession.description = self.ClassDesc.text;
+}
+
+- (Boolean) checkSession
+{
+    // call service to check the existence of the session
+    // call serive to join session
+    SessionService *ssSpeaker;
+    
+    ssSpeaker = [[SessionService alloc] init];
+    if ( [ssSpeaker create:(newSpeakerSession)] == nil)
+        return FALSE;
+    
+    return TRUE;
 }
 
 - (IBAction)CreateNewSession:(id)sender
 {
-    NSLog(@"CreateNewSession %@", _ClassID.text);
+
     if (_ClassID.text.length > 0 )
     {
-        [self createSession];
-        [self.navigationController popViewControllerAnimated:YES];
+        [self setSessionInfo];
+        
+        if ( [self checkSession] == TRUE)
+        {
+            [parent retriveActiveSessions];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }
-}
+} 
 
 @end

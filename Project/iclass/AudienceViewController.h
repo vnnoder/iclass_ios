@@ -11,12 +11,14 @@
 @class ClassDetailsViewController;
 @class JoinClassViewController;
 @class SessionService;
+@class SessionList;
 
 @interface AudienceViewController : UITableViewController
 {
     ClassDetailsViewController *classDetails;
     JoinClassViewController *joinClass;
     SessionService *ssAudience;
+    SessionList *activeSessions;
 }
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *AudienceNavBar;
@@ -26,5 +28,8 @@
 @property (nonatomic, strong) JoinClassViewController *joinClass;
 
 @property (nonatomic, strong) SessionService *ssAudience;
+@property (nonatomic, strong) SessionList *activeSessions;
+
+- (void) retriveActiveSessions;
 
 @end
