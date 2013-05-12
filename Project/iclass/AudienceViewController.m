@@ -156,7 +156,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-//    [self retriveActiveSessions];
+    [self retriveActiveSessions];
     [self.tableView reloadData];
 }
 
