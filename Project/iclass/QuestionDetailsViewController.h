@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class Session;
+@class Question;
 @interface QuestionDetailsViewController : UIViewController <UISearchDisplayDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *QuestionDescription;
 @property (weak, nonatomic) IBOutlet UIButton *VoteBtn;
 @property (strong,nonatomic)NSString *string;
-
+@property (strong, nonatomic) Session *currentSesseion;
+@property (strong, nonatomic) Question *currentQuestion;
 
 @end
