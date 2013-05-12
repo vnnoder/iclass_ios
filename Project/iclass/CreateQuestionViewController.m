@@ -7,13 +7,16 @@
 //
 
 #import "CreateQuestionViewController.h"
-
+#import "QuestionListViewController.h"
+#import "QuestionService.h"
+#import "QuestionList.h"
+#import "Question.h"
 @interface CreateQuestionViewController ()
 
 @end
 
 @implementation CreateQuestionViewController
-
+@synthesize questionTitle,qustionDetail, AskBtn,sessionId;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,4 +38,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+
+        if ([segue
+             .destinationViewController isKindOfClass:[QuestionListViewController class]]) {
+            QuestionListViewController *questionListViewController = segue.destinationViewController;
+            Question *newQustion = [[Question alloc]init];
+            newQustion.sessionId = sessionId;
+            newQustion.title = questionTitle.text;
+            newQustion.detail = qustionDetail.text;
+            [[[questionListViewController questionList]qsAudience] create:newQustion];
+        }
+
+}
 @end

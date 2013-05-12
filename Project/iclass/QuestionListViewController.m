@@ -8,6 +8,7 @@
 #import "QuestionList.h"
 #import "QuestionListViewController.h"
 #import "QuestionDetailsViewController.h"
+#import "CreateQuestionViewController.h"
 #import "Session.h"
 @interface QuestionListViewController ()
 
@@ -91,6 +92,17 @@
             QuestionDetailsViewController *detailController = segue.destinationViewController;
             detailController.string = [NSString stringWithFormat:
                                        @"%d", indexPath.row];
+        }
+    }
+    
+    
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        if ([segue
+             .destinationViewController isKindOfClass:[CreateQuestionViewController class]]) {
+
+            CreateQuestionViewController *createQuestionController = segue.destinationViewController;
+            createQuestionController.sessionId = currentSesseion.key;
+
         }
     }
 }
