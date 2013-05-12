@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Session;
 
 @interface CreateQuestionViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *questionTitle;
 @property (weak, nonatomic) IBOutlet UITextView *qustionDetail;
 @property (weak, nonatomic) IBOutlet UIButton *AskBtn;
-@property  int  sessionId;
+@property  (strong, nonatomic) Session *currentSession;
 @end

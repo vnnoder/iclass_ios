@@ -17,8 +17,8 @@
 @property (nonatomic, strong) QuestionService *qsAudience;
 //-(void)addQuestion:(Question *) question;
 //-(void)deleteQuestion:(Question *) question;
--(void)sortByUpdateTime;
--(void)sortByVote;
+//-(void)sortByUpdateTime;
+//-(void)sortByVote;
 -(void) getExistingQuestions:(int)sessionId;
 
 @end

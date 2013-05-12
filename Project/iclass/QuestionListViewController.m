@@ -22,7 +22,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        questionList = [[QuestionList alloc] init];
+        
     }
     return self;
 }
@@ -30,6 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (questionList == nil) {
+        questionList = [[QuestionList alloc] init];
+    }
+    NSLog(@"session id = %d", [currentSesseion key]);
     [questionList getExistingQuestions:[currentSesseion key]];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -96,15 +100,16 @@
     }
     
     
-    if ([sender isKindOfClass:[UITableViewCell class]]) {
+    //if ([sender isKindOfClass:[UITableViewCell class]]) {
         if ([segue
              .destinationViewController isKindOfClass:[CreateQuestionViewController class]]) {
 
             CreateQuestionViewController *createQuestionController = segue.destinationViewController;
-            createQuestionController.sessionId = currentSesseion.key;
+            NSLog(@"session id in question list = %d", currentSesseion.key);
+            createQuestionController.currentSession = currentSesseion;
 
         }
-    }
+    //}
 }
 /*
  // Override to support conditional editing of the table view.
@@ -157,5 +162,12 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+    //    [self retriveActiveSessions];
+    [questionList getExistingQuestions:[currentSesseion key]];
+    [self.tableView reloadData];
+}
+
 
 @end
