@@ -16,6 +16,6 @@
 @synthesize endDate;
 @synthesize status;
 @synthesize ownerId;
-@synthesize key;
+@synthesize passcode;
 
 @end

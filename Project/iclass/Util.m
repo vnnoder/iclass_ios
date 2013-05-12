@@ -29,4 +29,7 @@
 }
 
 
++ (void)nofify:(NSString* )error{
+    
+}
 @end
