@@ -40,7 +40,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-
+    if ([sender isKindOfClass:[UIButton class]]) {
+        UIButton *btn = (UIButton*)sender;
+        if ([btn.titleLabel.text  isEqual:@"Ask"]) {
+            
+        
         if ([segue
              .destinationViewController isKindOfClass:[QuestionListViewController class]]) {
             QuestionListViewController *questionListViewController = segue.destinationViewController;
@@ -49,9 +53,10 @@
             newQustion.sessionId = currentSession.key;
             newQustion.title = questionTitle.text;
             newQustion.detail = qustionDetail.text;
-            [[[questionListViewController questionList]qsAudience] create:newQustion];
+            [qsService create:newQustion];
             questionListViewController.currentSesseion = currentSession;
         }
-
+        }
+    }
 }
 @end
