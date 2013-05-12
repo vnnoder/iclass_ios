@@ -25,9 +25,18 @@ int main(int argc, char *argv[])
         UserService *service = [[UserService alloc]init];
         LoginInfo *info = [service singInWithLoginId:@"michael" password:@"michael"];
         NSLog(@"%@", [[info user]fullName]);
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+//        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+//        
+        Question *ques = [[Question alloc]init];
+        ques.sessionId = 1;
+        ques.title = @"i am a title";
+        ques.detail = @"i am a detail";
         
-
+        QuestionService *qs = [[QuestionService alloc]init];
+        [qs create:ques];
+        
+//        [qs listQuestionBySession:1];
+        
         
     }
 }

@@ -177,7 +177,7 @@
 
 + (NSString *)encodeURIComponent:(NSString *)string
 {
-    NSLog(@"%@", string);
+//    NSLog(@"%@", string);
     if ([Util isNull:string]) {
         return @"";
     }
