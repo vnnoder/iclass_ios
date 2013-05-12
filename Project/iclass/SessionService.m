@@ -41,5 +41,13 @@
     return [self.serializer deserialize:jsonData];
 }
 
+-(id)findByPasscode: (NSString *)passcode{
+    NSData* jsonData = [HttpQuery querySyncWithPath:[NSString stringWithFormat:@"/api/talks/passcode/%@", passcode]
+                                         withMethod:@"GET"
+                                         withParams:nil];
+    
+    return [self.serializer deserialize:jsonData];
+}
+
 
 @end
