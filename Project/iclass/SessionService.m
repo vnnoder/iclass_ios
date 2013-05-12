@@ -14,63 +14,19 @@
 
 @implementation SessionService
 
-@synthesize ActiveSessions;
 
 - (id) init{
-    inSessionSequenceNo = 1;
-    
-    ActiveSessions = [[SessionList alloc] init];
-    
+
     return [super initWithPath:@"/talks" withSerializer:[[SessionSerializer alloc]init]];
 }
-
-- (void) create:(NSString *) sessionTitle description:(NSString *) sessionDesc owner:(NSInteger) sessionOwnerID
-{
-    Session *aNewSession = [[Session alloc]init];
-    
-    NSLog(@"SessionService create: [%@][%@][%d]", sessionTitle, sessionDesc, sessionOwnerID );
-    
-    aNewSession.title = sessionTitle;
-    aNewSession.description = sessionDesc;
-    aNewSession.ownerId = sessionOwnerID;
-    aNewSession.key = inSessionSequenceNo;
-    inSessionSequenceNo++;
-    
-    // web service function to create the new session at host side
-    
-    [ActiveSessions addSession:aNewSession];
+- (NSArray *)getOwnedSession{
+    return [self list];
 }
 
-- (void) update:(NSString *) sessionKey sessionStatus:(NSInteger) sessionStatus
-{
-    NSLog(@"SessionService update: [%@][%d]", sessionKey, sessionStatus );
-    
-    // web service function to create the new session at host side
-    
-}
+- (NSArray *)getJoinedSession{
+    NSData* jsonData = [HttpQuery  querySyncWithPath:@"joined_talks" withMethod:@"GET" withParams:nil];
+    return [self.serializer deserializeArray:jsonData];
 
-- (void) join:(NSString *) sessionTitle
-{
-    NSLog(@"SessionService join: [%@] ", sessionTitle );
-
-    Session *aNewSession = [[Session alloc]init];
-    
-    aNewSession.title = sessionTitle;
-    aNewSession.description = @"this is description";
-    aNewSession.ownerId = 1234;
-    aNewSession.key = inSessionSequenceNo;
-    inSessionSequenceNo++;
-    
-    [ActiveSessions addSession:aNewSession];
-    
-}
-
-
-- (NSArray*) getSessionByUserId: (int) userid{
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setObject:[NSString stringWithFormat:@"%d",userid] forKey:@"user_id"];
-    NSData *data = [HttpQuery querySyncWithPath:@"/talks/" withMethod:@"GET" withParams:dict];
-    return [self.serializer deserializeArray:data];
 }
 
 

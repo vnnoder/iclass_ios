@@ -14,4 +14,11 @@
 - (id) init{
     return [super initWithPath:@"/questions" withSerializer:[[QuestionSerializer alloc]init]];
 }
+- listQuestionBySession: (int)sessionId{
+    NSData* jsonData = [HttpQuery querySyncWithPath:[self.path stringByAppendingFormat:@"%@", [ServiceAPI pathPostfix]]
+                                         withMethod:@"POST"
+                                         withParams:[self.serializer toNSDictionary:entity]];
+    return [self.serializer deserialize:jsonData];
+}
+
 @end

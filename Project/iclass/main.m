@@ -16,6 +16,7 @@
 #import "UserService.h"
 #import "LoginInfo.h"
 #import "SessionService.h"
+#import "Util.h"
 
 int main(int argc, char *argv[])
 {
@@ -31,7 +32,7 @@ int main(int argc, char *argv[])
 //        NSLog(@"%@", [[info user]fullName]);
         for (Session *item in list) {
             NSLog(@"%@", item.title);
-        }
-       
+        } 
+      
     }
 }

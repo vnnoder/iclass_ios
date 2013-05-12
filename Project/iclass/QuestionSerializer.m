@@ -8,7 +8,8 @@
 
 #import "QuestionSerializer.h"
 #import "Question.h"
-#import "JSON.h"
+#import "JSON.h"    
+#import "Util.h"
 
 @implementation QuestionSerializer
 
@@ -44,8 +45,8 @@
     entity.title = [map objectForKey:@"title"];
     entity.detail= [map objectForKey:@"detail"];
     entity.key = [[map objectForKey: @"id"]intValue];
-//    entity.sessionId = [[map objectForKey:@"talk_id"]integerValue];
-    
+    entity.sessionId = [[map objectForKey:@"talk_id"]integerValue];
+    entity.updatedAt = [Util parse:[map objectForKey:@"updated_at"]];
     return entity;
 }
 

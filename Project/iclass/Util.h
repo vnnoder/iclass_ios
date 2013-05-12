@@ -10,4 +10,5 @@
 
 @interface Util : NSObject
 +(BOOL)isNull:(NSString*)string;
++(NSDate*)parse:(NSString *)dataStr;
 @end

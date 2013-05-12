@@ -16,7 +16,7 @@
                      withMethod:(NSString *)method
                      withParams: (NSDictionary *)paramMap{
         
-    NSString *base = @"http://ec2-122-248-192-192.ap-southeast-1.compute.amazonaws.com";
+    NSString *base = @"http://ec2-122-248-192-192.ap-southeast-1.compute.amazonaws.com/api";
     NSString *urlString = [base stringByAppendingString:path];
     
     NSString *paramString = [[NSString alloc]init];
