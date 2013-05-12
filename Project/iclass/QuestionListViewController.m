@@ -5,6 +5,7 @@
 //  Created by Wiely Rabin on 30/4/13.
 //  Copyright (c) 2013 Wiely Rabin. All rights reserved.
 //
+#import "Question.h"
 #import "QuestionList.h"
 #import "QuestionListViewController.h"
 #import "QuestionDetailsViewController.h"
@@ -82,8 +83,16 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    Question *qn = [questionList.QuestionListData objectAtIndex:indexPath.row];
+    cell.textLabel.text = [qn title] ;
     
-    cell.textLabel.text = [[questionList.QuestionListData objectAtIndex:indexPath.row]title] ;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM d, h:mm a"];
+    
+    NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",[formatter stringFromDate:[qn updatedAt]]];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Voted(%d) %@",[qn voteCount], lastUpdated];
     return cell;
 }
 
@@ -96,7 +105,7 @@
             QuestionDetailsViewController *detailController = segue.destinationViewController;
             detailController.currentSesseion = currentSesseion;
             detailController.currentQuestion = [questionList.QuestionListData objectAtIndex:indexPath.row];
-
+            detailController.qsService = [questionList qsAudience];
         }
     }
     
