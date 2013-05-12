@@ -75,7 +75,7 @@
 {
     UserService *service = [[UserService alloc]init];
     LoginInfo *info = [service singInWithLoginId:@"michael" password:@"michael"];
-        
+    
     if ( [info user] == nil)
         return false;
     
