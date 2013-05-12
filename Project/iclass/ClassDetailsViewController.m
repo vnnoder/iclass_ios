@@ -115,7 +115,7 @@ Session *currentSession;
             QuestionListViewController *detailController = segue.destinationViewController;
             
             // TODO should pass current session to question list view
-            detailController.currentSesseion = [[Session alloc] init];
+            detailController.currentSesseion = currentSession;
         }
     }
 }
