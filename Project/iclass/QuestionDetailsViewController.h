@@ -12,11 +12,14 @@
 @class QuestionService;
 @interface QuestionDetailsViewController : UIViewController <UISearchDisplayDelegate>
 
+
 @property (weak, nonatomic) IBOutlet UITextView *QuestionDescription;
 @property (weak, nonatomic) IBOutlet UIButton *VoteBtn;
 @property (strong,nonatomic)NSString *string;
 @property (strong, nonatomic) Session *currentSesseion;
 @property (strong, nonatomic) Question *currentQuestion;
 @property (strong, nonatomic) QuestionService *qsService;
+
+
 
 @end

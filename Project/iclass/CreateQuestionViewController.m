@@ -26,9 +26,11 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [qustionDetail setDelegate:self];
 	// Do any additional setup after loading the view.
 }
 
@@ -59,5 +61,32 @@
         }
     }
     //[self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void) textViewDidBeginEditing:(UITextView *)textView
+{
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithTitle:@"Done"
+                                              style:UIBarButtonItemStyleDone
+                                              target:self
+                                              action:@selector(doneEditing:)];
+}
+- (void) doneEditing:(id) sender
+{
+    [qustionDetail resignFirstResponder];
+    self.navigationItem.rightBarButtonItem = NULL;
+}
+
+- (IBAction) textFieldDoneEditing: (id)sender
+{
+    [self.questionTitle resignFirstResponder];
+    [self.qustionDetail resignFirstResponder];
+    //[_view endEditing:NO];
+}
+- (IBAction) backgroundTap: (id)sender
+{
+    //[_view endEditing:NO];
+    [self.questionTitle resignFirstResponder];
+    [self.qustionDetail resignFirstResponder];
 }
 @end
