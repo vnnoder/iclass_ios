@@ -44,7 +44,7 @@
     entity.title = [map objectForKey:@"title"];
     entity.detail= [map objectForKey:@"detail"];
     entity.key = [[map objectForKey: @"id"]intValue];
-    entity.sessionId = [[map objectForKey:@"talk_id"]integerValue];
+//    entity.sessionId = [[map objectForKey:@"talk_id"]integerValue];
     
     return entity;
 }
