@@ -17,6 +17,7 @@
 #import "LoginInfo.h"
 #import "SessionService.h"
 #import "Util.h"
+#import "JSON.h"
 
 int main(int argc, char *argv[])
 {
@@ -28,11 +29,12 @@ int main(int argc, char *argv[])
         NSLog(@"%@", [[info user]fullName]);
         
         SessionService *sessionSer= [[SessionService alloc]init];
-        NSArray *list = [sessionSer list];
-//        NSLog(@"%@", [[info user]fullName]);
+        NSArray *list = [sessionSer getJoinedSession];
+////        NSLog(@"%@", [[info user]fullName]);
         for (Session *item in list) {
             NSLog(@"%@", item.title);
-        } 
-      
+        }
+        
+     
     }
 }

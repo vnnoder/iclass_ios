@@ -17,16 +17,28 @@
 
 - (id) init{
 
-    return [super initWithPath:@"/talks" withSerializer:[[SessionSerializer alloc]init]];
+    return [super initWithPath:@"/api/talks" withSerializer:[[SessionSerializer alloc]init]];
 }
 - (NSArray *)getOwnedSession{
-    return [self list];
+    NSData* jsonData = [HttpQuery querySyncWithPath:@"/api/talks" withMethod:@"GET" withParams:nil];
+    
+    return [self.serializer deserializeArray:jsonData];
+
 }
 
 - (NSArray *)getJoinedSession{
-    NSData* jsonData = [HttpQuery  querySyncWithPath:@"joined_talks" withMethod:@"GET" withParams:nil];
+    NSData* jsonData = [HttpQuery querySyncWithPath:@"/api/joined_talks" withMethod:@"GET" withParams:nil];
+    
     return [self.serializer deserializeArray:jsonData];
 
+}
+
+- (id)joinSession: (int) sessionId{
+    NSData* jsonData = [HttpQuery querySyncWithPath:[NSString stringWithFormat:@"/api/talks/%i/join", sessionId]
+                                         withMethod:@"POST"
+                                         withParams:nil];
+    
+    return [self.serializer deserialize:jsonData];
 }
 
 

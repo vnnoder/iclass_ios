@@ -13,5 +13,6 @@
     
     - (NSArray *)getOwnedSession;
     - (NSArray *)getJoinedSession;
+    - (id)joinSession: (int) sessionId;
 
 @end

@@ -49,4 +49,9 @@
     
     return entity;
 }
+
+- (id) deserialize:(NSData *)jsonData{
+    NSDictionary *map = [self parseJSONData:jsonData];
+    return [self fromNSDictionary:map];
+}
 @end

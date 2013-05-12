@@ -24,4 +24,7 @@
 // subclass need to implement the method for the specific entity
 - (id) fromNSDictionary:(NSDictionary*) dict;
 
+
+- (id) parseJSONData: (NSData*) data;
+
 @end

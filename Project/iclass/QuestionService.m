@@ -8,17 +8,21 @@
 
 #import "QuestionService.h"
 #import "QuestionSerializer.h"
+#import "HttpQuery.h"
 
 @implementation QuestionService
 
 - (id) init{
     return [super initWithPath:@"/questions" withSerializer:[[QuestionSerializer alloc]init]];
 }
-- listQuestionBySession: (int)sessionId{
-    NSData* jsonData = [HttpQuery querySyncWithPath:[self.path stringByAppendingFormat:@"%@", [ServiceAPI pathPostfix]]
-                                         withMethod:@"POST"
-                                         withParams:[self.serializer toNSDictionary:entity]];
-    return [self.serializer deserialize:jsonData];
+
+///api/talks/1/questions
+- (NSArray*) listQuestionBySession: (int)sessionId{
+    NSData* jsonData = [HttpQuery querySyncWithPath:[NSString stringWithFormat:@"/api/talks/%i/questions", sessionId]
+                                                                    withMethod:@"GET"
+                                                                    withParams:nil];
+    
+    return [self.serializer deserializeArray:jsonData];
 }
 
 @end

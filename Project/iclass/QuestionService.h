@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 #import "ServiceAPI.h"
 @interface QuestionService : ServiceAPI
-- listQuestionBySession: (int)sessionId;
+- (NSArray *)listQuestionBySession: (int)sessionId;
 @end

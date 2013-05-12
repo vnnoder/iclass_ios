@@ -9,6 +9,7 @@
 #import "HttpQuery.h"
 #import "Util.h"
 #import "ServiceAPI.h"
+#import "JSON.h"
 
 @implementation HttpQuery
 
@@ -16,7 +17,7 @@
                      withMethod:(NSString *)method
                      withParams: (NSDictionary *)paramMap{
         
-    NSString *base = @"http://ec2-122-248-192-192.ap-southeast-1.compute.amazonaws.com/api";
+    NSString *base = @"http://ec2-122-248-192-192.ap-southeast-1.compute.amazonaws.com";
     NSString *urlString = [base stringByAppendingString:path];
     
     NSString *paramString = [[NSString alloc]init];
@@ -66,8 +67,10 @@
         NSLog(@"Error happend = %@", error);
     }
     
-//    NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"Response String: %@", json) ;
     NSLog(@"Synchronous request end.");
+    
     return data;
 
 }

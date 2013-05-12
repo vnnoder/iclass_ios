@@ -26,15 +26,41 @@
 
 - (id) deserialize: (NSData*)jsonData{
     NSDictionary *map = [self parseJSONData:jsonData];
-    return [self fromNSDictionary:map];
+    NSDictionary *obj = nil;
+    if([map objectForKey:@"success"]){
+        for (NSString *key in map) {
+            if (![key isEqualToString:@"success"]){
+                obj = [map objectForKey:key];
+                break;
+            }
+        }
+    }else{
+        obj = map;
+    }
+    
+    return [self fromNSDictionary:obj];
 }
 
 
 - (NSArray*) deserializeArray: (NSData*)jsonData{
+ 
+//    NSArray *map = [self parseJSONData:jsonData];
+    NSArray *array = nil;
+    id map = [self parseJSONData:jsonData];
+    if ([map isKindOfClass:[NSArray class]]){
+        array = map;
+    }else if([[map objectForKey:@"success"] isEqualToString:@"true"]){
+        for (NSString *key in map) {
+            if (![key isEqualToString:@"success"]){
+                array = [map objectForKey:key];
+                break;
+            }
+        }
+        
+    }
+  
     NSMutableArray *result = [[NSMutableArray alloc] init];
-    NSArray *map = [self parseJSONData:jsonData];
-    
-    for (NSDictionary *item in map) {
+    for (NSDictionary *item in array) {
         [result addObject:[self fromNSDictionary:item]];
     }
     

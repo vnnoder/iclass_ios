@@ -34,16 +34,18 @@
     NSData* jsonData = [HttpQuery querySyncWithPath:@"/api/sign_in"
                                          withMethod:@"POST"
                                          withParams:dict];
-    NSLog(@"Response from login: %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
+//    NSLog(@"Response from login: %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
     LoginInfoSerializer *serializer =  [[LoginInfoSerializer alloc]init];
     LoginInfo *info = [serializer deserialize:jsonData];
     if([info success]){
         [UserService setAuthToken:[info token]];
         [UserService setCurrentUser:[info user]];
-    }
-  //TODO handle login error;
-    return nil;
+        return info;
+    }else{
+        //TODO handle login error;
+        return nil;
     
+    }
 }
 -(id)singInwithToken{
     return nil;

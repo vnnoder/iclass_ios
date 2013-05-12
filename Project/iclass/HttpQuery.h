@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
 @interface HttpQuery : NSObject
-    
+
+
 + (NSData*) querySyncWithPath: (NSString *)path
                      withMethod:(NSString *)method
             withParams: (NSDictionary *)paramMap;

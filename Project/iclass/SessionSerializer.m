@@ -44,6 +44,11 @@
 }
 
 - (id) fromNSDictionary:(NSDictionary *) dict{
+    NSString* flag = [dict objectForKey:@"success"];
+    if(flag != nil && [flag isEqualToString:@"true"]){
+        dict = [dict objectForKey:@"talks"];
+    }
+    
     Session *entity = [[Session alloc]init];
     entity.key = [[dict objectForKey: @"id"]intValue];
     entity.title = [dict objectForKey:@"title"];
