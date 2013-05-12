@@ -8,6 +8,7 @@
 
 #import "Serializer.h"
 #import "JSON.h"
+#import "Util.h"
 
 @implementation Serializer
 - (NSData*) serialize: (id)user{
@@ -28,6 +29,12 @@
     NSDictionary *map = [self parseJSONData:jsonData];
     NSDictionary *obj = nil;
     if([map objectForKey:@"success"]){
+        if([[map objectForKey:@"success"]isEqualToString:@"false"]){
+            NSString *msg = [map objectForKey:@"message"];
+            [Util nofifyError:msg];
+            return nil;
+        }
+        
         for (NSString *key in map) {
             if (![key isEqualToString:@"success"]){
                 obj = [map objectForKey:key];
@@ -49,7 +56,13 @@
     id map = [self parseJSONData:jsonData];
     if ([map isKindOfClass:[NSArray class]]){
         array = map;
-    }else if([[map objectForKey:@"success"] isEqualToString:@"true"]){
+    }else if([map objectForKey:@"success"]){
+        if([[map objectForKey:@"success"]isEqualToString:@"false"]){
+            NSString *msg = [map objectForKey:@"message"];
+            [Util nofifyError:msg];
+            return nil;
+        }
+        
         for (NSString *key in map) {
             if (![key isEqualToString:@"success"]){
                 array = [map objectForKey:key];

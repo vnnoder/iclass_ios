@@ -65,7 +65,7 @@
         NSLog(@"No Data was returned");
     }else if (error != nil){
         NSLog(@"Error happend = %@", error);
-        [Util nofify:@"Server Problem."];
+        [Util nofifyError:@"Server Problem."];
         return nil;
     }
     

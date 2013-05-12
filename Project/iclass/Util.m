@@ -29,7 +29,12 @@
 }
 
 
-+ (void)nofify:(NSString* )error{
-    
++ (void)nofifyError:(NSString* )error{
+    NSMutableDictionary *msg = [NSMutableDictionary dictionary];
+    [msg setValue:error forKey:@"error"];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"Error"
+                                                       object:nil
+                                                     userInfo:msg];
+
 }
 @end

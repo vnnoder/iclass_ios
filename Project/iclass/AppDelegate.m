@@ -13,6 +13,10 @@ NSUserRole GUserGole = AUDIENCE;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveErrorNotification:)
+                                                 name:@"Error"
+                                               object:nil];
     return YES;
 }
 							
@@ -41,6 +45,22 @@ NSUserRole GUserGole = AUDIENCE;
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) receiveErrorNotification:(NSNotification *) notification
+{
+    // [notification name] should always be @"TestNotification"
+    // unless you use this method for observation of other notifications
+    // as well.
+    
+    if ([[notification name] isEqualToString:@"Error"])
+        NSLog (@"Successfully received the error notification!");
+    
+    NSString *msg = [[notification userInfo]objectForKey:@"error"];
+
+    UIAlertView* alert;
+    alert = [[UIAlertView alloc] initWithTitle:@"Error" message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
 }
 
 @end
