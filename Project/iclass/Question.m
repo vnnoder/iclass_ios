@@ -12,21 +12,21 @@
 
 @synthesize title;
 @synthesize detail;
-@synthesize owner;
-@synthesize session;
+@synthesize userId;
+@synthesize sessionId;
 @synthesize createdAt;
 @synthesize updatedAt;
 @synthesize voteCount;
 @synthesize voted;
 
--(id) initWithTitle:(NSString *)paratitle andDetail:(NSString*)paradetail andOwener:(User*)paraowner andSession:(Session*)parasession andCreateData:(NSDate*)paracreateDate andUpdateDate:(NSDate*)paraupdateDate andVoteCount:(NSInteger)paravoteCount andIsVoted:(BOOL)paravoted
+-(id) initWithTitle:(NSString *)paratitle andDetail:(NSString*)paradetail andOwener:(NSInteger)paraowner andSession:(NSInteger)parasession andCreateData:(NSDate*)paracreateDate andUpdateDate:(NSDate*)paraupdateDate andVoteCount:(NSInteger)paravoteCount andIsVoted:(BOOL)paravoted;
 {
     self = [super init];
     if (self) {
         self.title = paratitle;
         self.detail =paradetail;
-        self.owner = paraowner;
-        self.session = parasession;
+        self.userId = paraowner;
+        self.sessionId = parasession;
         self.createdAt = paracreateDate;
         self.updatedAt = paraupdateDate;
         self.voteCount = paravoteCount;
