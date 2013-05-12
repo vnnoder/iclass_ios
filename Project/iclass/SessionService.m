@@ -41,5 +41,27 @@
     return [self.serializer deserialize:jsonData];
 }
 
+-(id)findByPasscode: (NSString *)passcode{
+    NSData* jsonData = [HttpQuery querySyncWithPath:[NSString stringWithFormat:@"/api/talks/passcode/%@", passcode]
+                                         withMethod:@"GET"
+                                         withParams:nil];
+    
+    return [self.serializer deserialize:jsonData];
+}
+
+- (id)endSession:(int)sessionId{
+    NSData* jsonData = [HttpQuery querySyncWithPath:[NSString stringWithFormat:@"/api/talks/%i/close", sessionId]
+                                         withMethod:@"POST"
+                                         withParams:nil];
+    
+    return [self.serializer deserialize:jsonData];
+}
+- (id)startSession:(int)sessionId{
+    NSData* jsonData = [HttpQuery querySyncWithPath:[NSString stringWithFormat:@"/api/talks/%i/start", sessionId]
+                                         withMethod:@"POST"
+                                         withParams:nil];
+    
+    return [self.serializer deserialize:jsonData];
+}
 
 @end
