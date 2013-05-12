@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class Session;
+
 @interface ClassDetailsViewController : UIViewController 
 
 @property (nonatomic) NSInteger sessionDetailType;
@@ -20,4 +22,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *QuestionsBtn;
 @property (weak, nonatomic) IBOutlet UIButton *OperationBtn;
+
+
+- (void) setSessionRef:(Session *) aSession;
+
 @end

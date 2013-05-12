@@ -20,6 +20,8 @@
 
 @synthesize OperationBtn;
 
+//UIViewController *parent;
+Session *currentSession;
 
 - (void) setSessionDetailType:(NSInteger)inSessionDetailType
 {
@@ -27,7 +29,24 @@
 }
 
 
-- (void) setClassDetailItem:(id)newClassDetailItem
+- (void) setSessionRef:(Session *) aSession
+{
+    
+    if ( currentSession != aSession)
+    {
+        currentSession = aSession;
+        //parent = theSender;
+        [self configureView];
+    }
+    
+    if(self.parentPopoverController != nil)
+    {
+        [self.parentPopoverController dismissPopoverAnimated:YES];
+    }
+    
+}
+
+- (void) setClassDetailItem:(id)newClassDetailItem 
 {
     NSLog(@"ClassDetails setClassDetailItem = %@ ", [newClassDetailItem description]);
 
@@ -43,11 +62,9 @@
 
 - (void) configureView
 {
-    NSLog(@"ClassDetails configureView = %@ ", [self.classDetailItem description]);
-
-    if (self.classDetailItem){
-        self.ClassID.text = [self.classDetailItem title];
-        self.ClassDescription.text = [self.classDetailItem description];
+    if (currentSession){
+        self.ClassID.text = currentSession.title;
+        self.ClassDescription.text = currentSession.description;
     }
     
     //if (OperationBtn) {
