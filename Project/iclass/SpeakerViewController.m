@@ -55,6 +55,14 @@
     GUserGole = SPEAKER;
     
     [self retriveActiveSessions];
+    
+    
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+    [refresh addTarget:self
+                action:@selector(refreshView:)
+      forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
 }
 
 
@@ -157,17 +165,31 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self retriveActiveSessions];
+//    [self retriveActiveSessions];
+    [self.tableView reloadData];
 }
 
 - (void) retriveActiveSessions
 {
-    NSLog(@"Speaker Retrive");
     activeSessions.DataList = (NSMutableArray *) [ssSpeaker list];
-    
-    //clear and retrive the list from web
 }
 
+-(void)refreshView:(UIRefreshControl *)refresh
+{
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
+    // custom refresh logic would be placed here...
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM d, h:mm a"];
+    
+    NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",[formatter stringFromDate:[NSDate date]]];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
+    
+    [self retriveActiveSessions];
+    [self.tableView reloadData];
+    
+    [refresh endRefreshing];
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -176,7 +198,10 @@
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
             ClassDetailsViewController *detailController = segue.destinationViewController;
             [[segue destinationViewController] setSessionDetailType:1];
-            [detailController setClassDetailItem:[activeSessions.DataList objectAtIndex:indexPath.row]];
+            //[detailController setClassDetailItem:[activeSessions.DataList objectAtIndex:indexPath.row]];
+            [detailController setSessionRef:[activeSessions.DataList objectAtIndex:indexPath.row]];
+            //[detailController setSessionRef:[activeSessions.DataList objectAtIndex:indexPath.row] thecaller:(self)];
+            
         }
     }
     

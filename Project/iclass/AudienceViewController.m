@@ -50,6 +50,15 @@
     GUserGole = AUDIENCE;
     
     [self retriveActiveSessions];
+
+
+
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+    [refresh addTarget:self
+                action:@selector(refreshView:)
+                forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
 }
 
 
@@ -143,20 +152,37 @@
     self.classDetails.classDetailItem = [activeSessions.DataList objectAtIndex:indexPath.row];
 
 }
-    
+
 - (void)viewDidAppear:(BOOL)animated
 {
+//    [self retriveActiveSessions];
     [self.tableView reloadData];
 }
 
 
 - (void) retriveActiveSessions
 {
-    NSLog(@"Audi Retrive");
-
     activeSessions.DataList = (NSMutableArray *) [ssAudience list];
 }
 
+
+-(void)refreshView:(UIRefreshControl *)refresh
+{
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
+    // custom refresh logic would be placed here...
+
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM d, h:mm a"];
+    
+    NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",[formatter stringFromDate:[NSDate date]]];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
+    
+    [self retriveActiveSessions];
+    [self.tableView reloadData];
+
+    
+    [refresh endRefreshing];
+}
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -167,7 +193,8 @@
         NSLog(@"prepareForSegue showClassDetail");
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         [[segue destinationViewController] setSessionDetailType:0];
-        [[segue destinationViewController] setClassDetailItem:[activeSessions.DataList objectAtIndex:indexPath.row]];
+        //[[segue destinationViewController] setClassDetailItem:[activeSessions.DataList objectAtIndex:indexPath.row]];
+        [[segue destinationViewController] setSessionRef:[activeSessions.DataList objectAtIndex:indexPath.row]];
     }
 
     
