@@ -11,10 +11,11 @@
 #import "UserSerializer.h"
 #import "LoginInfo.h"
 #import "LoginInfoSerializer.h"
+#import "Util.h"
 @implementation UserService
 
 - (id) init{
-    return [super initWithPath:@"/users" withSerializer:[[UserSerializer alloc]init]];
+    return [super initWithPath:@"/api/users" withSerializer:[[UserSerializer alloc]init]];
 }
 
 
@@ -42,7 +43,7 @@
         [UserService setCurrentUser:[info user]];
         return info;
     }else{
-        //TODO handle login error;
+        [Util nofifyError:[info error]];
         return nil;
     
     }
