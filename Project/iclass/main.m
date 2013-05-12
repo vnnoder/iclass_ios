@@ -28,13 +28,5 @@ int main(int argc, char *argv[])
         LoginInfo *info = [service singInWithLoginId:@"michael" password:@"michael"];
         NSLog(@"%@", [[info user]fullName]);
         
-        SessionService *sessionSer= [[SessionService alloc]init];
-        NSArray *list = [sessionSer getJoinedSession];
-////        NSLog(@"%@", [[info user]fullName]);
-        for (Session *item in list) {
-            NSLog(@"%@", item.title);
-        }
-        
-     
     }
 }

@@ -47,6 +47,7 @@
     entity.key = [[map objectForKey: @"id"]intValue];
     entity.sessionId = [[map objectForKey:@"talk_id"]integerValue];
     entity.updatedAt = [Util parse:[map objectForKey:@"updated_at"]];
+    entity.voteCount = [[map objectForKey:@"vote_count"]integerValue];
     return entity;
 }
 
