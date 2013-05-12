@@ -7,10 +7,11 @@
 //
 
 #import "QuestionService.h"
+#import "QuestionSerializer.h"
 
 @implementation QuestionService
 
 - (id) init{
-    return [super initWithPath:@"/questions" withSerializer:[[Question alloc]init]];
+    return [super initWithPath:@"/questions" withSerializer:[[QuestionSerializer alloc]init]];
 }
 @end

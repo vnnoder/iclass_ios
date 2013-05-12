@@ -48,6 +48,7 @@
 		41DD7D07173F32E600182868 /* QuestionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DD7D06173F32E600182868 /* QuestionService.m */; };
 		41DD7D0A173F334E00182868 /* QuestionSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DD7D09173F334E00182868 /* QuestionSerializer.m */; };
 		41DD7D0D173F3A3E00182868 /* LoginInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DD7D0C173F3A3E00182868 /* LoginInfo.m */; };
+		41DD7D10173F3AFF00182868 /* LoginInfoSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DD7D0F173F3AFF00182868 /* LoginInfoSerializer.m */; };
 		4A4A68D41734BA2D002C9BBC /* QuestionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A68D31734BA2C002C9BBC /* QuestionList.m */; };
 		CE31B97D1730CB4E00FDD98B /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B9761730CB4E00FDD98B /* LoginModel.m */; };
 		CE31B97E1730CB4E00FDD98B /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B9781730CB4E00FDD98B /* Question.m */; };
@@ -134,6 +135,8 @@
 		41DD7D09173F334E00182868 /* QuestionSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionSerializer.m; sourceTree = "<group>"; };
 		41DD7D0B173F3A3E00182868 /* LoginInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginInfo.h; sourceTree = "<group>"; };
 		41DD7D0C173F3A3E00182868 /* LoginInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginInfo.m; sourceTree = "<group>"; };
+		41DD7D0E173F3AFF00182868 /* LoginInfoSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginInfoSerializer.h; sourceTree = "<group>"; };
+		41DD7D0F173F3AFF00182868 /* LoginInfoSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginInfoSerializer.m; sourceTree = "<group>"; };
 		4A4A68CF173400ED002C9BBC /* GlobalState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalState.h; sourceTree = "<group>"; };
 		4A4A68D21734BA2C002C9BBC /* QuestionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionList.h; sourceTree = "<group>"; };
 		4A4A68D31734BA2C002C9BBC /* QuestionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionList.m; sourceTree = "<group>"; };
@@ -324,6 +327,8 @@
 				41C8DDEE17369AEB0075DD92 /* Serializer.m */,
 				41DD7D08173F334E00182868 /* QuestionSerializer.h */,
 				41DD7D09173F334E00182868 /* QuestionSerializer.m */,
+				41DD7D0E173F3AFF00182868 /* LoginInfoSerializer.h */,
+				41DD7D0F173F3AFF00182868 /* LoginInfoSerializer.m */,
 			);
 			name = serializer;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				41DD7D07173F32E600182868 /* QuestionService.m in Sources */,
 				41DD7D0A173F334E00182868 /* QuestionSerializer.m in Sources */,
 				41DD7D0D173F3A3E00182868 /* LoginInfo.m in Sources */,
+				41DD7D10173F3AFF00182868 /* LoginInfoSerializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

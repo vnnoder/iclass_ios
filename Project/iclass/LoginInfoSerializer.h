@@ -1,5 +1,5 @@
 //
-//  QuestionService.h
+//  LoginInfoSerializer.h
 //  iclass
 //
 //  Created by Ma Xiangmei on 12/5/13.
@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ServiceAPI.h"
-@interface QuestionService : ServiceAPI
+
+@interface LoginInfoSerializer : NSObject
 
 @end

@@ -11,15 +11,15 @@
 #import "AppDelegate.h"
 #import "HttpQuery.h"
 #import "SessionSerializer.h"
-#import "Session.h"
-#import "SessionService.h"
+#import "Question.h"
+#import "QuestionService.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
 //        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
         
-        SessionService *service = [[SessionService alloc]init];
+        QuestionService *service = [[QuestionService alloc]init];
         NSArray *array = [service list];
         NSString *title = [[array objectAtIndex:0] title];
         NSLog(@"%@", title);
