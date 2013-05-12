@@ -11,6 +11,7 @@
 #import "QuestionService.h"
 #import "QuestionList.h"
 #import "Question.h"
+#import "Util.h"
 @interface CreateQuestionViewController ()
 
 @end
@@ -41,6 +42,10 @@
 }
 
 - (IBAction)AskAction:(id)sender {
+    if ([questionTitle.text isEqual:@"Please input title here..."] && [qustionDetail.text isEqual:@"Please input question details here..."]) {
+        [Util nofifyError:@"Please don't use default titile and detail"];
+    }
+    else {
     Question *newQustion = [[Question alloc]init];
     NSLog(@"create question fo session id is  = %d", currentSession.key);
     newQustion.sessionId = currentSession.key;
@@ -48,6 +53,7 @@
     newQustion.detail = qustionDetail.text;
     [qsService create:newQustion];
     [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 /*
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
