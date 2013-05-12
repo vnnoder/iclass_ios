@@ -11,4 +11,5 @@
 @interface QuestionService : ServiceAPI
 - (NSArray *)listQuestionBySession: (int)sessionId;
 - (id)updateVoteForQuestion:(int)questionId inSession: (int)sessionId;
+
 @end

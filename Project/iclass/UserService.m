@@ -41,10 +41,15 @@
     if([info success]){
         [UserService setAuthToken:[info token]];
         [UserService setCurrentUser:[info user]];
+        
+        // save to user defaults
+        [[NSUserDefaults standardUserDefaults] setValue:loginId forKey:@"username"];
+        [[NSUserDefaults standardUserDefaults] setValue:pwd forKey:@"password"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         return info;
     }else{
         [Util nofifyError:[info error]];
-        return nil;
+        return nil; 
     
     }
 }
@@ -54,5 +59,10 @@
 -(void)singOut{
     [UserService setAuthToken:nil];
     [UserService setCurrentUser:nil];
+    
+    //clean user defaults
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"username"];
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"password"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 @end

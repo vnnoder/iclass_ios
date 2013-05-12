@@ -23,12 +23,32 @@
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-/*
+
         UserService *service = [[UserService alloc]init];
         LoginInfo *info = [service singInWithLoginId:@"michael" password:@"michael"];
         NSLog(@"%@", [[info user]fullName]);
-*/
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+//<<<<<<< HEAD
+//        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+//        
+        Question *ques = [[Question alloc]init];
+        ques.sessionId = 1;
+        ques.title = @"i am a title";
+        ques.detail = @"i am a detail";
+        
+        QuestionService *qs = [[QuestionService alloc]init];
+//        [qs create:ques];
+        
+       NSArray *arr =  [qs listQuestionBySession:1];
+        for (Question  *item in arr) {
+            NSLog(@"%@", [item title]);
+        }
+        
+//        [qs listQuestionBySession:1];
+        
+    
+
+//        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+
     }
 }
 
