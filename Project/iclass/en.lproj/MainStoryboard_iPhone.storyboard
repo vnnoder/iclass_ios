@@ -278,6 +278,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="9JQ-3W-Osu" kind="push" id="5KV-gh-MYN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -298,23 +301,50 @@
                         <outlet property="callSupport" destination="otv-y3-lsR" id="mOG-HJ-1aB"/>
                         <outlet property="emailSupport" destination="WSW-iI-ajO" id="fUV-Na-5QS"/>
                         <outlet property="yourLocation" destination="oDg-iC-6VU" id="npr-dr-IPg"/>
-                        <segue destination="9JQ-3W-Osu" kind="push" id="3s6-dC-5f4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DWp-Dd-JEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="951" y="1110"/>
         </scene>
-        <!--View Controller-->
+        <!--Your Location View Controller - Your Location-->
         <scene sceneID="v5x-dr-keH">
             <objects>
-                <viewController id="9JQ-3W-Osu" sceneMemberID="viewController">
+                <viewController id="9JQ-3W-Osu" customClass="YourLocationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K4y-RM-CP6">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EeT-oG-KJQ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="326" id="Qd7-Ah-JXg"/>
+                                </constraints>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EE8-rf-Chg">
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satelite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="SegmentAction:" destination="9JQ-3W-Osu" eventType="valueChanged" id="u9X-55-VRz"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EE8-rf-Chg" firstAttribute="bottom" secondItem="K4y-RM-CP6" secondAttribute="bottom" type="default" id="1hu-SX-Qc3"/>
+                            <constraint firstItem="EeT-oG-KJQ" firstAttribute="trailing" secondItem="K4y-RM-CP6" secondAttribute="trailing" type="default" id="K9a-75-zck"/>
+                            <constraint firstItem="EE8-rf-Chg" firstAttribute="leading" secondItem="K4y-RM-CP6" secondAttribute="leading" type="default" id="WoS-Cc-LTT"/>
+                            <constraint firstItem="EE8-rf-Chg" firstAttribute="trailing" secondItem="K4y-RM-CP6" secondAttribute="trailing" type="default" id="dKb-dz-dvh"/>
+                            <constraint firstItem="EeT-oG-KJQ" firstAttribute="top" secondItem="K4y-RM-CP6" secondAttribute="top" type="default" id="nG9-hh-2n9"/>
+                            <constraint firstItem="EeT-oG-KJQ" firstAttribute="leading" secondItem="K4y-RM-CP6" secondAttribute="leading" type="default" id="wuc-bg-Gfa"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TIw-Ro-KcQ"/>
+                    <navigationItem key="navigationItem" title="Your Location" id="TIw-Ro-KcQ"/>
+                    <connections>
+                        <outlet property="mapView" destination="EeT-oG-KJQ" id="VrF-FX-jfB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Eo-uF-xFM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -995,6 +1025,13 @@
                 <relationship kind="outlet" name="SpeakerNavigationBar" candidateClass="UINavigationBar"/>
             </relationships>
         </class>
+        <class className="YourLocationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/YourLocationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="SegmentAction:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1002,8 +1039,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RBT-zC-7Xe"/>
+        <segue reference="FN7-mK-NSX"/>
         <segue reference="3gr-CK-xaZ"/>
-        <segue reference="rse-Co-5Pu"/>
+        <segue reference="zTa-UU-ojJ"/>
     </inferredMetricsTieBreakers>
 </document>

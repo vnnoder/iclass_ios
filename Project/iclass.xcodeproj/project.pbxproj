@@ -30,6 +30,10 @@
 		03C5E002173BE5D400B39AFF /* SessionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5E001173BE5D300B39AFF /* SessionList.m */; };
 		03F7858C17411C4100AD9CD4 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F7858B17411C4100AD9CD4 /* MoreViewController.m */; };
 		03F7858E1741289C00AD9CD4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F7858D1741289C00AD9CD4 /* MessageUI.framework */; };
+		03F7859017412D1600AD9CD4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F7858F17412D1600AD9CD4 /* MapKit.framework */; };
+		03F7859317412D8200AD9CD4 /* YourLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F7859217412D8200AD9CD4 /* YourLocationViewController.m */; };
+		03F7859617412EA100AD9CD4 /* mapInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F7859517412EA100AD9CD4 /* mapInfo.m */; };
+		03F7859817413A0100AD9CD4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F7859717413A0000AD9CD4 /* CoreLocation.framework */; };
 		41C534B01734B29200493111 /* ServiceAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C534AF1734B29200493111 /* ServiceAPI.m */; };
 		41C534B81734D6A700493111 /* SessionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C534B71734D6A700493111 /* SessionService.m */; };
 		41C8DDAF1734E6050075DD92 /* UserSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDAE1734E6050075DD92 /* UserSerializer.m */; };
@@ -97,6 +101,12 @@
 		03F7858A17411C4100AD9CD4 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		03F7858B17411C4100AD9CD4 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		03F7858D1741289C00AD9CD4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		03F7858F17412D1600AD9CD4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		03F7859117412D8200AD9CD4 /* YourLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourLocationViewController.h; sourceTree = "<group>"; };
+		03F7859217412D8200AD9CD4 /* YourLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourLocationViewController.m; sourceTree = "<group>"; };
+		03F7859417412EA100AD9CD4 /* mapInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapInfo.h; sourceTree = "<group>"; };
+		03F7859517412EA100AD9CD4 /* mapInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapInfo.m; sourceTree = "<group>"; };
+		03F7859717413A0000AD9CD4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		41C534AE1734B29200493111 /* ServiceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAPI.h; sourceTree = "<group>"; };
 		41C534AF1734B29200493111 /* ServiceAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAPI.m; sourceTree = "<group>"; };
 		41C534B61734D6A700493111 /* SessionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionService.h; sourceTree = "<group>"; };
@@ -159,6 +169,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03F7859817413A0100AD9CD4 /* CoreLocation.framework in Frameworks */,
+				03F7859017412D1600AD9CD4 /* MapKit.framework in Frameworks */,
 				03F7858E1741289C00AD9CD4 /* MessageUI.framework in Frameworks */,
 				03C5DF15172D5E1D00B39AFF /* UIKit.framework in Frameworks */,
 				03C5DF17172D5E1D00B39AFF /* Foundation.framework in Frameworks */,
@@ -172,6 +184,8 @@
 		03C5DF08172D5E1D00B39AFF = {
 			isa = PBXGroup;
 			children = (
+				03F7859717413A0000AD9CD4 /* CoreLocation.framework */,
+				03F7858F17412D1600AD9CD4 /* MapKit.framework */,
 				03F7858D1741289C00AD9CD4 /* MessageUI.framework */,
 				41C8DDF217369D4B0075DD92 /* Default-568h@2x.png */,
 				03C5DF1A172D5E1D00B39AFF /* iclass */,
@@ -244,6 +258,10 @@
 				4A917418173F8C780068182E /* CreateQuestionViewController.m */,
 				03F7858A17411C4100AD9CD4 /* MoreViewController.h */,
 				03F7858B17411C4100AD9CD4 /* MoreViewController.m */,
+				03F7859117412D8200AD9CD4 /* YourLocationViewController.h */,
+				03F7859217412D8200AD9CD4 /* YourLocationViewController.m */,
+				03F7859417412EA100AD9CD4 /* mapInfo.h */,
+				03F7859517412EA100AD9CD4 /* mapInfo.m */,
 			);
 			path = iclass;
 			sourceTree = "<group>";
@@ -444,6 +462,8 @@
 				41DD7D10173F3AFF00182868 /* LoginInfoSerializer.m in Sources */,
 				4A917419173F8C790068182E /* CreateQuestionViewController.m in Sources */,
 				03F7858C17411C4100AD9CD4 /* MoreViewController.m in Sources */,
+				03F7859317412D8200AD9CD4 /* YourLocationViewController.m in Sources */,
+				03F7859617412EA100AD9CD4 /* mapInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
