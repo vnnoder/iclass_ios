@@ -48,7 +48,6 @@
 
 - (Boolean) createUser
 {
-    NSLog(@"step 0");
     if (self.userNameTextField.text.length > 0
         && self.fullNameTextField.text.length > 0
         && self.userEmailTextField.text.length > 0
@@ -56,11 +55,8 @@
         && self.userRetypePasswordTextField.text.length > 0
         )
     {
-        NSLog(@"step 1");
-   
         if ( [self.userPasswordTextField.text isEqualToString:(self.userRetypePasswordTextField.text)] == true)
         {
-            NSLog(@"step 2");
             UserService *service = [[UserService alloc]init];
             User *newUser = [[User alloc] init];
             
@@ -69,13 +65,15 @@
             newUser.fullName = self.fullNameTextField.text;
             newUser.email = self.userEmailTextField.text;
             newUser.password = self.userPasswordTextField.text;
-            
-            NSLog(@"step 3");
 
             if ([service create:(newUser)] == nil)
                 return false;
             
-            NSLog(@"step 4");
+            LoginInfo *info = [service singInWithLoginId:newUser.loginId password:newUser.password];
+            
+            if ( [info user] == nil)
+                return false;
+            
             
             return true;
         }
@@ -87,13 +85,16 @@
 
 - (IBAction)SignUpAction:(id)sender
 {
-    NSLog(@"step A");
     if ([self createUser] == true)
     {
         //auto signin
-        [self.navigationController popViewControllerAnimated:YES];
+        //[self.navigationController popViewControllerAnimated:YES];
+        [self performSegueWithIdentifier:@"autoLogonAfterSignUp" sender:self];
     }
+}
 
+- (IBAction)cancelAction:(id)sender {
+    [self performSegueWithIdentifier:@"backToLogon" sender:self];
 }
 
 @end

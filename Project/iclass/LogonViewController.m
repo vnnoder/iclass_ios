@@ -9,7 +9,7 @@
 #import "LogonViewController.h"
 #import "UserService.h"
 #import "LoginInfo.h"
-
+#import "User.h"
 
 @interface LogonViewController ()
 
@@ -70,23 +70,48 @@
     return false;
 }
 
+- (NSString *) generateRandomUser
+{
+    NSString *szBuff;
+    int inLengthUserName = ( arc4random() % 10 ) + 5;
+    int i, test;
+    
+    szBuff = @"AGU_";   //Auto Generate User
+    
+    for ( i = 0; i < inLengthUserName ; i++ ){
+        test = ( arc4random() % 26 ) + 'a';
+        szBuff = [szBuff stringByAppendingFormat:@"%c", test];
+    }
+    
+    NSLog(@"dummy username: %@",szBuff);
+    
+    return szBuff;
+
+}
 
 - (Boolean) guestLogon
 {
+    User *newUser = [[User alloc] init]; 
     UserService *service = [[UserService alloc]init];
-    LoginInfo *info = [service singInWithLoginId:@"michael" password:@"michael"];
+    
+    newUser.loginId = [self generateRandomUser];
+    newUser.fullName = newUser.email = newUser.password = newUser.loginId;
+    
+    if ([service create:(newUser)] == nil)
+        return false;
+    
+    LoginInfo *info = [service singInWithLoginId:newUser.loginId password:newUser.password];
     
     if ( [info user] == nil)
         return false;
+    
+    NSLog(@"Current User: %@ ", [[info user] fullName] );
     
     return true;
 }
 
 
-- (IBAction)Logon
-{
-    NSLog(@"Logon IBAction");
-    
+- (IBAction)Logon{   
     if ( [self checkLogonInfo] )
         [self performSegueWithIdentifier:@"LogonSegue" sender:self];
     
@@ -96,7 +121,7 @@
     NSLog(@"SignUpAction");
 }
 
-- (IBAction)GuestAction:(id)sender {
+- (IBAction)GuestAction:(id)sender {    
     if ( [self guestLogon] == true)
         [self performSegueWithIdentifier:@"LogonSegue" sender:self];
 }

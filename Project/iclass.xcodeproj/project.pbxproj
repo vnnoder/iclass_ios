@@ -26,9 +26,9 @@
 		03C5DFE1173015E700B39AFF /* ClassDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFE0173015E600B39AFF /* ClassDetailsViewController.m */; };
 		03C5DFE71730180100B39AFF /* QuestionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFE61730180000B39AFF /* QuestionListViewController.m */; };
 		03C5DFEA1730E57F00B39AFF /* QuestionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFE91730E57F00B39AFF /* QuestionDetailsViewController.m */; };
-		03C5DFF01730F5CB00B39AFF /* sessionListSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFEF1730F5CA00B39AFF /* sessionListSample.m */; };
 		03C5DFFF173BE3D000B39AFF /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5DFFE173BE3D000B39AFF /* SignUpViewController.m */; };
 		03C5E002173BE5D400B39AFF /* SessionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5E001173BE5D300B39AFF /* SessionList.m */; };
+		03F7858C17411C4100AD9CD4 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F7858B17411C4100AD9CD4 /* MoreViewController.m */; };
 		41C534B01734B29200493111 /* ServiceAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C534AF1734B29200493111 /* ServiceAPI.m */; };
 		41C534B81734D6A700493111 /* SessionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C534B71734D6A700493111 /* SessionService.m */; };
 		41C8DDAF1734E6050075DD92 /* UserSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C8DDAE1734E6050075DD92 /* UserSerializer.m */; };
@@ -89,12 +89,12 @@
 		03C5DFE61730180000B39AFF /* QuestionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListViewController.m; sourceTree = "<group>"; };
 		03C5DFE81730E57F00B39AFF /* QuestionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionDetailsViewController.h; sourceTree = "<group>"; };
 		03C5DFE91730E57F00B39AFF /* QuestionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailsViewController.m; sourceTree = "<group>"; };
-		03C5DFEE1730F5CA00B39AFF /* sessionListSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sessionListSample.h; sourceTree = "<group>"; };
-		03C5DFEF1730F5CA00B39AFF /* sessionListSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sessionListSample.m; sourceTree = "<group>"; };
 		03C5DFFD173BE3D000B39AFF /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		03C5DFFE173BE3D000B39AFF /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		03C5E000173BE5D100B39AFF /* SessionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionList.h; sourceTree = "<group>"; };
 		03C5E001173BE5D300B39AFF /* SessionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionList.m; sourceTree = "<group>"; };
+		03F7858A17411C4100AD9CD4 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		03F7858B17411C4100AD9CD4 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		41C534AE1734B29200493111 /* ServiceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAPI.h; sourceTree = "<group>"; };
 		41C534AF1734B29200493111 /* ServiceAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceAPI.m; sourceTree = "<group>"; };
 		41C534B61734D6A700493111 /* SessionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionService.h; sourceTree = "<group>"; };
@@ -202,23 +202,21 @@
 				41C8DDA91734E1630075DD92 /* domain */,
 				41C534B11734B29900493111 /* service */,
 				03C5DF3D172D70C600B39AFF /* LogonViewController.h */,
+				03C5DF3E172D70C600B39AFF /* LogonViewController.m */,
 				03C5DFE51730180000B39AFF /* QuestionListViewController.h */,
 				03C5DFE61730180000B39AFF /* QuestionListViewController.m */,
-				03C5DF3E172D70C600B39AFF /* LogonViewController.m */,
 				03C5DF9E172FFCB400B39AFF /* AudienceViewController.h */,
 				03C5DF9F172FFCB400B39AFF /* AudienceViewController.m */,
 				03C5DFD917300EF200B39AFF /* JoinClassViewController.h */,
+				03C5DFDA17300EF200B39AFF /* JoinClassViewController.m */,
 				03C5DFDC173013DE00B39AFF /* CreateClassViewController.h */,
 				03C5DFDD173013DF00B39AFF /* CreateClassViewController.m */,
-				03C5DFDA17300EF200B39AFF /* JoinClassViewController.m */,
 				03C5DFA1172FFCCC00B39AFF /* SpeakerViewController.h */,
 				03C5DFA2172FFCCC00B39AFF /* SpeakerViewController.m */,
 				03C5DFDF173015E600B39AFF /* ClassDetailsViewController.h */,
 				03C5DFE0173015E600B39AFF /* ClassDetailsViewController.m */,
 				03C5DFE81730E57F00B39AFF /* QuestionDetailsViewController.h */,
 				03C5DFE91730E57F00B39AFF /* QuestionDetailsViewController.m */,
-				03C5DFEE1730F5CA00B39AFF /* sessionListSample.h */,
-				03C5DFEF1730F5CA00B39AFF /* sessionListSample.m */,
 				4A4A68D21734BA2C002C9BBC /* QuestionList.h */,
 				4A4A68D31734BA2C002C9BBC /* QuestionList.m */,
 				CE31B9771730CB4E00FDD98B /* Question.h */,
@@ -240,6 +238,8 @@
 				03C5E001173BE5D300B39AFF /* SessionList.m */,
 				4A917417173F8C770068182E /* CreateQuestionViewController.h */,
 				4A917418173F8C780068182E /* CreateQuestionViewController.m */,
+				03F7858A17411C4100AD9CD4 /* MoreViewController.h */,
+				03F7858B17411C4100AD9CD4 /* MoreViewController.m */,
 			);
 			path = iclass;
 			sourceTree = "<group>";
@@ -415,7 +415,6 @@
 				CE31B97F1730CB4E00FDD98B /* Session.m in Sources */,
 				CE31B9801730CB4E00FDD98B /* User.m in Sources */,
 				03C5DFEA1730E57F00B39AFF /* QuestionDetailsViewController.m in Sources */,
-				03C5DFF01730F5CB00B39AFF /* sessionListSample.m in Sources */,
 				4A4A68D41734BA2D002C9BBC /* QuestionList.m in Sources */,
 				41C534B01734B29200493111 /* ServiceAPI.m in Sources */,
 				41C534B81734D6A700493111 /* SessionService.m in Sources */,
@@ -440,6 +439,7 @@
 				41DD7D0D173F3A3E00182868 /* LoginInfo.m in Sources */,
 				41DD7D10173F3AFF00182868 /* LoginInfoSerializer.m in Sources */,
 				4A917419173F8C790068182E /* CreateQuestionViewController.m in Sources */,
+				03F7858C17411C4100AD9CD4 /* MoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

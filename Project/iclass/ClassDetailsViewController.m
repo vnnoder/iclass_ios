@@ -129,7 +129,7 @@ Session *currentSession;
     SessionService *ssCurr;
     
     ssCurr = [[SessionService alloc] init];
-    [ssCurr endSession:(currentSession.key)];
+    [ssCurr leaveSession:(currentSession.key)];
 }
 
 
@@ -155,7 +155,7 @@ Session *currentSession;
     NSLog(@"CS status %@",currentSession.status);
     if ( _sessionDetailType == AUDIENCEROLE)
     {
-        // no service to leave the session right now
+        [self leaveClass];
         [self.navigationController popViewControllerAnimated:YES];
         
     }
