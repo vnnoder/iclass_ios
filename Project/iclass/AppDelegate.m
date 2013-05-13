@@ -13,8 +13,39 @@ NSUserRole GUserGole = AUDIENCE;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //Register for push notification
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+
     return YES;
 }
+
+// Delegation methods
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
+    const unsigned *tokenBytes = [devToken bytes];
+    self.registered = YES;
+    
+    NSString *hexToken = [NSString stringWithFormat:@"%08x%08x%08x%08x%08x%08x%08x%08x",
+                          ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
+                          ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
+                          ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
+    [self sendProviderDeviceToken:hexToken]; // custom method
+    
+    
+    NSLog(@"token in string: %@", hexToken);
+    //Send device token to Web service API
+    //[self sendProviderDeviceToken:devTokenBytes]; // custom method
+}
+
+- (void)sendProviderDeviceToken:(NSString *)token
+{
+    //TODO implement calling web service to update token
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+    NSLog(@"Error in registration. Error: %@", err);
+}
+
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
