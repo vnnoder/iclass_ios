@@ -20,6 +20,6 @@
 @property (strong, nonatomic) Question *currentQuestion;
 @property (strong, nonatomic) QuestionService *qsService;
 
-
+- (IBAction)VoteAction:(id)sender;
 
 @end

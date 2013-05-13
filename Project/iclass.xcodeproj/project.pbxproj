@@ -50,6 +50,8 @@
 		41DD7D0A173F334E00182868 /* QuestionSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DD7D09173F334E00182868 /* QuestionSerializer.m */; };
 		41DD7D0D173F3A3E00182868 /* LoginInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DD7D0C173F3A3E00182868 /* LoginInfo.m */; };
 		41DD7D10173F3AFF00182868 /* LoginInfoSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DD7D0F173F3AFF00182868 /* LoginInfoSerializer.m */; };
+		4A42B09F1741363900878F4C /* QuestionNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42B09E1741363900878F4C /* QuestionNoteViewController.m */; };
+		4A42B0A11741449D00878F4C /* QuestionNote.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A42B0A01741449C00878F4C /* QuestionNote.plist */; };
 		4A4A68D41734BA2D002C9BBC /* QuestionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A68D31734BA2C002C9BBC /* QuestionList.m */; };
 		4A917419173F8C790068182E /* CreateQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A917418173F8C780068182E /* CreateQuestionViewController.m */; };
 		CE31B97E1730CB4E00FDD98B /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31B9781730CB4E00FDD98B /* Question.m */; };
@@ -139,6 +141,9 @@
 		41DD7D0C173F3A3E00182868 /* LoginInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginInfo.m; sourceTree = "<group>"; };
 		41DD7D0E173F3AFF00182868 /* LoginInfoSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginInfoSerializer.h; sourceTree = "<group>"; };
 		41DD7D0F173F3AFF00182868 /* LoginInfoSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginInfoSerializer.m; sourceTree = "<group>"; };
+		4A42B09D1741363800878F4C /* QuestionNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionNoteViewController.h; sourceTree = "<group>"; };
+		4A42B09E1741363900878F4C /* QuestionNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionNoteViewController.m; sourceTree = "<group>"; };
+		4A42B0A01741449C00878F4C /* QuestionNote.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuestionNote.plist; sourceTree = "<group>"; };
 		4A4A68CF173400ED002C9BBC /* GlobalState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalState.h; sourceTree = "<group>"; };
 		4A4A68D21734BA2C002C9BBC /* QuestionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionList.h; sourceTree = "<group>"; };
 		4A4A68D31734BA2C002C9BBC /* QuestionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionList.m; sourceTree = "<group>"; };
@@ -244,6 +249,9 @@
 				4A917418173F8C780068182E /* CreateQuestionViewController.m */,
 				03F7858A17411C4100AD9CD4 /* MoreViewController.h */,
 				03F7858B17411C4100AD9CD4 /* MoreViewController.m */,
+				4A42B09D1741363800878F4C /* QuestionNoteViewController.h */,
+				4A42B09E1741363900878F4C /* QuestionNoteViewController.m */,
+				4A42B0A01741449C00878F4C /* QuestionNote.plist */,
 			);
 			path = iclass;
 			sourceTree = "<group>";
@@ -395,6 +403,7 @@
 				03C5DF29172D5E1D00B39AFF /* Default@2x.png in Resources */,
 				03C5DF2B172D5E1D00B39AFF /* Default-568h@2x.png in Resources */,
 				03C5DF2E172D5E1D00B39AFF /* MainStoryboard_iPhone.storyboard in Resources */,
+				4A42B0A11741449D00878F4C /* QuestionNote.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +453,7 @@
 				41DD7D10173F3AFF00182868 /* LoginInfoSerializer.m in Sources */,
 				4A917419173F8C790068182E /* CreateQuestionViewController.m in Sources */,
 				03F7858C17411C4100AD9CD4 /* MoreViewController.m in Sources */,
+				4A42B09F1741363900878F4C /* QuestionNoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

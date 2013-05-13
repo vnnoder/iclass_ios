@@ -9,6 +9,7 @@
 #import "QuestionDetailsViewController.h"
 #import "Question.h"
 #import "QuestionService.h"
+#import "QuestionNoteViewController.h"
 @interface QuestionDetailsViewController ()
 
 @end
@@ -51,6 +52,17 @@
     NSLog(@"qk = %d, sessi=%d", [currentQuestion key], [currentSesseion key]);
     [qsService updateVoteForQuestion:[currentQuestion key] inSession:[currentSesseion key]];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue
+         .destinationViewController isKindOfClass:[QuestionNoteViewController class]]) {
+        
+        QuestionNoteViewController *questionNoteController = segue.destinationViewController;
+        questionNoteController.questionKey = currentQuestion.key;
+        
+    }
 }
 
 @end
