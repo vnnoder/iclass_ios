@@ -252,6 +252,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="callSupportAction:" destination="Gpe-QS-CQS" eventType="touchUpInside" id="Jwl-i7-tK6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSW-iI-ajO">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -262,6 +265,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="emailSupport:" destination="Gpe-QS-CQS" eventType="touchUpInside" id="VSW-X8-nUd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDg-iC-6VU">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -289,6 +295,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="m7L-LU-oEL"/>
                     <connections>
+                        <outlet property="callSupport" destination="otv-y3-lsR" id="mOG-HJ-1aB"/>
+                        <outlet property="emailSupport" destination="WSW-iI-ajO" id="fUV-Na-5QS"/>
+                        <outlet property="yourLocation" destination="oDg-iC-6VU" id="npr-dr-IPg"/>
                         <segue destination="9JQ-3W-Osu" kind="push" id="3s6-dC-5f4"/>
                     </connections>
                 </viewController>
@@ -940,6 +949,13 @@
         </class>
         <class className="MoreViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="callSupportAction:"/>
+                <relationship kind="action" name="emailSupport:"/>
+                <relationship kind="outlet" name="callSupport" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="emailSupport" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="yourLocation" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -986,8 +1002,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="FN7-mK-NSX"/>
+        <segue reference="RBT-zC-7Xe"/>
         <segue reference="3gr-CK-xaZ"/>
-        <segue reference="9YY-Se-xv4"/>
+        <segue reference="rse-Co-5Pu"/>
     </inferredMetricsTieBreakers>
 </document>

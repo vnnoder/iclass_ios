@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface MoreViewController : UIViewController
+@interface MoreViewController : UIViewController <MFMailComposeViewControllerDelegate> {
+    
+}
+@property (weak, nonatomic) IBOutlet UIButton *callSupport;
+@property (weak, nonatomic) IBOutlet UIButton *emailSupport;
+@property (weak, nonatomic) IBOutlet UIButton *yourLocation;
 
 @end
