@@ -23,6 +23,7 @@
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *AudienceNavBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *AddBtn;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *SignOut;
 
 @property (nonatomic, strong) ClassDetailsViewController *classDetails;
 @property (nonatomic, strong) JoinClassViewController *joinClass;

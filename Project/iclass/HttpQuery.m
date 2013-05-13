@@ -65,6 +65,8 @@
         NSLog(@"No Data was returned");
     }else if (error != nil){
         NSLog(@"Error happend = %@", error);
+        [Util nofifyError:@"Server Problem."];
+        return nil;
     }
     
     NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -113,6 +115,10 @@
     NSLog(@"Synchronous request end.");
 
     return data;
+    
+}
+
++ (void)nofify:(NSString* )error{
     
 }
 
@@ -171,7 +177,7 @@
 
 + (NSString *)encodeURIComponent:(NSString *)string
 {
-    NSLog(@"%@", string);
+//    NSLog(@"%@", string);
     if ([Util isNull:string]) {
         return @"";
     }

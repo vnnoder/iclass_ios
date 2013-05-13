@@ -23,6 +23,14 @@
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
+<<<<<<< HEAD
+//
+        
+        UserService *service = [[UserService alloc]init];
+        LoginInfo *info = [service singInWithLoginId:@"michael" password:@"michael"];
+        NSLog(@"%@", [[info user]fullName]);
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+=======
 /*
         UserService *service = [[UserService alloc]init];
         LoginInfo *info = [service singInWithLoginId:@"michael" password:@"michael"];
@@ -49,6 +57,7 @@ int main(int argc, char *argv[])
 
        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
 
+>>>>>>> master
     }
 }
 

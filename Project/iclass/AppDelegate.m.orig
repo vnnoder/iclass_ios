@@ -13,13 +13,16 @@ NSUserRole GUserGole = AUDIENCE;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+<<<<<<< HEAD
     //Register for push notification
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
 
+=======
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveErrorNotification:)
                                                  name:@"Error"
                                                object:nil];
+>>>>>>> master
     return YES;
 }
 

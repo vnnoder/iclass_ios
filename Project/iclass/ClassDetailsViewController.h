@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *ClassID;
 @property (weak, nonatomic) IBOutlet UITextView *ClassDescription;
+@property (weak, nonatomic) IBOutlet UITextField *ClassPassCode;
 @property (weak, nonatomic) IBOutlet UIButton *SurveryBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *QuestionsBtn;

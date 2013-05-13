@@ -14,6 +14,7 @@
 #import "Session.h"
 #import "SessionList.h"
 #import "SessionService.h"
+#import "UserService.h"
 
 @interface AudienceViewController ()
 
@@ -155,14 +156,21 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-//    [self retriveActiveSessions];
+    [self retriveActiveSessions];
     [self.tableView reloadData];
 }
 
 
 - (void) retriveActiveSessions
 {
-    activeSessions.DataList = (NSMutableArray *) [ssAudience list];
+    activeSessions.DataList = (NSMutableArray *) [ssAudience getJoinedSession];
+}
+
+
+- (void) signOut
+{
+    UserService *us = [[UserService alloc] init];
+    [us singOut];
 }
 
 
@@ -187,10 +195,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"prepareForSegue ");
-    
+    //NSLog(@"prepareForSegue ");
+    // learn 2 way to indetify segue 
     if ([[segue identifier] isEqualToString:@"showClassDetail"]) {
-        NSLog(@"prepareForSegue showClassDetail");
+        //NSLog(@"prepareForSegue showClassDetail");
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         [[segue destinationViewController] setSessionDetailType:0];
         //[[segue destinationViewController] setClassDetailItem:[activeSessions.DataList objectAtIndex:indexPath.row]];
@@ -200,9 +208,17 @@
     
     if ([[segue identifier] isEqualToString:@"joinNewClass"]) {
         Session *aNewSession = [[Session alloc] init];
-        NSLog(@"prepareForSegue joinNewClass");
+        //NSLog(@"prepareForSegue joinNewClass");
         [[segue destinationViewController] setSessionRef:(aNewSession) thecaller:(self)];
     }
+    
+
+}
+
+- (IBAction)SignOutBtn:(id)sender {
+    UserService *us = [[UserService alloc] init];
+    [us singOut];
+    [self performSegueWithIdentifier:@"audienceSignOut" sender:self];
 
 }
 

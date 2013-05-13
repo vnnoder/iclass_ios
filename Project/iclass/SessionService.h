@@ -14,5 +14,9 @@
     - (NSArray *)getOwnedSession;
     - (NSArray *)getJoinedSession;
     - (id)joinSession: (int) sessionId;
+    - (id)leaveSession: (int) sessionId;
+    - (id)findByPasscode: (NSString *)passcode;
+    - (id)endSession:(int)sessionId;
+    - (id)startSession:(int)sessionId;
 
 @end

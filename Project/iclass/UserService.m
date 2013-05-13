@@ -11,10 +11,11 @@
 #import "UserSerializer.h"
 #import "LoginInfo.h"
 #import "LoginInfoSerializer.h"
+#import "Util.h"
 @implementation UserService
 
 - (id) init{
-    return [super initWithPath:@"/users" withSerializer:[[UserSerializer alloc]init]];
+    return [super initWithPath:@"/api/users" withSerializer:[[UserSerializer alloc]init]];
 }
 
 
@@ -40,10 +41,17 @@
     if([info success]){
         [UserService setAuthToken:[info token]];
         [UserService setCurrentUser:[info user]];
+        
+        // save to user defaults
+        [[NSUserDefaults standardUserDefaults] setValue:loginId forKey:@"username"];
+        [[NSUserDefaults standardUserDefaults] setValue:pwd forKey:@"password"];
+        [[NSUserDefaults standardUserDefaults] setValue:[info token] forKey:@"auth_token"];
+
+        [[NSUserDefaults standardUserDefaults] synchronize];
         return info;
     }else{
-        //TODO handle login error;
-        return nil;
+        [Util nofifyError:[info error]];
+        return nil; 
     
     }
 }
@@ -53,5 +61,12 @@
 -(void)singOut{
     [UserService setAuthToken:nil];
     [UserService setCurrentUser:nil];
+    
+    //clean user defaults
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"username"];
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"password"];
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"auth_token"];
+
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 @end

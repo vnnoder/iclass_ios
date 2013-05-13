@@ -10,6 +10,9 @@
 #import "ClassDetailsViewController.h"
 #import "QuestionListViewController.h"
 #import "GlobalState.h"
+#import "SessionService.h"
+
+
 
 @interface ClassDetailsViewController ()
 @property (strong,nonatomic) UIPopoverController *parentPopoverController;
@@ -46,36 +49,35 @@ Session *currentSession;
     
 }
 
-- (void) setClassDetailItem:(id)newClassDetailItem 
-{
-    NSLog(@"ClassDetails setClassDetailItem = %@ ", [newClassDetailItem description]);
-
-    if(_classDetailItem != newClassDetailItem){
-        _classDetailItem = newClassDetailItem;
-        [self configureView];
-    }
-    
-    if(self.parentPopoverController != nil){
-        [self.parentPopoverController dismissPopoverAnimated:YES];
-    }
-}
 
 - (void) configureView
 {
     if (currentSession){
         self.ClassID.text = currentSession.title;
         self.ClassDescription.text = currentSession.description;
+        self.ClassPassCode.text = currentSession.passcode;
     }
     
     //if (OperationBtn) {
         //if (GUserGole == AUDIENCE) {
-        if ( _sessionDetailType == 0)
+        if ( _sessionDetailType == AUDIENCEROLE)
         {
             [OperationBtn setTitle:@"Leave" forState:UIControlStateNormal];
 
-        } else {
+        }
+        else
+        {
+            if ( [currentSession.status isEqualToString:@"pending"] == true)
+            {
+                [OperationBtn setTitle:@"Start" forState:UIControlStateNormal];
+            }
+            else
+            {
+                [OperationBtn setTitle:@"End" forState:UIControlStateNormal];
+            }
+            
             // TODO change button title according to class's status
-            [OperationBtn setTitle:@"Start" forState:UIControlStateNormal];
+
 
         }
     //}
@@ -93,7 +95,7 @@ Session *currentSession;
 */
 - (void)viewDidLoad
 {
-    NSLog(@"ClassDetails viewDidLoad = %@ ", [self.classDetailItem title]);
+    //NSLog(@"ClassDetails viewDidLoad = %@ ", [self.classDetailItem title]);
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -109,15 +111,73 @@ Session *currentSession;
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([sender isKindOfClass:[UITableViewCell class]]) {
+    //if ([sender isKindOfClass:[UITableViewCell class]]) {
         if ([segue
              .destinationViewController isKindOfClass:[QuestionListViewController class]]) {
             QuestionListViewController *detailController = segue.destinationViewController;
             
             // TODO should pass current session to question list view
-            detailController.currentSesseion = [[Session alloc] init];
+            NSLog(@"session id is  = %d", currentSession.key);
+            detailController.currentSesseion = currentSession;
         }
+    //}
+}
+
+
+- (void) leaveClass
+{
+    SessionService *ssCurr;
+    
+    ssCurr = [[SessionService alloc] init];
+    [ssCurr leaveSession:(currentSession.key)];
+}
+
+
+- (void) startClass
+{
+    SessionService *ssCurr;
+    
+    ssCurr = [[SessionService alloc] init];
+    [ssCurr startSession:(currentSession.key)];
+
+}
+
+- (void) endClass
+{
+    SessionService *ssCurr;
+    
+    ssCurr = [[SessionService alloc] init];
+    [ssCurr endSession:(currentSession.key)];
+}
+
+- (IBAction)ActionBtn:(id)sender
+{
+    NSLog(@"CS status %@",currentSession.status);
+    if ( _sessionDetailType == AUDIENCEROLE)
+    {
+        [self leaveClass];
+        [self.navigationController popViewControllerAnimated:YES];
+        
     }
+    else
+    {
+        if ( [currentSession.status isEqualToString:@"pending"] == true)
+        {
+            [self startClass];
+            [OperationBtn setTitle:@"End" forState:UIControlStateNormal];
+        }
+        else
+        {
+            [self endClass];
+            //[OperationBtn setTitle:@"Start" forState:UIControlStateNormal];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+
+    }
+    
+    
+    
+    
 }
 
 #pragma mark - Split view

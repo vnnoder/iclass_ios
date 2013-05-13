@@ -7,13 +7,15 @@
 //
 
 #import "QuestionDetailsViewController.h"
-
+#import "Question.h"
+#import "QuestionService.h"
+#import "QuestionNoteViewController.h"
 @interface QuestionDetailsViewController ()
 
 @end
 
 @implementation QuestionDetailsViewController
-@synthesize string, QuestionDescription;
+@synthesize string, QuestionDescription,currentSesseion,currentQuestion, VoteBtn, qsService;
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,7 +31,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    QuestionDescription.text = self.string;
+    /*
+    if (currentQuestion.voted) {
+        VoteBtn.titleLabel.text = @"Unvote";
+    }
+    else{
+        VoteBtn.titleLabel.text = @"Vote";
+    }
+     */
+    QuestionDescription.text = currentQuestion.title;
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,7 +49,20 @@
 }
 
 - (IBAction)VoteAction:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES]; 
+    NSLog(@"qk = %d, sessi=%d", [currentQuestion key], [currentSesseion key]);
+    [qsService updateVoteForQuestion:[currentQuestion key] inSession:[currentSesseion key]];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue
+         .destinationViewController isKindOfClass:[QuestionNoteViewController class]]) {
+        
+        QuestionNoteViewController *questionNoteController = segue.destinationViewController;
+        questionNoteController.questionKey = currentQuestion.key;
+        
+    }
 }
 
 @end

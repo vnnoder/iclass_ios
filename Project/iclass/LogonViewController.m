@@ -7,7 +7,9 @@
 //
 
 #import "LogonViewController.h"
-#import "SpeakerViewController.h"
+#import "UserService.h"
+#import "LoginInfo.h"
+#import "User.h"
 
 @interface LogonViewController ()
 
@@ -20,6 +22,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+
     }
     return self;
 }
@@ -28,8 +31,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    //_usernameField.text = @"abc";
+    self.passwordField.secureTextEntry = YES;    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    NSString *username =  [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+    NSString *password =  [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    if(username && password){
+        self.usernameField.text = username;
+        self.passwordField.text = password;
+        
+        if ( [self checkLogonInfo] )
+            [self performSegueWithIdentifier:@"LogonSegue" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,25 +52,78 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (Boolean) checkLogonInfo
+{
+    UserService *service = [[UserService alloc]init];
+    if ( (self.usernameField.text.length > 0) && (self.passwordField.text.length >0) )
+    {
+        LoginInfo *info = [service singInWithLoginId:self.usernameField.text password:self.passwordField.text];
+        
+        if ( [info user] == nil)
+            return false;
+        
+        NSLog(@"%@", [[info user]fullName]);        
+ 
+        return true;
+    }
+    
+    return false;
+}
 
-- (IBAction)Logon{
-//    int a;
-    NSLog(@"Logon IBAction");
-/*
-    a =2;
-    if (a==1)
-*/        [self performSegueWithIdentifier:@"LogonSegue" sender:self];
+- (NSString *) generateRandomUser
+{
+    NSString *szBuff;
+    int inLengthUserName = ( arc4random() % 10 ) + 5;
+    int i, test;
+    
+    szBuff = @"AGU_";   //Auto Generate User
+    
+    for ( i = 0; i < inLengthUserName ; i++ ){
+        test = ( arc4random() % 26 ) + 'a';
+        szBuff = [szBuff stringByAppendingFormat:@"%c", test];
+    }
+    
+    NSLog(@"dummy username: %@",szBuff);
+    
+    return szBuff;
+
+}
+
+- (Boolean) guestLogon
+{
+    User *newUser = [[User alloc] init]; 
+    UserService *service = [[UserService alloc]init];
+    
+    newUser.loginId = [self generateRandomUser];
+    newUser.fullName = newUser.email = newUser.password = newUser.loginId;
+    
+    if ([service create:(newUser)] == nil)
+        return false;
+    
+    LoginInfo *info = [service singInWithLoginId:newUser.loginId password:newUser.password];
+    
+    if ( [info user] == nil)
+        return false;
+    
+    NSLog(@"Current User: %@ ", [[info user] fullName] );
+    
+    return true;
+}
+
+
+- (IBAction)Logon{   
+    if ( [self checkLogonInfo] )
+        [self performSegueWithIdentifier:@"LogonSegue" sender:self];
     
 }
 
 - (IBAction)SignUpAction:(id)sender {
     NSLog(@"SignUpAction");
-    
-
 }
 
-- (IBAction)GuestAction:(id)sender {
-    NSLog(@"GuestAction");
+- (IBAction)GuestAction:(id)sender {    
+    if ( [self guestLogon] == true)
+        [self performSegueWithIdentifier:@"LogonSegue" sender:self];
 }
 
 - (IBAction)SignInAction:(id)sender {

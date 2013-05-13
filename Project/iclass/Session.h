@@ -16,6 +16,7 @@
 @property (strong) NSDate *startDate;
 @property (strong) NSDate *endDate;
 @property (strong) NSString *status;
+@property (strong) NSString *passcode;
 @property NSInteger ownerId;
 
 @end

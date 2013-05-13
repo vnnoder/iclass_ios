@@ -55,6 +55,7 @@
     entity.description = [dict objectForKey:@"description"];
     entity.ownerId = [[dict objectForKey: @"user_id"]intValue];
     entity.status = [dict objectForKey:@"status"];
+    entity.passcode=[dict objectForKey:@"passcode"];
     return entity;
 }
 

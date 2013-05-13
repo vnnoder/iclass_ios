@@ -15,6 +15,7 @@
 #import "Session.h"
 #import "SessionList.h"
 #import "SessionService.h"
+#import "UserService.h"
 
 @interface SpeakerViewController ()
 
@@ -95,12 +96,10 @@
 {    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpeakerClassCell"];
     
-    NSLog(@"Speaker ~ load Title: ");
-    
     if (cell == nil)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SpeakerClassCell"];
 
-    NSLog(@"Speaker ~ load Title: %@ ", [[activeSessions.DataList objectAtIndex:indexPath.row] title]);
+    //NSLog(@"Speaker ~ load Title: %@ ", [[activeSessions.DataList objectAtIndex:indexPath.row] title]);
     cell.textLabel.text = [[activeSessions.DataList objectAtIndex:indexPath.row] title];
     
     return cell;
@@ -149,7 +148,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Speaker load");
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -165,13 +163,13 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-//    [self retriveActiveSessions];
+    [self retriveActiveSessions];
     [self.tableView reloadData];
 }
 
 - (void) retriveActiveSessions
 {
-    activeSessions.DataList = (NSMutableArray *) [ssSpeaker list];
+    activeSessions.DataList = (NSMutableArray *) [ssSpeaker getOwnedSession];
 }
 
 -(void)refreshView:(UIRefreshControl *)refresh
@@ -191,8 +189,17 @@
     [refresh endRefreshing];
 }
 
+
+- (void) signOut
+{
+    UserService *us = [[UserService alloc] init];
+    [us singOut];
+}
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+        // learn 2 way to indetify segue 
     if ([sender isKindOfClass:[UITableViewCell class]]) {
         if ([segue.destinationViewController isKindOfClass:[ClassDetailsViewController class]]) {
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
@@ -208,11 +215,17 @@
     
     if ([[segue identifier] isEqualToString:@"createNewClass"]) {
         Session *aNewSession = [[Session alloc] init];
-        NSLog(@"prepareForSegue createNewClass");
+        //NSLog(@"prepareForSegue createNewClass");
         [[segue destinationViewController] setSessionRef:(aNewSession) thecaller:(self)];
     }
     
 }
 
+- (IBAction)signOutBtn:(id)sender {
+    UserService *us = [[UserService alloc] init];
+    [us singOut];
+    [self performSegueWithIdentifier:@"speakerSignOut" sender:self];
+
+}
 
 @end
