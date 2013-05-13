@@ -12,6 +12,7 @@
 #import "LoginInfo.h"
 #import "LoginInfoSerializer.h"
 #import "Util.h"
+#import "JSON.h"
 @implementation UserService
 
 - (id) init{
@@ -76,6 +77,13 @@
     NSData* jsonData = [HttpQuery querySyncWithPath:@"/api/update_device_token"
                                          withMethod:@"POST"
                                          withParams:dict];
+    
+    NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSDictionary* result =  [json JSONValue];
+    NSString *success = [result objectForKey:@"success"];
+    if ([success isEqualToString:@"false"]){
+        NSLog(@"Update Device Token failed. msg: %@", [result objectForKey:@"message"]);
+    }
     
     /**
      response: 
