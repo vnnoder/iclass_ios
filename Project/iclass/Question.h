@@ -11,14 +11,14 @@
 #import "Session.h"
 #import "Entity.h"
 
-@interface Question : Entity
+@interface Question : Entity <NSCoding>
 
-@property (strong) NSString *title;
-@property (strong) NSString *detail;
+@property (retain) NSString *title;
+@property (retain) NSString *detail;
 @property NSInteger userId;
 @property NSInteger sessionId;
-@property (strong) NSDate *createdAt;
-@property (strong) NSDate *updatedAt;
+@property (retain) NSDate *createdAt;
+@property (retain) NSDate *updatedAt;
 @property NSInteger voteCount;
 @property BOOL voted;
 

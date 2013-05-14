@@ -41,8 +41,12 @@
         self.usernameField.text = username;
         self.passwordField.text = password;
         
-        if ( [self checkLogonInfo] )
+        if ( [self checkLogonInfo] ) {
             [self performSegueWithIdentifier:@"LogonSegue" sender:self];
+        }
+        else {
+            [self performSegueWithIdentifier:@"OfflineSegue" sender:self];
+        }
     }
 }
 

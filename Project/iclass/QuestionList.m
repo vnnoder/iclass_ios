@@ -12,6 +12,12 @@
 @implementation QuestionList
 @synthesize QuestionListData, qsAudience;
 
+-(id) initInOfflineMode
+{
+    self = [super init];
+    return self;
+}
+
 -(id) init {
     self = [super init];
     qsAudience = [[QuestionService alloc]init];
@@ -39,10 +45,37 @@
     [QuestionListData sortUsingSelector:@selector(compareVote:)];
 }
 */
+
+-(void) getExistingQuestionsFromFile
+{
+    NSLog(@"Offline mode");
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *plistPath1 = [paths objectAtIndex:0];
+    NSString *filename = [plistPath1 stringByAppendingPathComponent:@"Question"];
+    
+    NSMutableArray *ud = [NSKeyedUnarchiver unarchiveObjectWithFile: filename];
+    self.QuestionListData = [NSArray  arrayWithArray:ud];
+    for (Question *q in self.QuestionListData) {
+        NSLog(@"title is:%@ ",[q title]);
+    }
+}
+
 -(void) getExistingQuestions:(int)sessionId{
 
     
     self.QuestionListData = [qsAudience listQuestionBySession:sessionId];
+    if (self.QuestionListData == nil) {
+        NSLog(@"Offline mode");
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *plistPath1 = [paths objectAtIndex:0];
+        NSString *filename = [plistPath1 stringByAppendingPathComponent:@"Question"];
+        
+        NSMutableArray *ud = [NSKeyedUnarchiver unarchiveObjectWithFile: filename];
+        self.QuestionListData = [NSArray  arrayWithArray:ud];
+        for (Question *q in self.QuestionListData) {
+            NSLog(@"title is:%@ ",[q title]);
+        }
+    }
     NSLog(@"sessid = %d, question count =%d", sessionId, [self.QuestionListData count]);
 
 }

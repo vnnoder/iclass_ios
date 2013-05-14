@@ -107,12 +107,11 @@
                         <outlet property="passwordField" destination="cK7-mX-vwP" id="ea5-YS-cHl"/>
                         <outlet property="usernameField" destination="grv-0I-KeY" id="tvF-3S-Ih8"/>
                         <segue destination="ODR-yg-5U7" kind="modal" identifier="LogonSegue" id="x4J-6w-tVi"/>
-                        <segue destination="abe-cU-Icf" kind="modal" identifier="OfflineSegue" id="d7J-0D-h2b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-834" y="161"/>
+            <point key="canvasLocation" x="-496" y="213"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="yJJ-Gz-pDX">
@@ -217,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsc-EG-iff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-321" y="825"/>
+            <point key="canvasLocation" x="-11" y="823"/>
         </scene>
         <!--Navigation Controller - Speaker-->
         <scene sceneID="Df9-xp-V5b">
@@ -306,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DWp-Dd-JEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037" y="1654"/>
+            <point key="canvasLocation" x="951" y="1110"/>
         </scene>
         <!--Your Location View Controller - Your Location-->
         <scene sceneID="v5x-dr-keH">
@@ -349,24 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Eo-uF-xFM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1579" y="1592"/>
-        </scene>
-        <!--Navigation Controller - Favourite-->
-        <scene sceneID="qn4-Wg-roS">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="abe-cU-Icf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favourite" id="027-3c-VIO"/>
-                    <navigationItem key="navigationItem" id="UD1-ge-XTh"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wKr-hg-Pog">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="3cm-W4-GXP" kind="relationship" relationship="rootViewController" id="KwC-xY-LBI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V7a-9K-uml" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="161" y="783"/>
+            <point key="canvasLocation" x="1483" y="1303"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7at-kQ-aYr">
@@ -382,7 +364,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tq-PE-BF6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="523" y="1646"/>
+            <point key="canvasLocation" x="523" y="1110"/>
         </scene>
         <!--Speaker View Controller-->
         <scene sceneID="mrt-mo-vmr">
@@ -743,7 +725,7 @@
             <objects>
                 <tableViewController id="3cm-W4-GXP" customClass="QuestionListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eD8-cV-3hD">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -787,14 +769,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EcF-QI-zvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="1077"/>
+            <point key="canvasLocation" x="1946" y="161"/>
         </scene>
         <!--Create Question View Controller-->
         <scene sceneID="KYC-lT-Dyj">
             <objects>
                 <viewController id="96q-t4-Wen" customClass="CreateQuestionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sOE-FW-Ax4">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please input question details here..." translatesAutoresizingMaskIntoConstraints="NO" id="dt6-AJ-Fpe">
@@ -859,7 +841,7 @@
             <objects>
                 <viewController id="5fx-et-fOB" customClass="QuestionDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="suf-Ka-oGU">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Question detials" translatesAutoresizingMaskIntoConstraints="NO" id="Kkj-SO-fTY">
@@ -917,7 +899,7 @@
             <objects>
                 <viewController id="n2O-qB-QRF" customClass="QuestionNoteViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgh-xc-Ot8">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please write the note here..." translatesAutoresizingMaskIntoConstraints="NO" id="Mag-2D-Sn4">
@@ -978,19 +960,21 @@
                     <connections>
                         <segue destination="2gg-Os-Lw3" kind="relationship" relationship="viewControllers" id="Ud3-vt-V4d"/>
                         <segue destination="RoJ-tu-lHm" kind="relationship" relationship="viewControllers" id="gtu-EX-Fp7"/>
-                        <segue destination="abe-cU-Icf" kind="relationship" relationship="viewControllers" id="DfB-M9-qMR"/>
-                        <segue destination="Ccp-Wt-cDr" kind="relationship" relationship="viewControllers" id="Ne0-HP-k60"/>
+                        <segue destination="Ccp-Wt-cDr" kind="relationship" relationship="viewControllers" id="drf-Qq-Ike"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uW-gw-T5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-157" y="637"/>
+            <point key="canvasLocation" x="-11" y="213"/>
         </scene>
     </scenes>
+<<<<<<< HEAD
+=======
     <classes>
         <class className="AudienceViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AudienceViewController.h"/>
             <relationships>
+                <relationship kind="action" name="SignOutBtn:"/>
                 <relationship kind="outlet" name="AddBtn" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="AudienceNavBar" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="SignOut" candidateClass="UIBarButtonItem"/>
@@ -999,6 +983,7 @@
         <class className="ClassDetailsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ClassDetailsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="ActionBtn:"/>
                 <relationship kind="outlet" name="ClassDescription" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="ClassID" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ClassPassCode" candidateClass="UITextField"/>
@@ -1010,6 +995,7 @@
         <class className="CreateClassViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateClassViewController.h"/>
             <relationships>
+                <relationship kind="action" name="CreateNewSession:"/>
                 <relationship kind="outlet" name="ClassDesc" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ClassID" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ConfirmBtn" candidateClass="UIButton"/>
@@ -1018,6 +1004,7 @@
         <class className="CreateQuestionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateQuestionViewController.h"/>
             <relationships>
+                <relationship kind="action" name="AskAction:"/>
                 <relationship kind="action" name="backgroundTap:"/>
                 <relationship kind="action" name="textFieldDoneEditing:"/>
                 <relationship kind="outlet" name="AskBtn" candidateClass="UIButton"/>
@@ -1028,6 +1015,7 @@
         <class className="JoinClassViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JoinClassViewController.h"/>
             <relationships>
+                <relationship kind="action" name="JoinInAction:"/>
                 <relationship kind="outlet" name="ClassID" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="JoinBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="ScanBtn" candidateClass="UIButton"/>
@@ -1036,7 +1024,11 @@
         <class className="LogonViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LogonViewController.h"/>
             <relationships>
+                <relationship kind="action" name="GuestAction:"/>
                 <relationship kind="action" name="Logon"/>
+                <relationship kind="action" name="SignInAction:"/>
+                <relationship kind="action" name="SignInWithFacebookAction:"/>
+                <relationship kind="action" name="SignUpAction:"/>
                 <relationship kind="outlet" name="GuestButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="SignInButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="SignInWithFacebookButton" candidateClass="UIButton"/>
@@ -1048,6 +1040,8 @@
         <class className="MoreViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
             <relationships>
+                <relationship kind="action" name="callSupportAction:"/>
+                <relationship kind="action" name="emailSupport:"/>
                 <relationship kind="outlet" name="callSupport" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="emailSupport" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="yourLocation" candidateClass="UIButton"/>
@@ -1067,17 +1061,12 @@
         <class className="QuestionListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionListViewController.h"/>
         </class>
-        <class className="QuestionNoteViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionNoteViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="SaveAction:"/>
-                <relationship kind="outlet" name="SaveBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="noteText" candidateClass="UITextView"/>
-            </relationships>
-        </class>
         <class className="SignUpViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SignUpViewController.h"/>
             <relationships>
+                <relationship kind="action" name="CancelAction:"/>
+                <relationship kind="action" name="SignUpAction:"/>
+                <relationship kind="action" name="cancelAction:"/>
                 <relationship kind="outlet" name="SignUpBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="cancelBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="fullNameTextField" candidateClass="UITextField"/>
@@ -1090,6 +1079,7 @@
         <class className="SpeakerViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpeakerViewController.h"/>
             <relationships>
+                <relationship kind="action" name="signOutBtn:"/>
                 <relationship kind="outlet" name="AddBtn" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="SignOut" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="SpeakerNavigationBar" candidateClass="UINavigationBar"/>
@@ -1098,20 +1088,26 @@
         <class className="YourLocationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/YourLocationViewController.h"/>
             <relationships>
+                <relationship kind="action" name="SegmentAction:"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
     </classes>
+>>>>>>> 74c8072baee2c852f6dc7ba4a2e6f509f7334500
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KwC-xY-LBI"/>
-        <segue reference="d7J-0D-h2b"/>
-        <segue reference="9YY-Se-xv4"/>
+<<<<<<< HEAD
         <segue reference="x4J-6w-tVi"/>
+        <segue reference="rse-Co-5Pu"/>
+        <segue reference="RBT-zC-7Xe"/>
+=======
         <segue reference="FN7-mK-NSX"/>
+        <segue reference="3gr-CK-xaZ"/>
+        <segue reference="zTa-UU-ojJ"/>
+>>>>>>> 74c8072baee2c852f6dc7ba4a2e6f509f7334500
     </inferredMetricsTieBreakers>
 </document>

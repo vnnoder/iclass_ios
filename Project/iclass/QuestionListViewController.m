@@ -31,11 +31,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (questionList == nil) {
-        questionList = [[QuestionList alloc] init];
+
+    if (currentSesseion == nil) {
+        if (questionList == nil) {
+            questionList = [[QuestionList alloc] initInOfflineMode];
+        }
+        [questionList getExistingQuestionsFromFile];
     }
-    NSLog(@"session id = %d", [currentSesseion key]);
-    [questionList getExistingQuestions:[currentSesseion key]];
+    else {
+        if (questionList == nil) {
+            questionList = [[QuestionList alloc] init];
+        }
+        NSLog(@"session id = %d", [currentSesseion key]);
+        [questionList getExistingQuestions:[currentSesseion key]];
+    }
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -175,7 +185,13 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     //    [self retriveActiveSessions];
-    [questionList getExistingQuestions:[currentSesseion key]];
+    if (currentSesseion == nil) {
+        [questionList getExistingQuestionsFromFile];
+    }
+    else{
+        [questionList getExistingQuestions:[currentSesseion key]];
+    }
+    
     [self.tableView reloadData];
 }
 
