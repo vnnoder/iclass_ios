@@ -14,7 +14,7 @@ NSUserRole GUserGole = AUDIENCE;
 {
     // Override point for customization after application launch.
     //Register for push notification
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeNewsstandContentAvailability)];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveErrorNotification:)
