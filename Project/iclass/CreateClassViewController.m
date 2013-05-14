@@ -62,6 +62,7 @@ Session *newSpeakerSession;
 {   
     newSpeakerSession.title = self.ClassID.text;
     newSpeakerSession.description = self.ClassDesc.text;
+    newSpeakerSession.location = self.ClassLocation.text;
 }
 
 - (Boolean) checkSession

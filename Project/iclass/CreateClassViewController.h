@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *ClassID;
 @property (weak, nonatomic) IBOutlet UITextField *ClassDesc;
+@property (weak, nonatomic) IBOutlet UITextField *ClassLocation;
 @property (weak, nonatomic) IBOutlet UIButton *ConfirmBtn;
 
 - (void) setSessionRef:(Session *) newSession thecaller:(SpeakerViewController*) theSender;
