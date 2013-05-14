@@ -10,6 +10,7 @@
 #import "UserService.h"
 #import "LoginInfo.h"
 #import "User.h"
+#import "Util.h"
 
 @interface SignUpViewController ()
 
@@ -67,18 +68,27 @@
             newUser.password = self.userPasswordTextField.text;
 
             if ([service create:(newUser)] == nil)
+            {
+                [Util nofifyError:@"Logon failed"];
                 return false;
+            }
+
             
             LoginInfo *info = [service singInWithLoginId:newUser.loginId password:newUser.password];
             
             if ( [info user] == nil)
+            {
+                [Util nofifyError:@"Logon failed"];
                 return false;
-            
+            }
             
             return true;
         }
     }
-    
+    else
+    {
+        [Util nofifyError:@"Please fill in all fields"];
+    }
 
     return false;
 }

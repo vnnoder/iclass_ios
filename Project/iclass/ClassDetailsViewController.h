@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *QuestionsBtn;
 @property (weak, nonatomic) IBOutlet UIButton *OperationBtn;
 
+@property (weak, nonatomic) IBOutlet UILabel *hintLabel;
 
 - (void) setSessionRef:(Session *) aSession;
 

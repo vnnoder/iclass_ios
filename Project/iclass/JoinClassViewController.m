@@ -10,7 +10,7 @@
 #import "AudienceViewController.h"
 #import "SessionService.h"
 #import "session.h"
-
+#import "Util.h"
 
 @interface JoinClassViewController ()
 @property (strong,nonatomic) UIPopoverController *parentPopoverController;
@@ -82,8 +82,10 @@ Session *newAudiSession;
     else
     {
         if ( [ssAudi joinSession:(newSession.key)] == nil)
+        {
+            [Util nofifyError:@"Class is not available"];
             return FALSE;
-    
+        }
     }
     
     return TRUE;
@@ -102,9 +104,17 @@ Session *newAudiSession;
             [self.navigationController popViewControllerAnimated:YES];
         }
     }
-        
+    else
+    {
+        [Util nofifyError:@"Please fill in the passcode"];
+    }
+    
 }
 
+- (IBAction)Scan:(id)sender
+{
+    [Util nofifyError:@"Coming Soon"];
+}
 
 
 @end
