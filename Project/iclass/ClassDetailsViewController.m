@@ -63,19 +63,21 @@ Session *currentSession;
         if ( _sessionDetailType == AUDIENCEROLE)
         {
             [OperationBtn setTitle:@"Leave" forState:UIControlStateNormal];
-
+            self.hintLabel.hidden = YES;
         }
         else
         {
             if ( [currentSession.status isEqualToString:@"pending"] == true)
             {
                 [OperationBtn setTitle:@"Start" forState:UIControlStateNormal];
+                self.hintLabel.hidden = NO;
             }
             else
             {
                 [OperationBtn setTitle:@"End" forState:UIControlStateNormal];
+                self.hintLabel.hidden = YES;
             }
-            
+
             // TODO change button title according to class's status
 
 
@@ -165,6 +167,7 @@ Session *currentSession;
         {
             [self startClass];
             [OperationBtn setTitle:@"End" forState:UIControlStateNormal];
+            [self.navigationController popViewControllerAnimated:YES];
         }
         else
         {

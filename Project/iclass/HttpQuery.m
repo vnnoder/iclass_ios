@@ -65,7 +65,7 @@
         NSLog(@"No Data was returned");
     }else if (error != nil){
         NSLog(@"Error happend = %@", error);
-        [Util nofifyError:@"Server Problem."];
+        [Util nofifyError:@"Server Problem, offline mode will be actived"];
         return nil;
     }
     

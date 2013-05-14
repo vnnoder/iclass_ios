@@ -20,5 +20,6 @@
 //-(void)sortByUpdateTime;
 //-(void)sortByVote;
 -(void) getExistingQuestions:(int)sessionId;
-
+-(void) getExistingQuestionsFromFile;
+-(id) initInOfflineMode;
 @end

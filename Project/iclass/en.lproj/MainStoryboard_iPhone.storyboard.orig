@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -9,7 +9,7 @@
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="2" customClass="LogonViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7C-td-srR">
@@ -113,14 +113,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-822" y="227"/>
+            <point key="canvasLocation" x="-834" y="161"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="yJJ-Gz-pDX">
             <objects>
                 <viewController id="GFv-oR-J1q" customClass="SignUpViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F61-06-bN1">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJE-8T-R9w">
@@ -218,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsc-EG-iff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-397" y="829"/>
+            <point key="canvasLocation" x="-321" y="825"/>
         </scene>
         <!--Navigation Controller - Speaker-->
         <scene sceneID="Df9-xp-V5b">
@@ -242,7 +242,7 @@
             <objects>
                 <viewController id="Gpe-QS-CQS" customClass="MoreViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yYh-v3-Exe">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otv-y3-lsR">
@@ -307,14 +307,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DWp-Dd-JEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="1682"/>
+            <point key="canvasLocation" x="1037" y="1654"/>
         </scene>
         <!--Your Location View Controller - Your Location-->
         <scene sceneID="v5x-dr-keH">
             <objects>
                 <viewController id="9JQ-3W-Osu" customClass="YourLocationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K4y-RM-CP6">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EeT-oG-KJQ">
@@ -350,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Eo-uF-xFM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1417" y="1682"/>
+            <point key="canvasLocation" x="1579" y="1592"/>
         </scene>
         <!--Navigation Controller - Favourite-->
         <scene sceneID="qn4-Wg-roS">
@@ -367,7 +367,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7a-9K-uml" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531" y="1077"/>
+            <point key="canvasLocation" x="161" y="783"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7at-kQ-aYr">
@@ -383,14 +383,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tq-PE-BF6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="537" y="1674"/>
+            <point key="canvasLocation" x="523" y="1646"/>
         </scene>
         <!--Speaker View Controller-->
         <scene sceneID="mrt-mo-vmr">
             <objects>
                 <tableViewController id="bqb-BB-bh4" customClass="SpeakerViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="emo-hp-T4L">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -445,7 +445,7 @@
             <objects>
                 <viewController id="CZr-0r-hEF" customClass="CreateClassViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F5f-Pc-HB7">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5t9-QA-rLR">
@@ -476,37 +476,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Location" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jvW-BP-4um">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="8z8-b0-meO" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8iC-LW-daS"/>
+                            <constraint firstAttribute="centerX" secondItem="NMy-tY-NjU" secondAttribute="centerX" type="user" id="POn-nH-5fg"/>
                             <constraint firstItem="8z8-b0-meO" firstAttribute="leading" secondItem="F5f-Pc-HB7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Rhl-9i-sqt"/>
-                            <constraint firstAttribute="bottom" secondItem="5t9-QA-rLR" secondAttribute="bottom" constant="185" id="WOY-Le-HkC"/>
-                            <constraint firstItem="NMy-tY-NjU" firstAttribute="leading" secondItem="F5f-Pc-HB7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="XVT-uM-qSi"/>
-                            <constraint firstItem="NMy-tY-NjU" firstAttribute="top" secondItem="F5f-Pc-HB7" secondAttribute="top" constant="107" id="YCQ-Hm-ugA"/>
-                            <constraint firstItem="jvW-BP-4um" firstAttribute="leading" secondItem="F5f-Pc-HB7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="haR-yy-beq"/>
+                            <constraint firstItem="5t9-QA-rLR" firstAttribute="top" secondItem="NMy-tY-NjU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Xry-3x-Er4"/>
+                            <constraint firstItem="5t9-QA-rLR" firstAttribute="centerX" secondItem="NMy-tY-NjU" secondAttribute="centerX" type="default" id="c4I-36-2wd"/>
+                            <constraint firstItem="NMy-tY-NjU" firstAttribute="top" secondItem="F5f-Pc-HB7" secondAttribute="top" constant="48" id="jy1-k2-9jn"/>
                             <constraint firstItem="8z8-b0-meO" firstAttribute="top" secondItem="F5f-Pc-HB7" secondAttribute="top" constant="12" id="kC9-eJ-Urq"/>
-                            <constraint firstAttribute="trailing" secondItem="NMy-tY-NjU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="oBK-o1-xu0"/>
-                            <constraint firstItem="NMy-tY-NjU" firstAttribute="centerX" secondItem="5t9-QA-rLR" secondAttribute="centerX" type="default" id="rUt-1H-zDs"/>
-                            <constraint firstItem="jvW-BP-4um" firstAttribute="top" secondItem="F5f-Pc-HB7" secondAttribute="top" constant="57" id="ung-02-rPb"/>
-                            <constraint firstAttribute="trailing" secondItem="jvW-BP-4um" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xlC-3P-lvm"/>
+                            <constraint firstAttribute="trailing" secondItem="NMy-tY-NjU" secondAttribute="trailing" constant="20" symbolic="YES" type="user" id="rWA-GE-Qho"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create a Class" id="Bjb-vZ-CSY"/>
                     <connections>
                         <outlet property="ClassDesc" destination="NMy-tY-NjU" id="f6n-Ki-Pdu"/>
                         <outlet property="ClassID" destination="8z8-b0-meO" id="R7R-EW-Tjz"/>
-                        <outlet property="ClassLocation" destination="jvW-BP-4um" id="BXb-1S-3sm"/>
                         <outlet property="ConfirmBtn" destination="5t9-QA-rLR" id="Cza-24-QeE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwP-gK-d1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1483" y="750"/>
+            <point key="canvasLocation" x="1483" y="744"/>
         </scene>
         <!--Navigation Controller - Audience-->
         <scene sceneID="ZbW-HF-t6L">
@@ -529,7 +521,7 @@
             <objects>
                 <tableViewController id="Mn9-e9-YcQ" customClass="AudienceViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="TMB-Ou-fKb">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -585,7 +577,7 @@
             <objects>
                 <viewController id="jeo-MT-aMW" customClass="JoinClassViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x6D-M2-PaF">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTe-mT-5km">
@@ -647,14 +639,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Bn-1q-bfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1475" y="-444"/>
+            <point key="canvasLocation" x="1483" y="-436"/>
         </scene>
         <!--Class Details View Controller-->
         <scene sceneID="Grh-np-nNo">
             <objects>
                 <viewController id="JIJ-cE-GhG" customClass="ClassDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ufn-FQ-aUH">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Class Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XBs-pI-TgM">
@@ -770,7 +762,7 @@
             <objects>
                 <tableViewController id="3cm-W4-GXP" customClass="QuestionListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eD8-cV-3hD">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -814,14 +806,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EcF-QI-zvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="1083"/>
+            <point key="canvasLocation" x="1108" y="1077"/>
         </scene>
         <!--Create Question View Controller-->
         <scene sceneID="KYC-lT-Dyj">
             <objects>
                 <viewController id="96q-t4-Wen" customClass="CreateQuestionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sOE-FW-Ax4">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please input question details here..." translatesAutoresizingMaskIntoConstraints="NO" id="dt6-AJ-Fpe">
@@ -879,14 +871,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPU-pC-ZLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2171" y="-156"/>
+            <point key="canvasLocation" x="2475" y="-164"/>
         </scene>
         <!--Question Details View Controller-->
         <scene sceneID="EG6-8b-m4S">
             <objects>
                 <viewController id="5fx-et-fOB" customClass="QuestionDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="suf-Ka-oGU">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Question detials" translatesAutoresizingMaskIntoConstraints="NO" id="Kkj-SO-fTY">
@@ -937,14 +929,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wuW-vF-u9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2107" y="1097"/>
+            <point key="canvasLocation" x="2475" y="425"/>
         </scene>
         <!--Question Note View Controller-->
         <scene sceneID="NoM-hb-Fok">
             <objects>
                 <viewController id="n2O-qB-QRF" customClass="QuestionNoteViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgh-xc-Ot8">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please write the note here..." translatesAutoresizingMaskIntoConstraints="NO" id="Mag-2D-Sn4">
@@ -989,7 +981,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="orx-F8-DC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2759" y="1097"/>
+            <point key="canvasLocation" x="2911" y="419"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="A5b-y1-9tU">
@@ -1011,19 +1003,150 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uW-gw-T5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101" y="199"/>
+            <point key="canvasLocation" x="-157" y="637"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AudienceViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AudienceViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="AddBtn" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="AudienceNavBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="SignOut" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="ClassDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClassDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ClassDescription" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="ClassID" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ClassPassCode" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="OperationBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="QuestionsBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="SurveryBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="hintLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CreateClassViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateClassViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ClassDesc" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ClassID" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ConfirmBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="CreateQuestionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateQuestionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundTap:"/>
+                <relationship kind="action" name="textFieldDoneEditing:"/>
+                <relationship kind="outlet" name="AskBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="questionTitle" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="qustionDetail" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="JoinClassViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JoinClassViewController.h"/>
+            <relationships>
+<<<<<<< HEAD
+=======
+                <relationship kind="action" name="JoinInAction:"/>
+                <relationship kind="action" name="Scan:"/>
+>>>>>>> 959cfa7e6aac0b0a323df68258db6e99bf239e51
+                <relationship kind="outlet" name="ClassID" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="JoinBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ScanBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="LogonViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LogonViewController.h"/>
+            <relationships>
+<<<<<<< HEAD
+=======
+                <relationship kind="action" name="FacebookSignIn:"/>
+                <relationship kind="action" name="GuestAction:"/>
+>>>>>>> 959cfa7e6aac0b0a323df68258db6e99bf239e51
+                <relationship kind="action" name="Logon"/>
+                <relationship kind="outlet" name="GuestButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="SignInButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="SignInWithFacebookButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="SignUpButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="callSupport" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="emailSupport" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="yourLocation" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="QuestionDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="VoteAction:"/>
+                <relationship kind="outlet" name="QuestionDescription" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="VoteBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="QuestionListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionListViewController.h"/>
+        </class>
+        <class className="QuestionNoteViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionNoteViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="SaveAction:"/>
+                <relationship kind="outlet" name="SaveBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="noteText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="SignUpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignUpViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="SignUpBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cancelBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="fullNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userEmailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userPasswordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userRetypePasswordTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SpeakerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpeakerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="AddBtn" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="SignOut" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="SpeakerNavigationBar" candidateClass="UINavigationBar"/>
+            </relationships>
+        </class>
+        <class className="YourLocationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/YourLocationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
+        <segue reference="KwC-xY-LBI"/>
+        <segue reference="d7J-0D-h2b"/>
+        <segue reference="9YY-Se-xv4"/>
+        <segue reference="x4J-6w-tVi"/>
+=======
         <segue reference="3gr-CK-xaZ"/>
-        <segue reference="zTa-UU-ojJ"/>
+        <segue reference="9YY-Se-xv4"/>
+>>>>>>> 959cfa7e6aac0b0a323df68258db6e99bf239e51
         <segue reference="FN7-mK-NSX"/>
-        <segue reference="XkC-4r-mwk"/>
-        <segue reference="DfB-M9-qMR"/>
     </inferredMetricsTieBreakers>
 </document>

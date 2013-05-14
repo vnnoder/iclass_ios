@@ -61,6 +61,7 @@
         
         QuestionNoteViewController *questionNoteController = segue.destinationViewController;
         questionNoteController.questionKey = currentQuestion.key;
+        questionNoteController.currentQuestion = currentQuestion;
         
     }
 }

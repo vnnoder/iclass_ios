@@ -10,6 +10,7 @@
 #import "UserService.h"
 #import "LoginInfo.h"
 #import "User.h"
+#import "Util.h"
 
 @interface LogonViewController ()
 
@@ -41,8 +42,12 @@
         self.usernameField.text = username;
         self.passwordField.text = password;
         
-        if ( [self checkLogonInfo] )
+        if ( [self checkLogonInfo] ) {
             [self performSegueWithIdentifier:@"LogonSegue" sender:self];
+        }
+        else {
+            [self performSegueWithIdentifier:@"OfflineSegue" sender:self];
+        }
     }
 }
 
@@ -60,11 +65,17 @@
         LoginInfo *info = [service singInWithLoginId:self.usernameField.text password:self.passwordField.text];
         
         if ( [info user] == nil)
+        {
+            [Util nofifyError:@"Logon failed"];
             return false;
-        
+        }
+
         NSLog(@"%@", [[info user]fullName]);        
- 
         return true;
+    }
+    else
+    {
+        [Util nofifyError:@"Please fill in the username and password"];
     }
     
     return false;
@@ -98,20 +109,31 @@
     newUser.fullName = newUser.email = newUser.password = newUser.loginId;
     
     if ([service create:(newUser)] == nil)
+    {
+        [Util nofifyError:@"Generate user failed"];
         return false;
+    }
+
     
     LoginInfo *info = [service singInWithLoginId:newUser.loginId password:newUser.password];
     
     if ( [info user] == nil)
+    {
+        [Util nofifyError:@"Logon failed"];
         return false;
+    }
+
     
     NSLog(@"Current User: %@ ", [[info user] fullName] );
     
     return true;
 }
 
+- (IBAction)FacebookSignIn:(id)sender {
+    [Util nofifyError:@"Coming Soon"];
+}
 
-- (IBAction)Logon{   
+- (IBAction)Logon{
     if ( [self checkLogonInfo] )
         [self performSegueWithIdentifier:@"LogonSegue" sender:self];
     
