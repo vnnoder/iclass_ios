@@ -10,6 +10,7 @@
 #import "SpeakerViewController.h"
 #import "SessionService.h"
 #import "Session.h"
+#import "Util.h"
 
 @interface CreateClassViewController ()
 @property (strong,nonatomic) UIPopoverController *parentPopoverController;
@@ -69,7 +70,11 @@ Session *newSpeakerSession;
     
     ssSpeaker = [[SessionService alloc] init];
     if ( [ssSpeaker create:(newSpeakerSession)] == nil)
+    {
+        [Util nofifyError:@"Create class failed "];
         return FALSE;
+    }
+
     
     return TRUE;
 }
@@ -77,7 +82,7 @@ Session *newSpeakerSession;
 - (IBAction)CreateNewSession:(id)sender
 {
 
-    if (_ClassID.text.length > 0 )
+    if ( (_ClassID.text.length > 0 ) && (_ClassDesc.text.length > 0) )
     {
         [self setSessionInfo];
         
@@ -86,6 +91,10 @@ Session *newSpeakerSession;
             [parent retriveActiveSessions];
             [self.navigationController popViewControllerAnimated:YES];
         }
+    }
+    else
+    {
+        [Util nofifyError:@"Please fill in the class info "];
     }
 } 
 
