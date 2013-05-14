@@ -32,7 +32,9 @@ NSUserRole GUserGole = AUDIENCE;
                           ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
                           ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
                           ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
-    [self sendProviderDeviceToken:hexToken]; // custom method
+    //Save device token to user default to be pushed to server later after user sign in
+    [[NSUserDefaults standardUserDefaults] setValue:hexToken forKey:@"deviceToken"];
+
     
     
     NSLog(@"token in string: %@", hexToken);

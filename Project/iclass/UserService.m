@@ -19,6 +19,18 @@
 }
 
 
+-(void)updateDeviceToken: (NSString *)deviceToken{
+    NSMutableDictionary *token = [[NSMutableDictionary alloc]init];
+    [token setValue:deviceToken forKey:@"device_token"];
+
+    NSData* jsonData = [HttpQuery querySyncWithPath:@"/api/update_device_token"
+                                         withMethod:@"POST"
+                                         withParams:token];
+    LoginInfoSerializer *serializer =  [[LoginInfoSerializer alloc]init];
+    LoginInfo *info = [serializer deserialize:jsonData];
+    NSLog(@"Update device token success = %@",[info success]);
+}
+
 /**
  POST to ec2-122-248-192-192.ap-southeast-1.compute.amazonaws.com/api/sign_in
  with the following fields:
@@ -48,6 +60,14 @@
         [[NSUserDefaults standardUserDefaults] setValue:[info token] forKey:@"auth_token"];
 
         [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        //upload device token to server
+        NSString *deviceToken =  [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceToken"];
+        if (deviceToken){
+            NSLog(@"Found device token %@", deviceToken);
+            NSLog(@"ServiceAPI.token = %@",[ServiceAPI authToken] );
+            [self updateDeviceToken:deviceToken];
+        }
         return info;
     }else{
         [Util nofifyError:[info error]];

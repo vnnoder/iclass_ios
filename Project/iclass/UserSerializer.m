@@ -24,6 +24,7 @@
     [dict setValue:[user loginId] forKey:@"user[username]"];
     [dict setValue:[user email] forKey:@"user[email]"];
     [dict setValue:[user password] forKey:@"user[password]"];
+
     return dict;
 }
 
