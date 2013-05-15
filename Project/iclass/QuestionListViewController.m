@@ -16,7 +16,7 @@
 @end
 
 @implementation QuestionListViewController
-@synthesize currentSesseion, questionList;
+@synthesize currentSesseion, questionList, AddQuestionBtn;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.title = @"Favourite";
     if (currentSesseion == nil) {
         if (questionList == nil) {
             questionList = [[QuestionList alloc] initInOfflineMode];
@@ -120,7 +120,7 @@
     }
     
     
-    //if ([sender isKindOfClass:[UITableViewCell class]]) {
+
         if ([segue
              .destinationViewController isKindOfClass:[CreateQuestionViewController class]]) {
 
@@ -129,7 +129,7 @@
             createQuestionController.currentSession = currentSesseion;
             createQuestionController.qsService = [questionList qsAudience];
         }
-    //}
+
 }
 /*
  // Override to support conditional editing of the table view.

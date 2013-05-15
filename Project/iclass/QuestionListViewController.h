@@ -16,4 +16,5 @@
 }
 @property (strong, nonatomic) Session *currentSesseion;
 @property (nonatomic, strong) QuestionList *questionList;
+@property (weak, nonatomic) IBOutlet UIButton *AddQuestionBtn;
 @end
