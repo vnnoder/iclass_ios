@@ -28,7 +28,7 @@
                                          withParams:token];
     LoginInfoSerializer *serializer =  [[LoginInfoSerializer alloc]init];
     LoginInfo *info = [serializer deserialize:jsonData];
-    NSLog(@"Update device token success = %@",[info success]);
+    NSLog(@"Update device token success = %s",[info success] ? "YES": "NO");
 }
 
 /**
