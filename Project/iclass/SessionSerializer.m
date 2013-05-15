@@ -35,7 +35,6 @@
     [dict setValue:[session description ] forKey:@"talk[description]"];
     [dict setValue:[NSString stringWithFormat:@"%d",[session ownerId]]  forKey:@"talk[user_id]"];
     [dict setValue:[session status] forKey:@"talk[status]"];
-    [dict setValue:[session location] forKey:@"talk[location]"];
     //TODO
 //    [dict setValue:[session startDate] forKey:@"talk[start_date]"];
 //    [dict setValue:[session endDate] forKey:@"talk[end_date]"];
@@ -56,7 +55,6 @@
     entity.ownerId = [[dict objectForKey: @"user_id"]intValue];
     entity.status = [dict objectForKey:@"status"];
     entity.passcode=[dict objectForKey:@"passcode"];
-    entity.location =[dict objectForKey:@"location"];
     return entity;
 }
 

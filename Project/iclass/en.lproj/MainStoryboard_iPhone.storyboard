@@ -476,31 +476,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Location" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jvW-BP-4um">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="NMy-tY-NjU" firstAttribute="top" secondItem="8z8-b0-meO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2Kf-gk-fim"/>
+                            <constraint firstItem="5t9-QA-rLR" firstAttribute="top" secondItem="NMy-tY-NjU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="4LW-jq-UZc"/>
                             <constraint firstAttribute="trailing" secondItem="8z8-b0-meO" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8iC-LW-daS"/>
+                            <constraint firstItem="5t9-QA-rLR" firstAttribute="leading" secondItem="F5f-Pc-HB7" secondAttribute="leading" constant="119" id="HAF-fF-KUF"/>
                             <constraint firstItem="8z8-b0-meO" firstAttribute="leading" secondItem="F5f-Pc-HB7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Rhl-9i-sqt"/>
-                            <constraint firstAttribute="bottom" secondItem="5t9-QA-rLR" secondAttribute="bottom" constant="185" id="WOY-Le-HkC"/>
                             <constraint firstItem="NMy-tY-NjU" firstAttribute="leading" secondItem="F5f-Pc-HB7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="XVT-uM-qSi"/>
-                            <constraint firstItem="NMy-tY-NjU" firstAttribute="top" secondItem="F5f-Pc-HB7" secondAttribute="top" constant="107" id="YCQ-Hm-ugA"/>
-                            <constraint firstItem="jvW-BP-4um" firstAttribute="leading" secondItem="F5f-Pc-HB7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="haR-yy-beq"/>
                             <constraint firstItem="8z8-b0-meO" firstAttribute="top" secondItem="F5f-Pc-HB7" secondAttribute="top" constant="12" id="kC9-eJ-Urq"/>
                             <constraint firstAttribute="trailing" secondItem="NMy-tY-NjU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="oBK-o1-xu0"/>
-                            <constraint firstItem="NMy-tY-NjU" firstAttribute="centerX" secondItem="5t9-QA-rLR" secondAttribute="centerX" type="default" id="rUt-1H-zDs"/>
-                            <constraint firstItem="jvW-BP-4um" firstAttribute="top" secondItem="F5f-Pc-HB7" secondAttribute="top" constant="57" id="ung-02-rPb"/>
-                            <constraint firstAttribute="trailing" secondItem="jvW-BP-4um" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xlC-3P-lvm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create a Class" id="Bjb-vZ-CSY"/>
                     <connections>
                         <outlet property="ClassDesc" destination="NMy-tY-NjU" id="f6n-Ki-Pdu"/>
                         <outlet property="ClassID" destination="8z8-b0-meO" id="R7R-EW-Tjz"/>
-                        <outlet property="ClassLocation" destination="jvW-BP-4um" id="BXb-1S-3sm"/>
                         <outlet property="ConfirmBtn" destination="5t9-QA-rLR" id="Cza-24-QeE"/>
                     </connections>
                 </viewController>
@@ -1014,6 +1006,125 @@
             <point key="canvasLocation" x="-101" y="199"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AudienceViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AudienceViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="AddBtn" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="AudienceNavBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="SignOut" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="ClassDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClassDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ClassDescription" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="ClassID" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ClassPassCode" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="OperationBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="QuestionsBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="SurveryBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="hintLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CreateClassViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateClassViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ClassDesc" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ClassID" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ConfirmBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="CreateQuestionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateQuestionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundTap:"/>
+                <relationship kind="action" name="textFieldDoneEditing:"/>
+                <relationship kind="outlet" name="AskBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="questionTitle" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="qustionDetail" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="JoinClassViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JoinClassViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ClassID" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="JoinBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ScanBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="LogonViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LogonViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Logon"/>
+                <relationship kind="outlet" name="GuestButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="SignInButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="SignInWithFacebookButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="SignUpButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="callSupport" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="emailSupport" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="yourLocation" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="QuestionDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="VoteAction:"/>
+                <relationship kind="outlet" name="QuestionDescription" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="VoteBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="QuestionListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionListViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="AddQuestionBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="QuestionNoteViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionNoteViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="SaveAction:"/>
+                <relationship kind="outlet" name="SaveBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="noteText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="SignUpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignUpViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="SignUpBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cancelBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="fullNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userEmailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userPasswordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userRetypePasswordTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SpeakerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpeakerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="AddBtn" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="SignOut" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="SpeakerNavigationBar" candidateClass="UINavigationBar"/>
+            </relationships>
+        </class>
+        <class className="YourLocationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/YourLocationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
