@@ -49,13 +49,14 @@
 
     
     // read favourite question list
-    /*
+
     NSArray *qpaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *qplistPath1 = [qpaths objectAtIndex:0];
     NSString *qfilename = [qplistPath1 stringByAppendingPathComponent:@"Question"];
-     */
-    /*
+     
+
     favQuestionlist = [NSKeyedUnarchiver unarchiveObjectWithFile: qfilename];
+    /*
     NSFileManager *fm = [NSFileManager defaultManager];
     if ([fm fileExistsAtPath:qfilename])
     {
