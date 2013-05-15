@@ -31,14 +31,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Favourite";
+    
     if (currentSesseion == nil) {
+        self.title = @"Favourite";
         if (questionList == nil) {
             questionList = [[QuestionList alloc] initInOfflineMode];
         }
         [questionList getExistingQuestionsFromFile];
     }
     else {
+        self.title = @"Question";
         if (questionList == nil) {
             questionList = [[QuestionList alloc] init];
         }
