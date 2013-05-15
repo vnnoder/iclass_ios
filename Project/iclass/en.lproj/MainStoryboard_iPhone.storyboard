@@ -881,11 +881,11 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Question detials" translatesAutoresizingMaskIntoConstraints="NO" id="Kkj-SO-fTY">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkj-SO-fTY">
+                                <color key="backgroundColor" red="0.24356171568811813" green="1" blue="0.82703939403518745" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="287" id="8cy-2e-BDM"/>
-                                    <constraint firstAttribute="height" constant="159" id="yqx-o6-Vst"/>
+                                    <constraint firstAttribute="height" constant="108" id="Rxi-hz-egA"/>
+                                    <constraint firstAttribute="width" constant="287" id="ZFH-Se-QU9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -906,13 +906,24 @@
                                     <action selector="VoteAction:" destination="5fx-et-fOB" eventType="touchUpInside" id="MM1-nQ-bMp"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BES-wq-Vzk">
+                                <color key="backgroundColor" red="0.9309678247476002" green="1" blue="0.68334127976884451" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="293" id="KnK-sD-4Vn"/>
+                                    <constraint firstAttribute="height" constant="36" id="j2Q-Mw-7DS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9ck-ve-PQT" firstAttribute="leading" secondItem="suf-Ka-oGU" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0qa-dD-xgW"/>
-                            <constraint firstAttribute="bottom" secondItem="9ck-ve-PQT" secondAttribute="bottom" constant="137" id="HeB-Nu-ixf"/>
-                            <constraint firstAttribute="trailing" secondItem="Kkj-SO-fTY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cRz-uL-3SU"/>
-                            <constraint firstItem="Kkj-SO-fTY" firstAttribute="top" secondItem="suf-Ka-oGU" secondAttribute="top" constant="10" id="tpG-q4-rT4"/>
+                            <constraint firstItem="9ck-ve-PQT" firstAttribute="centerX" secondItem="suf-Ka-oGU" secondAttribute="centerX" type="default" id="0vp-Gl-ePl"/>
+                            <constraint firstItem="BES-wq-Vzk" firstAttribute="centerX" secondItem="Kkj-SO-fTY" secondAttribute="centerX" type="default" id="I3F-Xk-xY1"/>
+                            <constraint firstAttribute="bottom" secondItem="9ck-ve-PQT" secondAttribute="bottom" constant="122" id="JfS-xB-pkc"/>
+                            <constraint firstItem="9ck-ve-PQT" firstAttribute="centerX" secondItem="Kkj-SO-fTY" secondAttribute="centerX" type="default" id="KLG-VE-X7m"/>
+                            <constraint firstItem="Kkj-SO-fTY" firstAttribute="top" secondItem="BES-wq-Vzk" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fWX-f1-4T2"/>
+                            <constraint firstItem="BES-wq-Vzk" firstAttribute="top" secondItem="suf-Ka-oGU" secondAttribute="top" constant="20" symbolic="YES" type="default" id="iA3-5u-L2L"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZKg-Qp-fo4">
@@ -924,6 +935,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="QuestionDescription" destination="Kkj-SO-fTY" id="7PB-Yj-WvE"/>
+                        <outlet property="QuestionTitle" destination="BES-wq-Vzk" id="Pnu-72-eIC"/>
                         <outlet property="VoteBtn" destination="9ck-ve-PQT" id="7Bb-CQ-vpz"/>
                     </connections>
                 </viewController>
@@ -1081,6 +1093,7 @@
             <relationships>
                 <relationship kind="action" name="VoteAction:"/>
                 <relationship kind="outlet" name="QuestionDescription" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="QuestionTitle" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="VoteBtn" candidateClass="UIButton"/>
             </relationships>
         </class>

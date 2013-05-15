@@ -15,7 +15,7 @@
 @end
 
 @implementation QuestionDetailsViewController
-@synthesize string, QuestionDescription,currentSesseion,currentQuestion, VoteBtn, qsService;
+@synthesize string, QuestionDescription,currentSesseion,currentQuestion, VoteBtn, qsService, QuestionTitle;
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,7 +39,8 @@
         VoteBtn.titleLabel.text = @"Vote";
     }
      */
-    QuestionDescription.text = currentQuestion.title;
+    QuestionTitle.text = currentQuestion.title;
+    QuestionDescription.text = currentQuestion.detail;
 }
 
 - (void)didReceiveMemoryWarning
